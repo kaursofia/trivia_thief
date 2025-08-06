@@ -27,14 +27,12 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    /* Logo styling */
     #logo {
       width: 100px;
       height: auto;
       margin-bottom: 10px;
     }
 
-    /* Creative text styling */
     #creativeText {
       font-size: 24px;
       font-weight: bold;
@@ -106,7 +104,6 @@
       font-size: 18px;
     }
 
-    /* Circle countdown */
     #circle {
       width: 80px;
       height: 80px;
@@ -125,16 +122,15 @@
 
     .circle-text {
       font-weight: bold;
-      color: #000; /* Black color for the text to stand out */
+      color: #000;
     }
 
-    /* Spiral shrinking effect for the circle */
     @keyframes spiralShrink {
       0% {
         transform: scale(1) rotate(0deg);
       }
       100% {
-        transform: scale(0.6) rotate(1080deg); /* Shrinks and rotates */
+        transform: scale(0.6) rotate(1080deg);
       }
     }
 
@@ -155,10 +151,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- Logo -->
     <img id="logo" src="c65af28a-f6d2-4671-93b0-e1eb499e3b6c_removalai_preview.png" alt="Quiz Logo" />
-
-    <!-- Creative text below logo -->
     <div id="creativeText">A quiz makes you millionaire</div>
 
     <!-- Start Screen -->
@@ -177,7 +170,6 @@
 
     <!-- Quiz Screen -->
     <div id="quizScreen" class="screen">
-      <!-- Circle countdown -->
       <div id="circle" class="spiral-shrink">
         <div class="circle-text" id="questionsLeft"></div>
       </div>
@@ -200,7 +192,52 @@
       { question: "What color is the sky?", options: ["Blue", "Green", "Red", "Yellow"], answer: "Blue" },
       { question: "Which animal barks?", options: ["Cat", "Dog", "Elephant", "Tiger"], answer: "Dog" },
       { question: "Sun rises from?", options: ["West", "East", "North", "South"], answer: "East" },
-      { question: "How many days in a week?", options: ["5", "6", "7", "8"], answer: "7" }
+      { question: "How many days in a week?", options: ["5", "6", "7", "8"], answer: "7" },
+{ question: "What is the capital city of France?", options: ["Madrid", "Berlin", "Paris", "Rome"], answer: "Paris" },
+{ question: "Who wrote the play 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"], answer: "William Shakespeare" },
+{ question: "What is the largest country by land area?", options: ["United States", "China", "Canada", "Russia"], answer: "Russia" },
+{ question: "What is the longest river in the world?", options: ["Nile", "Amazon", "Yangtze", "Mississippi"], answer: "Nile" },
+{ question: "Which planet is closest to the sun?", options: ["Earth", "Venus", "Mercury", "Mars"], answer: "Mercury" },
+{ question: "Who was the first President of the United States?", options: ["Thomas Jefferson", "Abraham Lincoln", "George Washington", "John Adams"], answer: "George Washington" },
+{ question: "What is the largest desert in the world?", options: ["Sahara", "Gobi", "Kalahari", "Antarctic Desert"], answer: "Antarctic Desert" },
+{ question: "What is the smallest country in the world?", options: ["Monaco", "Vatican City", "Nauru", "San Marino"], answer: "Vatican City" },
+{ question: "In which country would you find the Great Barrier Reef?", options: ["United States", "Australia", "South Africa", "Brazil"], answer: "Australia" },
+{ question: "Which fruit is known as the 'king of fruits'?", options: ["Mango", "Banana", "Durian", "Pineapple"], answer: "Durian" },
+{ question: "Who painted the Mona Lisa?", options: ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Claude Monet"], answer: "Leonardo da Vinci" },
+{ question: "What is the smallest prime number?", options: ["0", "1", "2", "3"], answer: "2" },
+{ question: "What is the most common blood type in the world?", options: ["O+", "A+", "B+", "AB+"], answer: "O+" },
+{ question: "What is the longest-running TV show in the U.S.?", options: ["The Simpsons", "Friends", "The Office", "The Tonight Show"], answer: "The Simpsons" },
+{ question: "What is the currency of Japan?", options: ["Won", "Yen", "Baht", "Ringgit"], answer: "Yen" },
+{ question: "Which planet is known as the Red Planet?", options: ["Venus", "Mars", "Jupiter", "Saturn"], answer: "Mars" },
+{ question: "What is the tallest mountain in the world?", options: ["Mount Kilimanjaro", "Mount Everest", "Mount Fuji", "K2"], answer: "Mount Everest" },
+{ question: "Which element has the chemical symbol 'O'?", options: ["Oxygen", "Osmium", "Ozone", "Oxide"], answer: "Oxygen" },
+{ question: "Who is the author of 'Harry Potter'?", options: ["J.R.R. Tolkien", "George R.R. Martin", "J.K. Rowling", "Suzanne Collins"], answer: "J.K. Rowling" },
+{ question: "Which country is famous for producing maple syrup?", options: ["Sweden", "Canada", "Brazil", "Japan"], answer: "Canada" },
+{ question: "What is the name of the largest coral reef system in the world?", options: ["Great Barrier Reef", "Red Sea Coral Reef", "Maldives Reef", "Andaman Sea Reef"], answer: "Great Barrier Reef" },
+{ question: "What is the main ingredient in sushi?", options: ["Rice", "Fish", "Noodles", "Seaweed"], answer: "Rice" },
+{ question: "Which country has the most official languages?", options: ["India", "South Africa", "Canada", "Switzerland"], answer: "South Africa" },
+{ question: "Which animal is known as the 'King of the Jungle'?", options: ["Elephant", "Lion", "Tiger", "Gorilla"], answer: "Lion" },
+{ question: "Which ocean is the largest in the world?", options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"], answer: "Pacific Ocean" },
+{ question: "What is the most spoken language in the world?", options: ["English", "Mandarin", "Spanish", "Hindi"], answer: "Mandarin" },
+{ question: "Who discovered penicillin?", options: ["Albert Einstein", "Louis Pasteur", "Alexander Fleming", "Marie Curie"], answer: "Alexander Fleming" },
+{ question: "Which planet is known for having a ring system?", options: ["Mars", "Venus", "Saturn", "Jupiter"], answer: "Saturn" },
+{ question: "What is the most populous country in the world?", options: ["India", "United States", "China", "Indonesia"], answer: "China" },
+{ question: "What is the capital city of Japan?", options: ["Seoul", "Tokyo", "Beijing", "Kyoto"], answer: "Tokyo" },
+{ question: "What is the largest animal on Earth?", options: ["Elephant", "Blue Whale", "Giraffe", "Shark"], answer: "Blue Whale" },
+{ question: "Which country is known for the Eiffel Tower?", options: ["Italy", "Germany", "France", "Spain"], answer: "France" },
+{ question: "What is the most common element in Earth's atmosphere?", options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"], answer: "Nitrogen" },
+{ question: "Which artist is famous for his 'Starry Night' painting?", options: ["Pablo Picasso", "Claude Monet", "Vincent van Gogh", "Salvador Dali"], answer: "Vincent van Gogh" },
+{ question: "Who was the first person to walk on the moon?", options: ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "Michael Collins"], answer: "Neil Armstrong" },
+{ question: "What is the name of the longest river in Africa?", options: ["Nile", "Amazon", "Yangtze", "Mississippi"], answer: "Nile" },
+{ question: "Which is the largest continent by land area?", options: ["Africa", "Asia", "North America", "Europe"], answer: "Asia" },
+{ question: "Which sport is known as 'the king of sports'?", options: ["Football", "Basketball", "Cricket", "Baseball"], answer: "Football" },
+{ question: "What is the capital city of Italy?", options: ["Rome", "Paris", "Berlin", "Madrid"], answer: "Rome" },
+{ question: "Which planet is known as the Earth's twin?", options: ["Venus", "Mars", "Jupiter", "Saturn"], answer: "Venus" },
+{ question: "What is the currency used in the United Kingdom?", options: ["Dollar", "Euro", "Pound", "Yen"], answer: "Pound" },
+{ question: "Which chemical element has the atomic number 1?", options: ["Oxygen", "Hydrogen", "Carbon", "Nitrogen"], answer: "Hydrogen" },
+{ question: "What is the largest city in the world by population?", options: ["Tokyo", "New York", "Shanghai", "Delhi"], answer: "Tokyo" },
+{ question: "What is the main source of energy for the Sun?", options: ["Nuclear Fusion", "Gravitational Energy", "Chemical Reactions", "Electricity"], answer: "Nuclear Fusion" },
+{ question: "Which ocean lies on the eastern coast of the United States?", options: ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"], answer: "Atlantic Ocean" }
     ];
 
     const mediumQuestions = [
@@ -208,17 +245,117 @@
       { question: "What is the capital of Japan?", options: ["Seoul", "Tokyo", "Beijing", "Kyoto"], answer: "Tokyo" },
       { question: "Which gas do humans breathe in?", options: ["Oxygen", "Carbon", "Nitrogen", "Hydrogen"], answer: "Oxygen" },
       { question: "Which planet is known as the Red Planet?", options: ["Mars", "Jupiter", "Venus", "Earth"], answer: "Mars" },
-      { question: "How many hours in a day?", options: ["22", "23", "24", "25"], answer: "24" }
-    ];
+      { question: "How many hours in a day?", options: ["22", "23", "24", "25"], answer: "24" },
+  { question: "What is the capital city of Canada?", options: ["Ottawa", "Toronto", "Vancouver", "Montreal"], answer: "Ottawa" },
+  { question: "What is the square root of 225?", options: ["12", "14", "15", "16"], answer: "15" },
+  { question: "Which element has the chemical symbol 'Na'?", options: ["Sodium", "Nitrogen", "Nickel", "Neon"], answer: "Sodium" },
+  { question: "In which year did the Titanic sink?", options: ["1910", "1912", "1908", "1915"], answer: "1912" },
+  { question: "Who is the author of '1984'?", options: ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Kurt Vonnegut"], answer: "George Orwell" },
+  { question: "What is the largest internal organ in the human body?", options: ["Heart", "Liver", "Lungs", "Kidneys"], answer: "Liver" },
+  { question: "What is the chemical formula for methane?", options: ["CH4", "C2H6", "C3H8", "C4H10"], answer: "CH4" },
+  { question: "Which gas is most abundant in the Earth's atmosphere?", options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"], answer: "Nitrogen" },
+  { question: "What is the square of 13?", options: ["156", "169", "144", "121"], answer: "169" },
+  { question: "Which country is the largest producer of coffee?", options: ["Colombia", "Brazil", "Vietnam", "Ethiopia"], answer: "Brazil" },
+  { question: "Which planet is known as the 'Morning Star'?", options: ["Venus", "Mercury", "Mars", "Jupiter"], answer: "Venus" },
+  { question: "Who developed the theory of general relativity?", options: ["Isaac Newton", "Albert Einstein", "Max Planck", "Niels Bohr"], answer: "Albert Einstein" },
+  { question: "What is the speed of light in a vacuum?", options: ["300,000 km/s", "150,000 km/s", "350,000 km/s", "200,000 km/s"], answer: "300,000 km/s" },
+  { question: "Which famous scientist developed the first successful polio vaccine?", options: ["Jonas Salk", "Edward Jenner", "Louis Pasteur", "Marie Curie"], answer: "Jonas Salk" },
+  { question: "Which element is liquid at room temperature?", options: ["Mercury", "Gallium", "Bromine", "All of the above"], answer: "All of the above" },
+  { question: "What is the currency of the United Kingdom?", options: ["Euro", "Dollar", "Pound", "Yen"], answer: "Pound" },
+  { question: "Which country is known as the Land of the Rising Sun?", options: ["South Korea", "China", "Japan", "Thailand"], answer: "Japan" },
+  { question: "What is the symbol for the chemical element Gold?", options: ["Ag", "Au", "Pb", "Fe"], answer: "Au" },
+  { question: "In what year did World War II end?", options: ["1940", "1944", "1945", "1950"], answer: "1945" },
+  { question: "Which animal is known as the King of the Jungle?", options: ["Lion", "Elephant", "Tiger", "Cheetah"], answer: "Lion" },
+  { question: "Which element has the atomic number 6?", options: ["Carbon", "Oxygen", "Nitrogen", "Boron"], answer: "Carbon" },
+  { question: "What is the tallest mountain in North America?", options: ["Mount Everest", "Mount Denali", "Mount Fuji", "Kilimanjaro"], answer: "Mount Denali" },
+  { question: "What is the chemical formula for sulfuric acid?", options: ["HCl", "H2SO4", "NaOH", "HNO3"], answer: "H2SO4" },
+  { question: "Which country invented the first modern Olympic Games?", options: ["France", "Greece", "Germany", "Italy"], answer: "Greece" },
+  { question: "Which ocean is the largest in the world?", options: ["Atlantic", "Indian", "Pacific", "Arctic"], answer: "Pacific" },
+  { question: "Which country is the birthplace of the Renaissance?", options: ["France", "Italy", "Germany", "England"], answer: "Italy" },
+  { question: "Which bird is known for its ability to mimic sounds?", options: ["Parrot", "Crow", "Eagle", "Pigeon"], answer: "Parrot" },
+  { question: "Which metal is liquid at room temperature?", options: ["Mercury", "Gallium", "Lead", "Aluminum"], answer: "Mercury" },
+  { question: "What is the highest mountain in the world?", options: ["Mount Everest", "Mount Kilimanjaro", "Mount Fuji", "Mount Elbrus"], answer: "Mount Everest" },
+  { question: "Which is the largest island in the world?", options: ["Greenland", "New Guinea", "Borneo", "Madagascar"], answer: "Greenland" },
+  { question: "Which element has the chemical symbol 'Fe'?", options: ["Iron", "Flerovium", "Fluorine", "Francium"], answer: "Iron" },
+  { question: "What is the atomic number of Hydrogen?", options: ["1", "2", "3", "4"], answer: "1" },
+  { question: "Which planet has the longest day?", options: ["Venus", "Mars", "Jupiter", "Mercury"], answer: "Venus" },
+  { question: "Who discovered electricity?", options: ["Thomas Edison", "Benjamin Franklin", "Nikola Tesla", "Alexander Graham Bell"], answer: "Benjamin Franklin" },
+  { question: "What is the smallest bone in the human body?", options: ["Stapes", "Femur", "Scapula", "Radius"], answer: "Stapes" },
+  { question: "Which country is home to the Great Wall?", options: ["Japan", "India", "China", "South Korea"], answer: "China" },
+  { question: "Who is known for developing the first modern theory of psychology?", options: ["Sigmund Freud", "B.F. Skinner", "Carl Jung", "John Locke"], answer: "Sigmund Freud" },
+  { question: "Which famous actor played Jack Dawson in the movie 'Titanic'?", options: ["Leonardo DiCaprio", "Brad Pitt", "Johnny Depp", "Tom Cruise"], answer: "Leonardo DiCaprio" },
+  { question: "Which human organ is responsible for producing insulin?", options: ["Pancreas", "Liver", "Kidneys", "Stomach"], answer: "Pancreas" },
+  { question: "What is the second most abundant gas in the Earth's atmosphere?", options: ["Oxygen", "Argon", "Carbon Dioxide", "Nitrogen"], answer: "Oxygen" },
+  { question: "Which country is known for the Eiffel Tower?", options: ["Germany", "Spain", "France", "Italy"], answer: "France" },
+  { question: "Which planet is known for its rings?", options: ["Earth", "Saturn", "Jupiter", "Neptune"], answer: "Saturn" },
+  { question: "What type of animal is the 'Komodo dragon'?", options: ["Reptile", "Mammal", "Amphibian", "Bird"], answer: "Reptile" },
+  { question: "Which famous scientist discovered the laws of motion?", options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"], answer: "Isaac Newton" },
+  { question: "Which organ in the human body is primarily responsible for detoxification?", options: ["Heart", "Liver", "Kidneys", "Lungs"], answer: "Liver" },
+  { question: "Which country is known for the ancient pyramids?", options: ["China", "Egypt", "India", "Mexico"], answer: "Egypt" },
+  { question: "What does the 'DNA' stand for?", options: ["Deoxyribonucleic Acid", "Deoxyribose Nucleic Acid", "Double Nucleic Acid", "Dipeptide Nucleic Acid"], answer: "Deoxyribonucleic Acid" },
+  { question: "Which country was the first to send a man into space?", options: ["USA", "Soviet Union", "China", "India"], answer: "Soviet Union" },
+  { question: "Which is the largest volcano on Earth?", options: ["Mount Kilimanjaro", "Mount Fuji", "Mauna Loa", "Mount St. Helens"], answer: "Mauna Loa" },
+  { question: "What is the national sport of Japan?", options: ["Sumo", "Karate", "Judo", "Baseball"], answer: "Sumo" },
+  { question: "Which famous building is in Paris, France?", options: ["Eiffel Tower", "Colosseum", "Big Ben", "Christ the Redeemer"], answer: "Eiffel Tower" }
+];
 
     const hardQuestions = [
       { question: "What is the atomic number of Oxygen?", options: ["6", "7", "8", "9"], answer: "8" },
       { question: "When did WWII end?", options: ["1942", "1944", "1945", "1950"], answer: "1945" },
       { question: "Which scientist developed relativity?", options: ["Newton", "Tesla", "Einstein", "Bohr"], answer: "Einstein" },
       { question: "Who painted Starry Night?", options: ["Da Vinci", "Van Gogh", "Picasso", "Monet"], answer: "Van Gogh" },
-      { question: "Which is the longest river?", options: ["Amazon", "Ganga", "Nile", "Yangtze"], answer: "Nile" }
-    ];
-
+      { question: "Which is the longest river?", options: ["Amazon", "Ganga", "Nile", "Yangtze"], answer: "Nile" },
+  { question: "What is the rarest blood type in the world?", options: ["AB-", "O-", "B-", "A-"], answer: "Rh-null" },
+  { question: "Which element has the highest melting point?", options: ["Carbon", "Tungsten", "Iron", "Titanium"], answer: "Tungsten" },
+  { question: "Who invented the first mechanical computer?", options: ["Charles Babbage", "Alan Turing", "Konrad Zuse", "John von Neumann"], answer: "Charles Babbage" },
+  { question: "Which country was the first to grant women the right to vote?", options: ["United States", "New Zealand", "United Kingdom", "Sweden"], answer: "New Zealand" },
+  { question: "What is the longest-running science fiction TV show?", options: ["Star Trek", "Doctor Who", "The X-Files", "Battlestar Galactica"], answer: "Doctor Who" },
+  { question: "Which disease was eradicated by a global vaccination campaign?", options: ["Polio", "Smallpox", "Measles", "Tuberculosis"], answer: "Smallpox" },
+  { question: "What is the only country to have a flag that is not quadrilateral?", options: ["Nepal", "Switzerland", "Vatican City", "Lesotho"], answer: "Nepal" },
+  { question: "In which year was the first human-made object sent into space?", options: ["1948", "1957", "1961", "1972"], answer: "1957" },
+  { question: "What is the most expensive substance on Earth by mass?", options: ["Plutonium", "Diamonds", "Antimatter", "Gold"], answer: "Antimatter" },
+  { question: "Who was the first person to receive two Nobel Prizes in different fields?", options: ["Marie Curie", "Albert Einstein", "Linus Pauling", "Niels Bohr"], answer: "Marie Curie" },
+  { question: "What is the deepest part of the world's oceans?", options: ["Mariana Trench", "Challenger Deep", "Puerto Rico Trench", "Java Trench"], answer: "Challenger Deep" },
+  { question: "Which country was the first to legalize same-sex marriage?", options: ["Netherlands", "Canada", "Argentina", "Spain"], answer: "Netherlands" },
+  { question: "What is the name of the first artificial satellite?", options: ["Sputnik 1", "Apollo 11", "Explorer 1", "Vanguard 1"], answer: "Sputnik 1" },
+  { question: "Which is the largest known star in the universe?", options: ["VY Canis Majoris", "Betelgeuse", "Antares", "UY Scuti"], answer: "UY Scuti" },
+  { question: "Which mathematical constant is defined as the ratio of a circle's circumference to its diameter?", options: ["Pi", "Euler's Number", "Phi", "The Golden Ratio"], answer: "Pi" },
+  { question: "Which ocean is the deepest?", options: ["Atlantic", "Pacific", "Indian", "Southern"], answer: "Pacific" },
+  { question: "Which city is known as the 'City of a Hundred Spires'?", options: ["Prague", "Vienna", "Paris", "Berlin"], answer: "Prague" },
+  { question: "Which country has the longest coastline in the world?", options: ["Canada", "Russia", "Australia", "United States"], answer: "Canada" },
+  { question: "Who developed the first successful polio vaccine?", options: ["Louis Pasteur", "Jonas Salk", "Edward Jenner", "Albert Calmette"], answer: "Jonas Salk" },
+  { question: "What is the name of the largest volcano in the solar system?", options: ["Mauna Loa", "Olympus Mons", "Mount St. Helens", "Mount Vesuvius"], answer: "Olympus Mons" },
+  { question: "In which country was the first modern Olympic Games held?", options: ["Greece", "France", "Germany", "Italy"], answer: "Greece" },
+  { question: "What is the world's largest desert?", options: ["Sahara", "Gobi", "Kalahari", "Antarctic Desert"], answer: "Antarctic Desert" },
+  { question: "Which is the smallest ocean in the world?", options: ["Arctic Ocean", "Atlantic Ocean", "Indian Ocean", "Southern Ocean"], answer: "Arctic Ocean" },
+  { question: "What is the oldest known written language?", options: ["Sumerian", "Latin", "Greek", "Egyptian Hieroglyphs"], answer: "Sumerian" },
+  { question: "Which country is both an island and a continent?", options: ["Australia", "New Zealand", "Indonesia", "Philippines"], answer: "Australia" },
+  { question: "Which animal has the longest lifespan?", options: ["Bowhead Whale", "Elephant", "Tortoise", "Human"], answer: "Bowhead Whale" },
+  { question: "Who was the first woman to fly solo across the Atlantic Ocean?", options: ["Amelia Earhart", "Harriet Quimby", "Bessie Coleman", "Jacqueline Cochran"], answer: "Amelia Earhart" },
+  { question: "What is the largest living organism on Earth?", options: ["Blue Whale", "Giant Sequoia", "Honey Fungus", "Great Barrier Reef"], answer: "Honey Fungus" },
+  { question: "What is the rarest naturally occurring element on Earth?", options: ["Astatine", "Plutonium", "Radon", "Francium"], answer: "Astatine" },
+  { question: "What is the name of the first programmable computer?", options: ["Analytical Engine", "Z3", "ENIAC", "Colossus"], answer: "Z3" },
+  { question: "What is the longest river in Europe?", options: ["Danube", "Volga", "Rhine", "Elbe"], answer: "Volga" },
+  { question: "Who was the first woman in space?", options: ["Valentina Tereshkova", "Sally Ride", "Mae Jemison", "Yuri Gagarin"], answer: "Valentina Tereshkova" },
+  { question: "What is the largest island in the Mediterranean Sea?", options: ["Crete", "Sicily", "Cyprus", "Corsica"], answer: "Sicily" },
+  { question: "Which planet has the most moons?", options: ["Mars", "Saturn", "Jupiter", "Uranus"], answer: "Saturn" },
+  { question: "What is the largest living species of shark?", options: ["Great White Shark", "Whale Shark", "Tiger Shark", "Hammerhead Shark"], answer: "Whale Shark" },
+  { question: "Which two countries share the longest international border?", options: ["Canada and USA", "Russia and China", "Argentina and Chile", "India and China"], answer: "Canada and USA" },
+  { question: "Which language has the most words?", options: ["Mandarin", "English", "Arabic", "Russian"], answer: "English" },
+  { question: "What is the only letter that doesn’t appear in the periodic table?", options: ["J", "K", "Q", "Z"], answer: "J" },
+  { question: "What is the only country to have a flag with a Union Jack and a red background?", options: ["New Zealand", "Australia", "Fiji", "Tuvalu"], answer: "Australia" },
+  { question: "What is the most distant galaxy ever discovered?", options: ["Andromeda", "NGC 4889", "GN-z11", "Messier 87"], answer: "GN-z11" },
+  { question: "Which planet in our solar system has the most extreme seasons?", options: ["Uranus", "Mars", "Saturn", "Venus"], answer: "Uranus" },
+  { question: "Who was the first human to reach the South Pole?", options: ["Roald Amundsen", "Robert Falcon Scott", "Ernest Shackleton", "Douglas Mawson"], answer: "Roald Amundsen" },
+  { question: "Which country has won the most FIFA World Cup titles?", options: ["Brazil", "Germany", "Italy", "Argentina"], answer: "Brazil" },
+  { question: "What is the only flag that does not have four sides?", options: ["Nepal", "Switzerland", "Vatican City", "Lesotho"], answer: "Nepal" },
+  { question: "What is the smallest mammal in the world?", options: ["Bumblebee Bat", "Pygmy Marmoset", "Kitti's Hog-nosed Bat", "Etruscan Shrew"], answer: "Bumblebee Bat" },
+  { question: "Which planet is the hottest in the solar system?", options: ["Venus", "Mercury", "Mars", "Jupiter"], answer: "Venus" },
+  { question: "Which sea is the saltiest?", options: ["Dead Sea", "Salt Lake", "Red Sea", "Caspians Sea"], answer: "Dead Sea" },
+  { question: "Which planet is the most similar to Earth in terms of size?", options: ["Mars", "Venus", "Mercury", "Jupiter"], answer: "Venus" },
+  { question: "What is the largest bird in the world?", options: ["Ostrich", "Emu", "Cassowary", "Penguin"], answer: "Ostrich" },
+  { question: "What is the rarest type of eye color?", options: ["Blue", "Green", "Gray", "Red"], answer: "Gray" }
+];
     let currentQuestion = 0;
     let score = 0;
     let timer;
@@ -238,8 +375,9 @@
       if (level === 'easy') selectedQuestions = [...easyQuestions];
       if (level === 'medium') selectedQuestions = [...mediumQuestions];
       if (level === 'hard') selectedQuestions = [...hardQuestions];
+      // You can add more questions for medium and hard levels here
 
-      selectedQuestions = shuffleArray(selectedQuestions).slice(0, 5); // Limiting to 5 questions per difficulty
+      selectedQuestions = shuffleArray(selectedQuestions).slice(0, 10); // Limiting to 10 questions per difficulty
       score = 0;
       currentQuestion = 0;
       showScreen('quizScreen');
@@ -250,30 +388,26 @@
     function showQuestion() {
       const q = selectedQuestions[currentQuestion];
       document.getElementById('question').textContent = q.question;
-      document.getElementById('options').innerHTML = q.options.map(option =>
+      const shuffledOptions = shuffleArray([...q.options]);
+      document.getElementById('options').innerHTML = shuffledOptions.map(option =>
         `<button class="btn option-btn" onclick="checkAnswer('${option}')">${option}</button>`
       ).join('');
-      // Show remaining questions including the current question
       document.getElementById('questionsLeft').textContent = `${selectedQuestions.length - currentQuestion}`;
     }
 
     function checkAnswer(selected) {
-      // Stop the timer when an answer is selected
       clearInterval(timer);
-      
       const correct = selectedQuestions[currentQuestion].answer;
-      
       if (selected === correct) score++;
 
       currentQuestion++;
 
-      // Check if we have more questions, otherwise show results
       if (currentQuestion < selectedQuestions.length) {
-        timeLeft = 10;  // Reset the timer
-        showQuestion();  // Show the next question
-        startTimer();    // Restart the timer
+        timeLeft = 10;
+        showQuestion();
+        startTimer();
       } else {
-        showResult();    // Show result after last question
+        showResult();
       }
     }
 
@@ -283,10 +417,9 @@
         timeLeft--;
         document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
 
-        // If time runs out, immediately end the game and show result
         if (timeLeft <= 0) {
           clearInterval(timer);
-          showResult();  // Immediately show result when time is up
+          showResult();
         }
       }, 1000);
     }
@@ -294,16 +427,11 @@
     function showResult() {
       showScreen('resultScreen');
       document.getElementById('scoreText').textContent = `You scored ${score}/${selectedQuestions.length}`;
-      document.getElementById('resultMessage').textContent = score === selectedQuestions.length ? 
+      document.getElementById('resultMessage').textContent = score === selectedQuestions.length ?
         'Congratulations, You Win!' : 'You Lose! Better luck next time.';
-
-      if (score === selectedQuestions.length) {
-        document.getElementById('resultMessage').innerHTML += `<br>Excellent work! Move on to the next level!`;
-      }
     }
 
     function restartGame() {
-      // Restart the game and reset everything
       currentQuestion = 0;
       score = 0;
       timeLeft = 10;
