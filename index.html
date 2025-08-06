@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trivia Quiz</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffeb3b;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+      background: #fffde7;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Logo styling */
+    #logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    /* Creative text styling */
+    #creativeText {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 30px;
+      animation: textEffect 2s ease-out;
+    }
+
+    @keyframes textEffect {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .screen.active {
+      display: flex;
+    }
+
+    h1, h2 {
+      font-size: 28px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 30px;
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease, transform 0.1s ease;
+    }
+
+    .btn:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+
+    .option-btn {
+      background: #f5f5f5;
+      color: #000;
+      border: 2px solid #000;
+      transition: background 0.3s ease;
+      margin: 5px 0;
+    }
+
+    .option-btn:hover {
+      background: #ffe082;
+    }
+
+    #timer {
+      color: red;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    /* Circle countdown */
+    #circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 6px solid #ff5722;
+      background-color: transparent;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .circle-text {
+      font-weight: bold;
+      color: #000; /* Black color for the text to stand out */
+    }
+
+    /* Spiral shrinking effect for the circle */
+    @keyframes spiralShrink {
+      0% {
+        transform: scale(1) rotate(0deg);
+      }
+      100% {
+        transform: scale(0.6) rotate(1080deg); /* Shrinks and rotates */
+      }
+    }
+
+    .spiral-shrink {
+      animation: spiralShrink 10s linear forwards;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media screen and (max-width: 500px) {
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img id="logo" src="c65af28a-f6d2-4671-93b0-e1eb499e3b6c_removalai_preview.png" alt="Quiz Logo" />
+
+    <!-- Creative text below logo -->
+    <div id="creativeText">A quiz makes you millionaire</div>
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active">
+      <h1>QUIZ</h1>
+      <button class="btn" onclick="showDifficulty()">START</button>
+    </div>
+
+    <!-- Difficulty Screen -->
+    <div id="difficultyScreen" class="screen">
+      <h2>Select Difficulty</h2>
+      <button class="btn" onclick="selectDifficulty('easy')">Easy</button>
+      <button class="btn" onclick="selectDifficulty('medium')">Medium</button>
+      <button class="btn" onclick="selectDifficulty('hard')">Hard</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen">
+      <!-- Circle countdown -->
+      <div id="circle" class="spiral-shrink">
+        <div class="circle-text" id="questionsLeft"></div>
+      </div>
+      <div id="timer">Time left: 10s</div>
+      <div id="question" style="margin-bottom: 20px; font-size: 20px; font-weight: bold;"></div>
+      <div id="options"></div>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="resultScreen" class="screen">
+      <h2 id="resultMessage">YOU WIN!</h2>
+      <p id="scoreText"></p>
+      <button class="btn" onclick="restartGame()">TRY AGAIN</button>
+    </div>
+  </div>
+
+  <script>
+    const easyQuestions = [
+      { question: "What is 2 + 2?", options: ["3", "4", "5", "6"], answer: "4" },
+      { question: "What color is the sky?", options: ["Blue", "Green", "Red", "Yellow"], answer: "Blue" },
+      { question: "Which animal barks?", options: ["Cat", "Dog", "Elephant", "Tiger"], answer: "Dog" },
+      { question: "Sun rises from?", options: ["West", "East", "North", "South"], answer: "East" },
+      { question: "How many days in a week?", options: ["5", "6", "7", "8"], answer: "7" }
+    ];
+
+    const mediumQuestions = [
+      { question: "Who wrote 'Harry Potter'?", options: ["Rowling", "Tolkien", "King", "Shakespeare"], answer: "Rowling" },
+      { question: "What is the capital of Japan?", options: ["Seoul", "Tokyo", "Beijing", "Kyoto"], answer: "Tokyo" },
+      { question: "Which gas do humans breathe in?", options: ["Oxygen", "Carbon", "Nitrogen", "Hydrogen"], answer: "Oxygen" },
+      { question: "Which planet is known as the Red Planet?", options: ["Mars", "Jupiter", "Venus", "Earth"], answer: "Mars" },
+      { question: "How many hours in a day?", options: ["22", "23", "24", "25"], answer: "24" }
+    ];
+
+    const hardQuestions = [
+      { question: "What is the atomic number of Oxygen?", options: ["6", "7", "8", "9"], answer: "8" },
+      { question: "When did WWII end?", options: ["1942", "1944", "1945", "1950"], answer: "1945" },
+      { question: "Which scientist developed relativity?", options: ["Newton", "Tesla", "Einstein", "Bohr"], answer: "Einstein" },
+      { question: "Who painted Starry Night?", options: ["Da Vinci", "Van Gogh", "Picasso", "Monet"], answer: "Van Gogh" },
+      { question: "Which is the longest river?", options: ["Amazon", "Ganga", "Nile", "Yangtze"], answer: "Nile" }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let timer;
+    let timeLeft = 10;
+    let selectedQuestions = [];
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function showDifficulty() {
+      showScreen('difficultyScreen');
+    }
+
+    function selectDifficulty(level) {
+      if (level === 'easy') selectedQuestions = [...easyQuestions];
+      if (level === 'medium') selectedQuestions = [...mediumQuestions];
+      if (level === 'hard') selectedQuestions = [...hardQuestions];
+
+      selectedQuestions = shuffleArray(selectedQuestions).slice(0, 5); // Limiting to 5 questions per difficulty
+      score = 0;
+      currentQuestion = 0;
+      showScreen('quizScreen');
+      showQuestion();
+      startTimer();
+    }
+
+    function showQuestion() {
+      const q = selectedQuestions[currentQuestion];
+      document.getElementById('question').textContent = q.question;
+      document.getElementById('options').innerHTML = q.options.map(option =>
+        `<button class="btn option-btn" onclick="checkAnswer('${option}')">${option}</button>`
+      ).join('');
+      // Show remaining questions including the current question
+      document.getElementById('questionsLeft').textContent = `${selectedQuestions.length - currentQuestion}`;
+    }
+
+    function checkAnswer(selected) {
+      // Stop the timer when an answer is selected
+      clearInterval(timer);
+      
+      const correct = selectedQuestions[currentQuestion].answer;
+      
+      if (selected === correct) score++;
+
+      currentQuestion++;
+
+      // Check if we have more questions, otherwise show results
+      if (currentQuestion < selectedQuestions.length) {
+        timeLeft = 10;  // Reset the timer
+        showQuestion();  // Show the next question
+        startTimer();    // Restart the timer
+      } else {
+        showResult();    // Show result after last question
+      }
+    }
+
+    function startTimer() {
+      document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
+      timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
+
+        // If time runs out, immediately end the game and show result
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          showResult();  // Immediately show result when time is up
+        }
+      }, 1000);
+    }
+
+    function showResult() {
+      showScreen('resultScreen');
+      document.getElementById('scoreText').textContent = `You scored ${score}/${selectedQuestions.length}`;
+      document.getElementById('resultMessage').textContent = score === selectedQuestions.length ? 
+        'Congratulations, You Win!' : 'You Lose! Better luck next time.';
+
+      if (score === selectedQuestions.length) {
+        document.getElementById('resultMessage').innerHTML += `<br>Excellent work! Move on to the next level!`;
+      }
+    }
+
+    function restartGame() {
+      // Restart the game and reset everything
+      currentQuestion = 0;
+      score = 0;
+      timeLeft = 10;
+      showScreen('startScreen');
+    }
+
+    // Helper function to shuffle array
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      }
+      return array;
+    }
+  </script>
+</body>
+</html>
