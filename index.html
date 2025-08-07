@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1B1RV7TDY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P1B1RV7TDY');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trivia Quiz</title>
@@ -24,6 +15,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      flex-direction: column;
     }
 
     .container {
@@ -34,6 +26,8 @@
       background: #fffde7;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      overflow: hidden; /* Ensure content doesn't spill out */
     }
 
     #logo {
@@ -94,83 +88,149 @@
       transform: scale(1.05);
     }
 
-    .option-btn {
-      background: #f5f5f5;
-      color: #000;
-      border: 2px solid #000;
-      transition: background 0.3s ease;
-      margin: 5px 0;
-    }
-
-    .option-btn:hover {
-      background: #ffe082;
-    }
-
-    #timer {
-      color: red;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .inputField {
+      padding: 10px;
       font-size: 18px;
-    }
-
-    #circle {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 6px solid #ff5722;
-      background-color: transparent;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
       margin: 10px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .circle-text {
+      border: 2px solid #000;
+      border-radius: 20px;
+      width: 100%;
+      text-align: center;
       font-weight: bold;
-      color: #000;
     }
 
-    @keyframes spiralShrink {
-      0% {
-        transform: scale(1) rotate(0deg);
+    .inputField:focus {
+      outline: none;
+      border-color: #ff5722;
+      box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+    }
+
+    #startButton {
+      margin-top: 20px;
+    }
+
+    .headingText {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ff5722;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: textAnimate 1.5s ease-in-out infinite;
+    }
+
+    @keyframes textAnimate {
+      0% { transform: scale(1); color: #ff5722; }
+      50% { transform: scale(1.2); color: #ff9800; }
+      100% { transform: scale(1); color: #ff5722; }
+    }
+
+    @media screen and (max-width: 500px) {
+      .headingText {
+        font-size: 28px;
       }
-      100% {
-        transform: scale(0.6) rotate(1080deg);
+
+      #logo {
+        width: 80px;
+      }
+
+      #circle {
+        width: 80px;
+        height: 80px;
+      }
+
+      .btn {
+        font-size: 14px;
       }
     }
 
-    .spiral-shrink {
-      animation: spiralShrink 10s linear forwards;
+    /* Circle Animation */
+    #circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: transparent; /* Remove background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      border: 2px solid red; /* Optional: Adds a red border around the circle */
+    }
+
+    #circle .circle-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: red; /* Set the text color to red */
+    }
+
+    .correct-answer {
+      background-color: green;
+      color: white;
+    }
+
+    .incorrect-answer {
+      background-color: red;
+      color: white;
     }
 
     .hidden {
       display: none;
     }
 
-    @media screen and (max-width: 500px) {
-      h1 {
-        font-size: 24px;
-      }
+    /* Social Media Share Buttons */
+    .social-share {
+      margin: 20px 0;
     }
+
+    .social-share .btn {
+      margin: 10px 0;
+      width: 100%;
+      background-color: #25D366; /* WhatsApp color */
+    }
+
+    .social-share .btn:nth-child(2) {
+      background-color: #3b5998; /* Facebook color */
+    }
+
+    .social-share .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Timer in red */
+    #timer {
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Golden Card Adjustments */
+    #goldenCard {
+      width: 150px; /* Resize the golden card */
+      height: auto;
+      margin: 20px auto;
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
     <img id="logo" src="c65af28a-f6d2-4671-93b0-e1eb499e3b6c_removalai_preview.png" alt="Quiz Logo" />
-    <div id="creativeText">A quiz makes you millionaire</div>
+    <div id="creativeText">A Game Can Make You Millionaire</div>
 
-    <!-- Start Screen -->
+    <!-- Start Screen with Name Input -->
     <div id="startScreen" class="screen active">
-      <h1>QUIZ</h1>
-      <button class="btn" onclick="showDifficulty()">START</button>
+      <h1 class="headingText">QUIZ GAME</h1>
+
+      <!-- Name Input Field -->
+      <input type="text" id="userName" class="inputField" placeholder="Your Name" required />
+      
+      <!-- Start Button -->
+      <button class="btn" id="startButton" onclick="startQuiz()">START</button>
     </div>
 
     <!-- Difficulty Screen -->
     <div id="difficultyScreen" class="screen">
+      <div id="welcomeMessage"></div> <!-- Display welcome message here -->
       <h2>Select Difficulty</h2>
       <button class="btn" onclick="selectDifficulty('easy')">Easy</button>
       <button class="btn" onclick="selectDifficulty('medium')">Medium</button>
@@ -179,8 +239,8 @@
 
     <!-- Quiz Screen -->
     <div id="quizScreen" class="screen">
-      <div id="circle" class="spiral-shrink">
-        <div class="circle-text" id="questionsLeft"></div>
+      <div id="circle">
+        <div class="circle-text" id="questionsLeft">10</div>
       </div>
       <div id="timer">Time left: 10s</div>
       <div id="question" style="margin-bottom: 20px; font-size: 20px; font-weight: bold;"></div>
@@ -189,72 +249,78 @@
 
     <!-- Result Screen -->
     <div id="resultScreen" class="screen">
-      <h2 id="resultMessage">YOU WIN!</h2>
+      <h2 id="resultMessage"></h2>
       <p id="scoreText"></p>
+      <p id="levelPlayed"></p> <!-- Display the level played here -->
+      <img id="goldenCard" class="hidden" src="dreamina-2025-08-07-9866-Create_a_luxurious_golden_token_card_wit...-removebg-preview.png" alt="Golden Card">
+      
+      <!-- Social Media Share Buttons -->
+      <div class="social-share">
+        <button class="btn" onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+        <button class="btn" onclick="shareOnFacebook()">Share on Facebook</button>
+      </div>
+
       <button class="btn" onclick="restartGame()">TRY AGAIN</button>
     </div>
   </div>
 
   <script>
     const easyQuestions = [
-      { question: "What is 2 + 2?", options: ["3", "4", "5", "6"], answer: "4" },
-      { question: "What color is the sky?", options: ["Blue", "Green", "Red", "Yellow"], answer: "Blue" },
-      { question: "Which animal barks?", options: ["Cat", "Dog", "Elephant", "Tiger"], answer: "Dog" },
-      { question: "Sun rises from?", options: ["West", "East", "North", "South"], answer: "East" },
-      { question: "How many days in a week?", options: ["5", "6", "7", "8"], answer: "7" },
-{ question: "What is the capital city of France?", options: ["Madrid", "Berlin", "Paris", "Rome"], answer: "Paris" },
-{ question: "Who wrote the play 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"], answer: "William Shakespeare" },
-{ question: "What is the largest country by land area?", options: ["United States", "China", "Canada", "Russia"], answer: "Russia" },
-{ question: "What is the longest river in the world?", options: ["Nile", "Amazon", "Yangtze", "Mississippi"], answer: "Nile" },
-{ question: "Which planet is closest to the sun?", options: ["Earth", "Venus", "Mercury", "Mars"], answer: "Mercury" },
-{ question: "Who was the first President of the United States?", options: ["Thomas Jefferson", "Abraham Lincoln", "George Washington", "John Adams"], answer: "George Washington" },
-{ question: "What is the largest desert in the world?", options: ["Sahara", "Gobi", "Kalahari", "Antarctic Desert"], answer: "Antarctic Desert" },
-{ question: "What is the smallest country in the world?", options: ["Monaco", "Vatican City", "Nauru", "San Marino"], answer: "Vatican City" },
-{ question: "In which country would you find the Great Barrier Reef?", options: ["United States", "Australia", "South Africa", "Brazil"], answer: "Australia" },
-{ question: "Which fruit is known as the 'king of fruits'?", options: ["Mango", "Banana", "Durian", "Pineapple"], answer: "Durian" },
-{ question: "Who painted the Mona Lisa?", options: ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Claude Monet"], answer: "Leonardo da Vinci" },
-{ question: "What is the smallest prime number?", options: ["0", "1", "2", "3"], answer: "2" },
-{ question: "What is the most common blood type in the world?", options: ["O+", "A+", "B+", "AB+"], answer: "O+" },
-{ question: "What is the longest-running TV show in the U.S.?", options: ["The Simpsons", "Friends", "The Office", "The Tonight Show"], answer: "The Simpsons" },
-{ question: "What is the currency of Japan?", options: ["Won", "Yen", "Baht", "Ringgit"], answer: "Yen" },
-{ question: "Which planet is known as the Red Planet?", options: ["Venus", "Mars", "Jupiter", "Saturn"], answer: "Mars" },
-{ question: "What is the tallest mountain in the world?", options: ["Mount Kilimanjaro", "Mount Everest", "Mount Fuji", "K2"], answer: "Mount Everest" },
-{ question: "Which element has the chemical symbol 'O'?", options: ["Oxygen", "Osmium", "Ozone", "Oxide"], answer: "Oxygen" },
-{ question: "Who is the author of 'Harry Potter'?", options: ["J.R.R. Tolkien", "George R.R. Martin", "J.K. Rowling", "Suzanne Collins"], answer: "J.K. Rowling" },
-{ question: "Which country is famous for producing maple syrup?", options: ["Sweden", "Canada", "Brazil", "Japan"], answer: "Canada" },
-{ question: "What is the name of the largest coral reef system in the world?", options: ["Great Barrier Reef", "Red Sea Coral Reef", "Maldives Reef", "Andaman Sea Reef"], answer: "Great Barrier Reef" },
-{ question: "What is the main ingredient in sushi?", options: ["Rice", "Fish", "Noodles", "Seaweed"], answer: "Rice" },
-{ question: "Which country has the most official languages?", options: ["India", "South Africa", "Canada", "Switzerland"], answer: "South Africa" },
-{ question: "Which animal is known as the 'King of the Jungle'?", options: ["Elephant", "Lion", "Tiger", "Gorilla"], answer: "Lion" },
-{ question: "Which ocean is the largest in the world?", options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"], answer: "Pacific Ocean" },
-{ question: "What is the most spoken language in the world?", options: ["English", "Mandarin", "Spanish", "Hindi"], answer: "Mandarin" },
-{ question: "Who discovered penicillin?", options: ["Albert Einstein", "Louis Pasteur", "Alexander Fleming", "Marie Curie"], answer: "Alexander Fleming" },
-{ question: "Which planet is known for having a ring system?", options: ["Mars", "Venus", "Saturn", "Jupiter"], answer: "Saturn" },
-{ question: "What is the most populous country in the world?", options: ["India", "United States", "China", "Indonesia"], answer: "China" },
-{ question: "What is the capital city of Japan?", options: ["Seoul", "Tokyo", "Beijing", "Kyoto"], answer: "Tokyo" },
-{ question: "What is the largest animal on Earth?", options: ["Elephant", "Blue Whale", "Giraffe", "Shark"], answer: "Blue Whale" },
-{ question: "Which country is known for the Eiffel Tower?", options: ["Italy", "Germany", "France", "Spain"], answer: "France" },
-{ question: "What is the most common element in Earth's atmosphere?", options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"], answer: "Nitrogen" },
-{ question: "Which artist is famous for his 'Starry Night' painting?", options: ["Pablo Picasso", "Claude Monet", "Vincent van Gogh", "Salvador Dali"], answer: "Vincent van Gogh" },
-{ question: "Who was the first person to walk on the moon?", options: ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "Michael Collins"], answer: "Neil Armstrong" },
-{ question: "What is the name of the longest river in Africa?", options: ["Nile", "Amazon", "Yangtze", "Mississippi"], answer: "Nile" },
-{ question: "Which is the largest continent by land area?", options: ["Africa", "Asia", "North America", "Europe"], answer: "Asia" },
-{ question: "Which sport is known as 'the king of sports'?", options: ["Football", "Basketball", "Cricket", "Baseball"], answer: "Football" },
-{ question: "What is the capital city of Italy?", options: ["Rome", "Paris", "Berlin", "Madrid"], answer: "Rome" },
-{ question: "Which planet is known as the Earth's twin?", options: ["Venus", "Mars", "Jupiter", "Saturn"], answer: "Venus" },
-{ question: "What is the currency used in the United Kingdom?", options: ["Dollar", "Euro", "Pound", "Yen"], answer: "Pound" },
-{ question: "Which chemical element has the atomic number 1?", options: ["Oxygen", "Hydrogen", "Carbon", "Nitrogen"], answer: "Hydrogen" },
-{ question: "What is the largest city in the world by population?", options: ["Tokyo", "New York", "Shanghai", "Delhi"], answer: "Tokyo" },
-{ question: "What is the main source of energy for the Sun?", options: ["Nuclear Fusion", "Gravitational Energy", "Chemical Reactions", "Electricity"], answer: "Nuclear Fusion" },
-{ question: "Which ocean lies on the eastern coast of the United States?", options: ["Atlantic Ocean", "Pacific Ocean", "Indian Ocean", "Arctic Ocean"], answer: "Atlantic Ocean" }
-    ];
+  { question: "What is 2 + 2?", options: ["3", "4", "5", "6"], answer: "4" },
+  { question: "What color is the sky?", options: ["Blue", "Green", "Red", "Yellow"], answer: "Blue" },
+  { question: "Which animal barks?", options: ["Cat", "Dog", "Elephant", "Tiger"], answer: "Dog" },
+  { question: "Sun rises from?", options: ["West", "East", "North", "South"], answer: "East" },
+  { question: "How many days in a week?", options: ["5", "6", "7", "8"], answer: "7" },
+  { question: "What is the capital city of France?", options: ["Madrid", "Berlin", "Paris", "Rome"], answer: "Paris" },
+  { question: "Who wrote the play 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"], answer: "William Shakespeare" },
+  { question: "What is the largest country by land area?", options: ["United States", "China", "Canada", "Russia"], answer: "Russia" },
+  { question: "What is the longest river in the world?", options: ["Nile", "Amazon", "Yangtze", "Mississippi"], answer: "Nile" },
+  { question: "Which planet is closest to the sun?", options: ["Earth", "Venus", "Mercury", "Mars"], answer: "Mercury" },
+  { question: "Which city is known as the Big Apple?", options: ["Los Angeles", "New York", "Chicago", "Miami"], answer: "New York" },
+  { question: "Which ocean is the largest?", options: ["Atlantic", "Pacific", "Indian", "Arctic"], answer: "Pacific" },
+  { question: "What is the largest mammal?", options: ["Elephant", "Blue Whale", "Giraffe", "Shark"], answer: "Blue Whale" },
+  { question: "How many continents are there?", options: ["6", "7", "8", "9"], answer: "7" },
+  { question: "Which color is a mix of red and blue?", options: ["Purple", "Orange", "Green", "Yellow"], answer: "Purple" },
+  { question: "Which is the fastest land animal?", options: ["Cheetah", "Lion", "Tiger", "Elephant"], answer: "Cheetah" },
+  { question: "Which gas do we breathe?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], answer: "Oxygen" },
+  { question: "Which fruit is yellow and curved?", options: ["Apple", "Banana", "Grapes", "Orange"], answer: "Banana" },
+  { question: "What is the longest mountain range in the world?", options: ["Himalayas", "Rockies", "Andes", "Alps"], answer: "Andes" },
+  { question: "Which country is the Eiffel Tower in?", options: ["Italy", "France", "Spain", "Germany"], answer: "France" },
+  { question: "What is the tallest mountain on Earth?", options: ["Kilimanjaro", "Everest", "Fuji", "Denali"], answer: "Everest" },
+  { question: "Which is the smallest planet in the solar system?", options: ["Mercury", "Mars", "Earth", "Venus"], answer: "Mercury" },
+  { question: "Who invented the light bulb?", options: ["Nikola Tesla", "Thomas Edison", "Albert Einstein", "Alexander Graham Bell"], answer: "Thomas Edison" },
+  { question: "What is the capital of the United Kingdom?", options: ["London", "Paris", "Rome", "Berlin"], answer: "London" },
+  { question: "Which element's symbol is O?", options: ["Oxygen", "Osmium", "Ozone", "Oxygenium"], answer: "Oxygen" },
+  { question: "Which animal is known as the King of the Jungle?", options: ["Lion", "Tiger", "Elephant", "Cheetah"], answer: "Lion" },
+  { question: "What is the most common blood type?", options: ["A", "B", "AB", "O"], answer: "O" },
+  { question: "How many sides does a triangle have?", options: ["2", "3", "4", "5"], answer: "3" },
+  { question: "What is the main ingredient in guacamole?", options: ["Tomato", "Onion", "Avocado", "Pepper"], answer: "Avocado" },
+  { question: "What is the currency of the United States?", options: ["Euro", "Dollar", "Pound", "Yen"], answer: "Dollar" },
+  { question: "What is the capital city of Japan?", options: ["Seoul", "Tokyo", "Beijing", "Kyoto"], answer: "Tokyo" },
+  { question: "Which animal is the largest land mammal?", options: ["Elephant", "Giraffe", "Rhino", "Hippo"], answer: "Elephant" },
+  { question: "What is the hardest natural substance?", options: ["Gold", "Diamond", "Iron", "Platinum"], answer: "Diamond" },
+  { question: "How many hours are there in a day?", options: ["22", "23", "24", "25"], answer: "24" },
+  { question: "Which planet is known as the Red Planet?", options: ["Venus", "Earth", "Mars", "Jupiter"], answer: "Mars" },
+  { question: "Which country is famous for making chocolate?", options: ["Switzerland", "Belgium", "France", "Italy"], answer: "Switzerland" },
+  { question: "Which part of the plant conducts photosynthesis?", options: ["Roots", "Stem", "Leaves", "Flowers"], answer: "Leaves" },
+  { question: "What color is the grass?", options: ["Yellow", "Red", "Blue", "Green"], answer: "Green" },
+  { question: "Which fruit is known as the 'king of fruits'?", options: ["Mango", "Banana", "Durian", "Pineapple"], answer: "Durian" },
+  { question: "What is the capital of Germany?", options: ["Paris", "Berlin", "Rome", "Madrid"], answer: "Berlin" },
+  { question: "Which animal is known as the 'Ship of the Desert'?", options: ["Camel", "Donkey", "Horse", "Elephant"], answer: "Camel" },
+  { question: "Which animal can fly?", options: ["Elephant", "Lion", "Bat", "Snake"], answer: "Bat" },
+  { question: "What is the smallest country in the world?", options: ["Vatican City", "Monaco", "Nauru", "San Marino"], answer: "Vatican City" },
+  { question: "Who painted the Mona Lisa?", options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"], answer: "Leonardo da Vinci" },
+  { question: "What is the largest desert in the world?", options: ["Sahara", "Gobi", "Kalahari", "Antarctic Desert"], answer: "Antarctic Desert" },
+  { question: "Which month has 28 days?", options: ["January", "February", "March", "All of them"], answer: "All of them" }
+];
+
 
     const mediumQuestions = [
-      { question: "Who wrote 'Harry Potter'?", options: ["Rowling", "Tolkien", "King", "Shakespeare"], answer: "Rowling" },
-      { question: "What is the capital of Japan?", options: ["Seoul", "Tokyo", "Beijing", "Kyoto"], answer: "Tokyo" },
-      { question: "Which gas do humans breathe in?", options: ["Oxygen", "Carbon", "Nitrogen", "Hydrogen"], answer: "Oxygen" },
-      { question: "Which planet is known as the Red Planet?", options: ["Mars", "Jupiter", "Venus", "Earth"], answer: "Mars" },
-      { question: "How many hours in a day?", options: ["22", "23", "24", "25"], answer: "24" },
+  { question: "Who wrote 'Harry Potter'?", options: ["Rowling", "Tolkien", "King", "Shakespeare"], answer: "Rowling" },
+  { question: "What is the capital of Japan?", options: ["Seoul", "Tokyo", "Beijing", "Kyoto"], answer: "Tokyo" },
+  { question: "Which gas do humans breathe in?", options: ["Oxygen", "Carbon", "Nitrogen", "Hydrogen"], answer: "Oxygen" },
+  { question: "Which planet is known as the Red Planet?", options: ["Mars", "Jupiter", "Venus", "Earth"], answer: "Mars" },
+  { question: "How many hours in a day?", options: ["22", "23", "24", "25"], answer: "24" },
   { question: "What is the capital city of Canada?", options: ["Ottawa", "Toronto", "Vancouver", "Montreal"], answer: "Ottawa" },
   { question: "What is the square root of 225?", options: ["12", "14", "15", "16"], answer: "15" },
   { question: "Which element has the chemical symbol 'Na'?", options: ["Sodium", "Nitrogen", "Nickel", "Neon"], answer: "Sodium" },
@@ -288,32 +354,16 @@
   { question: "Which element has the chemical symbol 'Fe'?", options: ["Iron", "Flerovium", "Fluorine", "Francium"], answer: "Iron" },
   { question: "What is the atomic number of Hydrogen?", options: ["1", "2", "3", "4"], answer: "1" },
   { question: "Which planet has the longest day?", options: ["Venus", "Mars", "Jupiter", "Mercury"], answer: "Venus" },
-  { question: "Who discovered electricity?", options: ["Thomas Edison", "Benjamin Franklin", "Nikola Tesla", "Alexander Graham Bell"], answer: "Benjamin Franklin" },
-  { question: "What is the smallest bone in the human body?", options: ["Stapes", "Femur", "Scapula", "Radius"], answer: "Stapes" },
-  { question: "Which country is home to the Great Wall?", options: ["Japan", "India", "China", "South Korea"], answer: "China" },
-  { question: "Who is known for developing the first modern theory of psychology?", options: ["Sigmund Freud", "B.F. Skinner", "Carl Jung", "John Locke"], answer: "Sigmund Freud" },
-  { question: "Which famous actor played Jack Dawson in the movie 'Titanic'?", options: ["Leonardo DiCaprio", "Brad Pitt", "Johnny Depp", "Tom Cruise"], answer: "Leonardo DiCaprio" },
-  { question: "Which human organ is responsible for producing insulin?", options: ["Pancreas", "Liver", "Kidneys", "Stomach"], answer: "Pancreas" },
-  { question: "What is the second most abundant gas in the Earth's atmosphere?", options: ["Oxygen", "Argon", "Carbon Dioxide", "Nitrogen"], answer: "Oxygen" },
-  { question: "Which country is known for the Eiffel Tower?", options: ["Germany", "Spain", "France", "Italy"], answer: "France" },
-  { question: "Which planet is known for its rings?", options: ["Earth", "Saturn", "Jupiter", "Neptune"], answer: "Saturn" },
-  { question: "What type of animal is the 'Komodo dragon'?", options: ["Reptile", "Mammal", "Amphibian", "Bird"], answer: "Reptile" },
-  { question: "Which famous scientist discovered the laws of motion?", options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"], answer: "Isaac Newton" },
-  { question: "Which organ in the human body is primarily responsible for detoxification?", options: ["Heart", "Liver", "Kidneys", "Lungs"], answer: "Liver" },
-  { question: "Which country is known for the ancient pyramids?", options: ["China", "Egypt", "India", "Mexico"], answer: "Egypt" },
-  { question: "What does the 'DNA' stand for?", options: ["Deoxyribonucleic Acid", "Deoxyribose Nucleic Acid", "Double Nucleic Acid", "Dipeptide Nucleic Acid"], answer: "Deoxyribonucleic Acid" },
-  { question: "Which country was the first to send a man into space?", options: ["USA", "Soviet Union", "China", "India"], answer: "Soviet Union" },
-  { question: "Which is the largest volcano on Earth?", options: ["Mount Kilimanjaro", "Mount Fuji", "Mauna Loa", "Mount St. Helens"], answer: "Mauna Loa" },
-  { question: "What is the national sport of Japan?", options: ["Sumo", "Karate", "Judo", "Baseball"], answer: "Sumo" },
-  { question: "Which famous building is in Paris, France?", options: ["Eiffel Tower", "Colosseum", "Big Ben", "Christ the Redeemer"], answer: "Eiffel Tower" }
+  { question: "Who discovered electricity?", options: ["Thomas Edison", "Benjamin Franklin", "Nikola Tesla", "Alexander Graham Bell"], answer: "Benjamin Franklin" }
 ];
 
+
     const hardQuestions = [
-      { question: "What is the atomic number of Oxygen?", options: ["6", "7", "8", "9"], answer: "8" },
-      { question: "When did WWII end?", options: ["1942", "1944", "1945", "1950"], answer: "1945" },
-      { question: "Which scientist developed relativity?", options: ["Newton", "Tesla", "Einstein", "Bohr"], answer: "Einstein" },
-      { question: "Who painted Starry Night?", options: ["Da Vinci", "Van Gogh", "Picasso", "Monet"], answer: "Van Gogh" },
-      { question: "Which is the longest river?", options: ["Amazon", "Ganga", "Nile", "Yangtze"], answer: "Nile" },
+  { question: "What is the atomic number of Oxygen?", options: ["6", "7", "8", "9"], answer: "8" },
+  { question: "When did WWII end?", options: ["1942", "1944", "1945", "1950"], answer: "1945" },
+  { question: "Which scientist developed relativity?", options: ["Newton", "Tesla", "Einstein", "Bohr"], answer: "Einstein" },
+  { question: "Who painted Starry Night?", options: ["Da Vinci", "Van Gogh", "Picasso", "Monet"], answer: "Van Gogh" },
+  { question: "Which is the longest river?", options: ["Amazon", "Ganga", "Nile", "Yangtze"], answer: "Nile" },
   { question: "What is the rarest blood type in the world?", options: ["AB-", "O-", "B-", "A-"], answer: "Rh-null" },
   { question: "Which element has the highest melting point?", options: ["Carbon", "Tungsten", "Iron", "Titanium"], answer: "Tungsten" },
   { question: "Who invented the first mechanical computer?", options: ["Charles Babbage", "Alan Turing", "Konrad Zuse", "John von Neumann"], answer: "Charles Babbage" },
@@ -356,37 +406,39 @@
   { question: "What is the most distant galaxy ever discovered?", options: ["Andromeda", "NGC 4889", "GN-z11", "Messier 87"], answer: "GN-z11" },
   { question: "Which planet in our solar system has the most extreme seasons?", options: ["Uranus", "Mars", "Saturn", "Venus"], answer: "Uranus" },
   { question: "Who was the first human to reach the South Pole?", options: ["Roald Amundsen", "Robert Falcon Scott", "Ernest Shackleton", "Douglas Mawson"], answer: "Roald Amundsen" },
-  { question: "Which country has won the most FIFA World Cup titles?", options: ["Brazil", "Germany", "Italy", "Argentina"], answer: "Brazil" },
-  { question: "What is the only flag that does not have four sides?", options: ["Nepal", "Switzerland", "Vatican City", "Lesotho"], answer: "Nepal" },
-  { question: "What is the smallest mammal in the world?", options: ["Bumblebee Bat", "Pygmy Marmoset", "Kitti's Hog-nosed Bat", "Etruscan Shrew"], answer: "Bumblebee Bat" },
-  { question: "Which planet is the hottest in the solar system?", options: ["Venus", "Mercury", "Mars", "Jupiter"], answer: "Venus" },
-  { question: "Which sea is the saltiest?", options: ["Dead Sea", "Salt Lake", "Red Sea", "Caspians Sea"], answer: "Dead Sea" },
-  { question: "Which planet is the most similar to Earth in terms of size?", options: ["Mars", "Venus", "Mercury", "Jupiter"], answer: "Venus" },
-  { question: "What is the largest bird in the world?", options: ["Ostrich", "Emu", "Cassowary", "Penguin"], answer: "Ostrich" },
-  { question: "What is the rarest type of eye color?", options: ["Blue", "Green", "Gray", "Red"], answer: "Gray" }
+  { question: "Which country has won the most FIFA World Cup titles?", options: ["Brazil", "Germany", "Italy", "Argentina"], answer: "Brazil" }
 ];
+
+
+    let selectedQuestions = [];
     let currentQuestion = 0;
     let score = 0;
-    let timer;
     let timeLeft = 10;
-    let selectedQuestions = [];
+    let firstAttempt = true;
+    let level = '';
+    let timer;
+    let userName = '';
 
-    function showScreen(id) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
+    // Start the Game
+    function startQuiz() {
+      userName = document.getElementById('userName').value.trim();
+      if (userName === "") {
+        alert("Please enter your name before starting!");
+        return;
+      }
 
-    function showDifficulty() {
+      // Display welcome message with the username
+      document.getElementById('welcomeMessage').textContent = `Welcome ${userName}, Let's Begin!`;
       showScreen('difficultyScreen');
     }
 
-    function selectDifficulty(level) {
+    function selectDifficulty(selectedLevel) {
+      level = selectedLevel;
       if (level === 'easy') selectedQuestions = [...easyQuestions];
       if (level === 'medium') selectedQuestions = [...mediumQuestions];
       if (level === 'hard') selectedQuestions = [...hardQuestions];
-      // You can add more questions for medium and hard levels here
 
-      selectedQuestions = shuffleArray(selectedQuestions).slice(0, 10); // Limiting to 10 questions per difficulty
+      selectedQuestions = shuffleArray(selectedQuestions).slice(0, 10); // Limiting to 10 questions
       score = 0;
       currentQuestion = 0;
       showScreen('quizScreen');
@@ -394,32 +446,66 @@
       startTimer();
     }
 
+    // Shuffle Array Function
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      }
+      return array;
+    }
+
+    // Display Screen
+    function showScreen(screenId) {
+      const screens = document.querySelectorAll('.screen');
+      screens.forEach(screen => screen.classList.remove('active'));
+      document.getElementById(screenId).classList.add('active');
+    }
+
+    // Show Questions
     function showQuestion() {
       const q = selectedQuestions[currentQuestion];
       document.getElementById('question').textContent = q.question;
       const shuffledOptions = shuffleArray([...q.options]);
       document.getElementById('options').innerHTML = shuffledOptions.map(option =>
-        `<button class="btn option-btn" onclick="checkAnswer('${option}')">${option}</button>`
+        `<button class="btn option-btn" onclick="checkAnswer('${option}', this)">${option}</button>`
       ).join('');
-      document.getElementById('questionsLeft').textContent = `${selectedQuestions.length - currentQuestion}`;
+      const remainingQuestions = selectedQuestions.length - currentQuestion;
+      document.getElementById('questionsLeft').textContent = remainingQuestions;
+      document.getElementById('circle').style.width = `${100 - remainingQuestions * 5}px`;
+      document.getElementById('circle').style.height = `${100 - remainingQuestions * 5}px`;
     }
 
-    function checkAnswer(selected) {
+    // Check Answer
+    function checkAnswer(selected, button) {
       clearInterval(timer);
       const correct = selectedQuestions[currentQuestion].answer;
-      if (selected === correct) score++;
+      if (selected === correct) {
+        score++;
+        button.classList.add('correct-answer');
+      } else {
+        button.classList.add('incorrect-answer');
+      }
+
+      const buttons = document.querySelectorAll('.option-btn');
+      buttons.forEach(btn => {
+        if (btn.textContent === correct) {
+          btn.classList.add('correct-answer');
+        }
+      });
 
       currentQuestion++;
 
       if (currentQuestion < selectedQuestions.length) {
         timeLeft = 10;
-        showQuestion();
+        setTimeout(showQuestion, 1000);
         startTimer();
       } else {
         showResult();
       }
     }
 
+    // Timer
     function startTimer() {
       document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
       timer = setInterval(() => {
@@ -433,30 +519,43 @@
       }, 1000);
     }
 
+    // Show Result
     function showResult() {
       showScreen('resultScreen');
       document.getElementById('scoreText').textContent = `You scored ${score}/${selectedQuestions.length}`;
-      document.getElementById('resultMessage').textContent = score === selectedQuestions.length ?
-        'Congratulations, You Win!' : 'You Lose! Better luck next time.';
+      document.getElementById('levelPlayed').textContent = `Level Played: ${level.charAt(0).toUpperCase() + level.slice(1)}`;
+
+      if (score === selectedQuestions.length) {
+        document.getElementById('resultMessage').textContent = "You Win!";
+        document.getElementById('goldenCard').classList.remove('hidden'); // Show golden card only when user wins
+      } else {
+        document.getElementById('resultMessage').textContent = "You Lost! Better Luck Next Time";
+        document.getElementById('goldenCard').classList.add('hidden'); // Hide golden card when user loses
+      }
     }
 
+    // Social Media Sharing Functions
+    function shareOnWhatsApp() {
+      const message = `I scored ${score}/${selectedQuestions.length} on Trivia Thief! Can you beat my score?`;
+      const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function shareOnFacebook() {
+      const message = `I scored ${score}/${selectedQuestions.length} on Trivia Thief! Check it out!`;
+      const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    // Restart Game
     function restartGame() {
       currentQuestion = 0;
       score = 0;
       timeLeft = 10;
       showScreen('startScreen');
-    }
-
-    // Helper function to shuffle array
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-      }
-      return array;
+      document.getElementById('userName').value = "";
+      document.getElementById('creativeText').style.display = 'block'; // Show welcome message again
     }
   </script>
 </body>
 </html>
-
-
