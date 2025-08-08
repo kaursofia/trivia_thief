@@ -142,36 +142,39 @@
 
   <!-- Quiz View -->
   <div id="view-quiz" class="view" aria-hidden="true">
-    <div class="progress-bar" aria-hidden="true"><div id="progressFill" class="progress-fill"></div></div>
-    <div id="questionText" class="question">Question will appear here</div>
-    <div id="optionsContainer" class="options" role="list"></div>
-
-    <div class="row lifelines" style="margin-top:18px">
-      <button id="btn5050" class="lifeline-btn" title="50/50" aria-label="50/50 lifeline">🔀</button>
-      <button id="btnHint" class="lifeline-btn" title="Hint" aria-label="Hint lifeline">💡</button>
-    </div>
-
-    <div id="timerText" class="meta" style="margin-top:12px">Time left: <strong id="timerValue">10</strong>s</div>
+  <div class="progress-bar" aria-hidden="true">
+    <div id="progressFill" class="progress-fill"></div>
   </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+    <div id="progressText" class="meta"></div>
+    <div id="timerValueBox" class="meta" style="font-weight:600;">
+      <span id="timerValue">10</span>s
+    </div>
+  </div>
+  <div id="questionText" class="question">Question will appear here</div>
+  <div id="optionsContainer" class="options" role="list"></div>
+  <div class="row lifelines" style="margin-top:18px">
+    <button id="btn5050" class="lifeline-btn" title="50/50" aria-label="50/50 lifeline">🔀</button>
+    <button id="btnHint" class="lifeline-btn" title="Hint" aria-label="Hint lifeline">💡</button>
+  </div>
+</div>
 
   <!-- End View -->
   <div id="view-end" class="view" aria-hidden="true">
-    <div id="badge" class="badge" aria-hidden="true">🏆</div>
-    <h2 id="endTitle">You Win!</h2>
-    <div id="playerSummary" class="meta"></div>
-
-    <div style="margin-top:12px">
-      <button class="btn" onclick="restartFromEnd()">Play Again</button>
-      <button class="btn small" style="margin-top:8px" onclick="returnToMenu()">Main Menu</button>
-    </div>
-
-    <div style="margin-top:14px; text-align:left;">
-      <h3 style="margin:8px 0 6px;">Leaderboard</h3>
-      <ol id="leaderboardList" style="padding-left:18px; margin:0 0 6px 0;"></ol>
-    </div>
+  <div id="badge" class="badge" aria-hidden="true">🏆</div>
+  <h2 id="endTitle">You Win!</h2>
+  <div id="motivationalQuote" class="meta" style="color:#b97b16; margin-bottom:8px; font-weight:600;"></div>
+  <div id="playerSummary" class="meta"></div>
+  <div style="margin-top:12px">
+    <button class="btn" onclick="restartFromEnd()">Play Again</button>
+    <button class="btn small" style="margin-top:8px" onclick="returnToMenu()">Main Menu</button>
   </div>
-
+  <div style="margin-top:14px; text-align:left;">
+    <h3 style="margin:8px 0 6px;">Leaderboard</h3>
+    <ol id="leaderboardList" style="padding-left:18px; margin:0 0 6px 0;"></ol>
+  </div>
 </div>
+
 
 <!-- Fun fact popup -->
 <div id="funFact" class="funfact" aria-hidden="true"></div>
@@ -207,8 +210,7 @@ const questionBank = {
     { q:"What is H2O?", options:["Salt","Water","Oxygen","Glucose"], answer:"Water", hint:"Liquid we drink", fact:"H2O is water." },
     { q:"Which animal is known for barking at night?", options:["Owl","Dog","Cow","Frog"], answer:"Dog", hint:"Common pet", fact:"Dogs can bark any time." },
     { q:"What planet do we live on?", options:["Mars","Venus","Earth","Jupiter"], answer:"Earth", hint:"Blue oceans and green land", fact:"Earth is our home planet." },
-{ q:"2 + 2 = ?", options:["3","4","5","6"], answer:"4", hint:"Basic addition", fact:"2 + 2 equals 4." },
-{ q:"Water freezes at 0 degrees on which scale?", options:["Kelvin","Celsius","Fahrenheit","Rankine"], answer:"Celsius", hint:"Metric temperature", fact:"Water freezes at 0 °C." },
+    { q:"Water freezes at 0 degrees on which scale?", options:["Kelvin","Celsius","Fahrenheit","Rankine"], answer:"Celsius", hint:"Metric temperature", fact:"Water freezes at 0 °C." },
 { q:"The Sun rises in the ____.", options:["West","North","East","South"], answer:"East", hint:"Opposite of west", fact:"Earth rotates toward the east." },
 { q:"Which gas do plants absorb?", options:["Oxygen","Nitrogen","Carbon dioxide","Helium"], answer:"Carbon dioxide", hint:"Exhaled and absorbed by plants", fact:"Plants use CO₂ for photosynthesis." },
 { q:"H₂O is the chemical formula for ___?", options:["Salt","Water","Oxygen","Hydrogen"], answer:"Water", hint:"Life’s essential liquid", fact:"H₂O is water." },
@@ -287,7 +289,8 @@ const questionBank = {
 { q:"A circle is ___ shape.", options:["Square","Curved","Pointy","Straight"], answer:"Curved", hint:"No corners", fact:"Circles are curved with no angles." },
 { q:"Which weather is sunny?", options:["Cloudy","Rainy","Sunny","Windy"], answer:"Sunny", hint:"Bright daylight", fact:"Sunny means lots of sunlight." },
 { q:"Which runs faster: cheetah or turtle?", options:["Cheetah","Turtle","Same","Neither"], answer:"Cheetah", hint:"Fastest land animal", fact:"Cheetahs run much faster than turtles." },
-{ q:"We eat with ___?", options:["Fork","Shirt","Shoe","Hat"], answer:"Fork", hint:"Prongs for food", fact:"Forks help pick up food." }
+{ q:"We eat with ___?", options:["Fork","Shirt","Shoe","Hat"], answer:"Fork", hint:"Prongs for food", fact:"Forks help pick up food." },
+
     // --- Add more easy questions below this line if you want ---
   ],
   medium: [
@@ -308,7 +311,7 @@ const questionBank = {
     { q:"Which sea creature has eight arms?", options:["Whale","Octopus","Shark","Dolphin"], answer:"Octopus", hint:"Smarty marine animal", fact:"Octopi have 8 arms." },
     { q:"What is a group of wolves called?", options:["Pride","Pack","Herd","Flock"], answer:"Pack", hint:"Wild dogs together", fact:"Wolves hunt in packs." },
     { q:"The powerhouse of the cell is the ____.", options:["Nucleus","Mitochondria","Ribosome","Vacuole"], answer:"Mitochondria", hint:"Energy producer", fact:"Mitochondria generate ATP for energy." },
-{ q:"What is the value of π (pi) to two decimal places?", options:["3.12","3.14","3.16","3.18"], answer:"3.14", hint:"Approximate", fact:"π ≈ 3.14." },
+    { q:"What is the value of π (pi) to two decimal places?", options:["3.12","3.14","3.16","3.18"], answer:"3.14", hint:"Approximate", fact:"π ≈ 3.14." },
 { q:"Who discovered gravity?", options:["Einstein","Newton","Galileo","Kepler"], answer:"Newton", hint:"English physicist", fact:"Isaac Newton discovered the law of universal gravitation." },
 { q:"Which country is the largest by land area?", options:["China","USA","Russia","Canada"], answer:"Russia", hint:"Across two continents", fact:"Russia is the largest country by area." },
 { q:"Boiling point of water at sea level in Celsius?", options:["90","95","100","110"], answer:"100", hint:"Round number", fact:"Water boils at 100 °C at sea level." },
@@ -391,6 +394,7 @@ const questionBank = {
 { q:"In which galaxy do we live?", options:["Andromeda","Milky Way","Sombrero","Whirlpool"], answer:"Milky Way", hint:"Named after appearance", fact:"We live in the Milky Way galaxy." },
 { q:"The three states of matter are solid, liquid, and ____?", options:["Gas","Energy","Ice","Plasma"], answer:"Gas", hint:"Air form", fact:"Gas is the third state of matter." },
 { q:"Which organ is part of the digestive system?", options:["Liver","Heart","Lung","Brain"], answer:"Liver", hint:"Processes nutrients", fact:"The liver aids digestion." },
+
     // --- Add more medium questions below this line if you want ---
   ],
   hard: [
@@ -411,7 +415,7 @@ const questionBank = {
     { q:"Which mathematician is known for 'theorems' and primes?", options:["Fermat","Gauss","Euler","Euclid"], answer:"Euler", hint:"Euler contributed massively", fact:"Leonhard Euler was prolific." },
     { q:"What is the derivative of sin(x)?", options:["cos(x)","-cos(x)","sin(x)","-sin(x)"], answer:"cos(x)", hint:"Basic calculus", fact:"d/dx sin(x) = cos(x)." },
     { q:"In mathematics, e is approximately equal to?", options:["2.71","3.14","1.61","2.17"], answer:"2.71", hint:"Base of natural logarithms", fact:"e (Euler’s number) ≈ 2.71828." },
-{ q:"Which organ produces insulin?", options:["Liver","Pancreas","Kidney","Spleen"], answer:"Pancreas", hint:"Behind the stomach", fact:"The pancreas secretes insulin to regulate blood sugar." },
+    { q:"Which organ produces insulin?", options:["Liver","Pancreas","Kidney","Spleen"], answer:"Pancreas", hint:"Behind the stomach", fact:"The pancreas secretes insulin to regulate blood sugar." },
 { q:"What is the capital of Mongolia?", options:["Ulaanbaatar","Astana","Kathmandu","Thimphu"], answer:"Ulaanbaatar", hint:"City with many yurt festivals", fact:"Ulaanbaatar is the capital and largest city of Mongolia." },
 { q:"The Battle of Hastings occurred in which year?", options:["1066","1215","1415","1666"], answer:"1066", hint:"Norman conquest of England", fact:"The Battle of Hastings took place in 1066." },
 { q:"In physics, velocity is the derivative of ____ with respect to time.", options:["Displacement","Acceleration","Force","Mass"], answer:"Displacement", hint:"Position change", fact:"Velocity is the time derivative of displacement." },
@@ -430,6 +434,7 @@ const questionBank = {
 { q:"In computing, what does 'HTTP' stand for?", options:["Hyper Text Transfer Protocol","High Tech Transfer Program","Hyper Transfer Text Protocol","Hyperlink Text Transmission Process"], answer:"Hyper Text Transfer Protocol", hint:"Used in web addresses", fact:"HTTP stands for Hyper Text Transfer Protocol." },
 { q:"Which galaxy is closest to the Milky Way?", options:["Andromeda","Whirlpool","Sombrero","Triangulum"], answer:"Andromeda", hint:"Our future colliding neighbor", fact:"The Andromeda Galaxy is the closest spiral galaxy to the Milky Way." },
 { q:"The chemical formula C6H12O6 represents which compound?", options:["Glucose","Sucrose","Fructose","Lactose"], answer:"Glucose", hint:"Simple sugar", fact:"C6H12O6 is the molecular formula for glucose." },
+
 { q:"In physics, Planck’s constant is approximately ____ × 10⁻³⁴ Js.", options:["6.63","3.14","9.81","1.61"], answer:"6.63", hint:"Quantum mechanics constant", fact:"Planck’s constant is about 6.63 × 10⁻³⁴ Js." },
 { q:"The Great Fire of London occurred in which year?", options:["1666","1588","1750","1649"], answer:"1666", hint:"Year also associated with a plague", fact:"The Great Fire of London happened in 1666." },
 { q:"Which scientist discovered the neutron in 1932?", options:["James Chadwick","Ernest Rutherford","Niels Bohr","J.J. Thomson"], answer:"James Chadwick", hint:"British physicist", fact:"James Chadwick discovered the neutron in 1932." },
@@ -460,6 +465,8 @@ const questionBank = {
 { q:"Which scientist introduced the concept of the photon?", options:["Einstein","Planck","Bohr","Feynman"], answer:"Einstein", hint:"1905 light theory", fact:"Einstein proposed the idea of photons in his photoelectric effect paper." },
 { q:"Which desert is the largest in the world?", options:["Antarctic","Sahara","Arctic","Gobi"], answer:"Antarctic", hint:"It’s icy", fact:"The Antarctic Desert is the largest desert by area." },
 { q:"In Greek mythology, who is the god of the sea?", options:["Poseidon","Zeus","Hades","Apollo"], answer:"Poseidon", hint:"Carries a trident", fact:"Poseidon was the Greek god of the sea." },
+
+
 { q:"In physics, Planck’s constant is approximately ____ × 10⁻³⁴ Js.", options:["6.63","3.14","9.81","1.61"], answer:"6.63", hint:"Quantum mechanics constant", fact:"Planck’s constant is about 6.63 × 10⁻³⁴ Js." },
 { q:"The Great Fire of London occurred in which year?", options:["1666","1588","1750","1649"], answer:"1666", hint:"Year also associated with a plague", fact:"The Great Fire of London happened in 1666." },
 { q:"Which scientist discovered the neutron in 1932?", options:["James Chadwick","Ernest Rutherford","Niels Bohr","J.J. Thomson"], answer:"James Chadwick", hint:"British physicist", fact:"James Chadwick discovered the neutron in 1932." },
@@ -501,6 +508,8 @@ const questionBank = {
 { q:"The Rosetta Stone helped scholars to decode which ancient script?", options:["Egyptian hieroglyphs","Cuneiform","Linear B","Mayan"], answer:"Egyptian hieroglyphs", hint:"Found in 1799", fact:"The Rosetta Stone was key to decoding hieroglyphs." },
 { q:"Which is the fastest land animal?", options:["Cheetah","Pronghorn","Lion","Horse"], answer:"Cheetah", hint:"Can reach 100 km/h", fact:"The cheetah is the fastest land animal." },
 { q:"The smallest bone in the human body is the ____.", options:["Stapes","Incus","Malleus","Fibula"], answer:"Stapes", hint:"Located in the ear", fact:"The stapes is the smallest human bone." },
+
+
 { q:"Which ancient wonder was located in the city of Ephesus?", options:["Temple of Artemis","Hanging Gardens","Statue of Zeus","Colossus of Rhodes"], answer:"Temple of Artemis", hint:"Greek temple", fact:"The Temple of Artemis at Ephesus was one of the Seven Wonders of the Ancient World." },
 { q:"Which scientist is credited with discovering penicillin?", options:["Alexander Fleming","Louis Pasteur","Robert Koch","Edward Jenner"], answer:"Alexander Fleming", hint:"1928 discovery", fact:"Fleming discovered penicillin in 1928." },
 { q:"In which layer of Earth's atmosphere does the ozone layer lie?", options:["Stratosphere","Troposphere","Mesosphere","Thermosphere"], answer:"Stratosphere", hint:"Above the troposphere", fact:"The ozone layer is located in the stratosphere." },
@@ -589,66 +598,15 @@ avatarEls.forEach(a=>{
     state.avatarId = a.dataset.id;
   });
 });
-byId('startBtn').addEventListener('click', ()=>{
-  const nm = (byId('nameInput').value||'').trim();
-  if(!nm){ alert('Please enter your name'); byId('nameInput').focus(); return; }
-  if(!state.avatarId){ alert('Please pick an avatar'); return; }
-  state.name = nm;
-  showView('view-difficulty');
-});
-
-/* ---------- difficulty -> build pool ---------- */
-function pickDifficulty(level){
-  state.difficulty = level;
-  // clone and shuffle full pool, then take QUESTION_LIMIT
-  const pool = questionBank[level].slice();
-  shuffle(pool);
-  state.pool = pool.slice(0, Math.min(QUESTION_LIMIT, pool.length));
-  state.index = 0;
-  state.correctCount = 0;
-  state.used5050 = false; state.usedHint = false;
-  // reset lifeline buttons
-  byId('btn5050').classList.remove('used');
-  byId('btnHint').classList.remove('used');
-  showView('view-quiz');
-  renderQuestion();
-}
-
-/* ---------- render question ---------- */
-function renderQuestion(){
-  clearTimer();
-  if(state.index >= state.pool.length){
-    finishGame(true);
-    return;
-  }
-  const q = state.pool[state.index];
-  byId('questionText').textContent = q.q;
-
-  const optContainer = byId('optionsContainer');
-  optContainer.innerHTML = '';
-  q.options.forEach((opt)=>{
-    const btn = document.createElement('button');
-    btn.className = 'answer-btn';
-    btn.textContent = opt;
-    btn.addEventListener('click', ()=> onAnswer(btn,opt) );
-    optContainer.appendChild(btn);
-  });
-
-  // progress
-  updateProgress();
-  // restore progress-fill transition smooth
-  byId('progressFill').style.transition = 'width 1s linear';
-  // reset timer UI & start
-  startTimer();
-}
 
 /* ---------- progress ---------- */
 function updateProgress(){
   const total = state.pool.length || 1;
+  const current = state.index + 1;
   const pct = (state.index/total) * 100;
   byId('progressFill').style.width = pct + '%';
+  byId('progressText').textContent = `Question ${Math.min(current, total)} of ${total}`;
 }
-
 /* ---------- timer ---------- */
 function startTimer(){
   clearTimer();
@@ -715,7 +673,7 @@ byId('btn5050').addEventListener('click', ()=>{
   const opts = Array.from(document.querySelectorAll('.answer-btn'));
   // collect wrong buttons
   const wrongBtns = opts.filter(b => b.textContent !== q.answer && !b.classList.contains('disabled') && b.style.visibility !== 'hidden');
-  shuffle(wrongBtns);
+  shuffleArray(wrongBtns);
   // hide two wrong options (or as many as available)
   const toHide = wrongBtns.slice(0,2);
   toHide.forEach(b => { b.style.visibility = 'hidden'; });
@@ -739,21 +697,51 @@ function showFunFact(text, closeAfter=1600){
   setTimeout(()=>{ funFactEl.classList.remove('show'); funFactEl.setAttribute('aria-hidden','true'); }, closeAfter);
 }
 
+// Add this near the top of your script
+const MOTIVATIONAL_QUOTES = [
+  "Don't give up! Every failure is a step to success.",
+  "Mistakes are proof you are trying.",
+  "Believe in yourself and try again!",
+  "Great things take time. Keep going!",
+  "Every champion was once a contender that refused to give up.",
+  "You learn more from losing than winning.",
+  "Try again, you are getting better!",
+  "Persistence guarantees that results are inevitable.",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+  "Your next attempt could be your best yet!"
+  //Array add karo
+];
+
 /* ---------- finish game & leaderboard ---------- */
 function finishGame(win){
   clearTimer();
+  // ---- Yeh line add karo funfact close ke liye ----
+  funFactEl.classList.remove('show');
+  funFactEl.setAttribute('aria-hidden','true');
+  //---------------------------------------------------
   showView('view-end');
   const title = byId('endTitle');
   const playerSummary = byId('playerSummary');
   const badge = byId('badge');
 
-  if(win){
-    title.textContent = `🎉 Congratulations, ${state.name}! You Won!`;
-    badge.classList.add('win');
-  } else {
-    title.textContent = `😢 You Lose, Better Luck Next Time`;
-    badge.classList.remove('win');
+
+ if(win){
+  title.textContent = `🎉 Congratulations, ${state.name}! You Won!`;
+  badge.classList.add('win');
+  badge.style.display = 'flex'; // Show trophy if win
+  // Remove motivational quote if any
+  if (byId('motivationalQuote')) byId('motivationalQuote').textContent = '';
+} else {
+  title.textContent = `😢 You Lose, Better Luck Next Time`;
+  badge.classList.remove('win');
+  badge.style.display = 'none'; // Hide trophy if lose
+
+  // Show a random motivational quote
+  let quote = MOTIVATIONAL_QUOTES[Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)];
+  if (byId('motivationalQuote')) {
+    byId('motivationalQuote').textContent = quote;
   }
+}
 
   playerSummary.innerHTML = `
     <div style="display:flex; align-items:center; gap:10px; justify-content:center; margin-top:8px">
@@ -820,7 +808,7 @@ function renderQuestion() {
   byId('questionText').textContent = q.q;
 
   // Shuffle the options before rendering
-  const shuffledOptions = shuffleArray(q.options);
+  const shuffledOptions = shuffleArray(q.options.slice());
 
   const optContainer = byId('optionsContainer');
   optContainer.innerHTML = ''; // Clear any existing options
@@ -840,23 +828,6 @@ function renderQuestion() {
   startTimer();
 }
 
-// Fix: Shuffling question pool based on difficulty
-function pickDifficulty(level) {
-  state.difficulty = level;
-  // Shuffle the question pool for the selected difficulty
-  const pool = shuffleArray(questionBank[level].slice()); // Shuffle the pool
-  state.pool = pool.slice(0, Math.min(10, pool.length)); // Take the first 10 questions
-  state.index = 0;
-  state.correctCount = 0;
-  state.used5050 = false;
-  state.usedHint = false;
-
-  // reset lifeline buttons
-  byId('btn5050').classList.remove('used');
-  byId('btnHint').classList.remove('used');
-  showView('view-quiz');
-  renderQuestion();
-}
 
 // Fix: Adding session timeout to avoid memorization
 let sessionTimeout;
@@ -873,23 +844,17 @@ function resetSessionTimeout() {
 }
 
 // This will be called when a question is rendered and timer is started
-startSessionTimeout();
-
+//startSessionTimeout();
+byId('startBtn').addEventListener('click', ()=>{
+  const nm = (byId('nameInput').value||'').trim();
+  if(!nm){ alert('Please enter your name'); byId('nameInput').focus(); return; }
+  if(!state.avatarId){ alert('Please pick an avatar'); return; }
+  state.name = nm;
+  startSessionTimeout(); // <-- Sahi jagah
+  showView('view-difficulty');
+});
 // Function to fetch questions dynamically (optional: if you plan to use API for questions)
-async function fetchQuestions(difficulty) {
-  const response = await fetch(`https://opentdb.com/api.php?amount=10&difficulty=${difficulty}&type=multiple`);
-  const data = await response.json();
-  state.pool = data.results.map(q => ({
-    q: q.question,
-    options: [...q.incorrect_answers, q.correct_answer],
-    answer: q.correct_answer,
-    hint: 'No hint available', // You can enhance this if needed
-    fact: 'No fact available'  // You can enhance this if needed
-  }));
-  state.index = 0;
-  state.correctCount = 0;
-  renderQuestion();
-}
+
 
 // Update the game to reflect the selected difficulty
 function pickDifficulty(level) {
@@ -909,23 +874,41 @@ function pickDifficulty(level) {
   renderQuestion();
 }
 
-
 /* start over handlers */
 function restartFromEnd(){
-  // restart same difficulty
-  state.index = 0; state.correctCount = 0; state.used5050=false; state.usedHint=false;
+  // reset state and go home
+  clearTimer(); // <-- Add this line!// Stop timer if running
+  // NAYA QUESTIONS POOL SHUFFLE
+  const pool = shuffleArray(questionBank[state.difficulty].slice());
+  state.pool = pool.slice(0, Math.min(10, pool.length));
+  state.index = 0;
+  state.correctCount = 0;
+  state.used5050 = false;
+  state.usedHint = false;
+  byId('btn5050').classList.remove('used');
+  byId('btnHint').classList.remove('used');
   showView('view-quiz');
   renderQuestion();
-  byId('btn5050').classList.remove('used'); byId('btnHint').classList.remove('used');
 }
+
 function returnToMenu(){
   // reset state and go home
+  clearTimer(); // <-- Add this line!// Stop timer if running
   state = { name:'', avatarId:'', difficulty:'', pool:[], index:0, correctCount:0, timerVal:10, timerHandle:null, used5050:false, usedHint:false };
   // clear inputs
   byId('nameInput').value = '';
   avatarEls.forEach(a=>a.classList.remove('selected'));
   showView('view-start');
 }
+
+byId('startBtn').addEventListener('click', ()=>{
+  const nm = (byId('nameInput').value||'').trim();
+  if(!nm){ alert('Please enter your name'); byId('nameInput').focus(); return; }
+  if(!state.avatarId){ alert('Please pick an avatar'); return; }
+  state.name = nm;
+  startSessionTimeout(); // <-- Sahi jagah
+  showView('view-difficulty');
+});
 
 /* get avatar emoji by id */
 function getAvatarEmoji(id){
@@ -937,4 +920,3 @@ showView('view-start');
 </script>
 </body>
 </html>
-
