@@ -799,13 +799,116 @@ function renderLeaderboard(){
 }
 
 /* utility: shuffle */
-function shuffle(arr){
-  for(let i = arr.length-1; i>0; i--){
-    const j = Math.floor(Math.random()*(i+1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+// Function to shuffle an array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
   }
-  return arr;
+  return array;
 }
+
+// Fix: Shuffling answer options
+function renderQuestion() {
+  clearTimer();
+  if (state.index >= state.pool.length) {
+    finishGame(true);
+    return;
+  }
+
+  const q = state.pool[state.index];
+  byId('questionText').textContent = q.q;
+
+  // Shuffle the options before rendering
+  const shuffledOptions = shuffleArray(q.options);
+
+  const optContainer = byId('optionsContainer');
+  optContainer.innerHTML = ''; // Clear any existing options
+  shuffledOptions.forEach((opt) => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => onAnswer(btn, opt)); // Handle button click
+    optContainer.appendChild(btn);
+  });
+
+  // progress
+  updateProgress();
+  // restore progress-fill transition smooth
+  byId('progressFill').style.transition = 'width 1s linear';
+  // reset timer UI & start
+  startTimer();
+}
+
+// Fix: Shuffling question pool based on difficulty
+function pickDifficulty(level) {
+  state.difficulty = level;
+  // Shuffle the question pool for the selected difficulty
+  const pool = shuffleArray(questionBank[level].slice()); // Shuffle the pool
+  state.pool = pool.slice(0, Math.min(10, pool.length)); // Take the first 10 questions
+  state.index = 0;
+  state.correctCount = 0;
+  state.used5050 = false;
+  state.usedHint = false;
+
+  // reset lifeline buttons
+  byId('btn5050').classList.remove('used');
+  byId('btnHint').classList.remove('used');
+  showView('view-quiz');
+  renderQuestion();
+}
+
+// Fix: Adding session timeout to avoid memorization
+let sessionTimeout;
+function startSessionTimeout() {
+  sessionTimeout = setTimeout(() => {
+    alert("Session expired. Please start again.");
+    window.location.reload(); // Reload the page to restart the game
+  }, 600000); // 10 minutes in milliseconds
+}
+
+function resetSessionTimeout() {
+  clearTimeout(sessionTimeout);
+  startSessionTimeout(); // Reset the session timeout if needed
+}
+
+// This will be called when a question is rendered and timer is started
+startSessionTimeout();
+
+// Function to fetch questions dynamically (optional: if you plan to use API for questions)
+async function fetchQuestions(difficulty) {
+  const response = await fetch(`https://opentdb.com/api.php?amount=10&difficulty=${difficulty}&type=multiple`);
+  const data = await response.json();
+  state.pool = data.results.map(q => ({
+    q: q.question,
+    options: [...q.incorrect_answers, q.correct_answer],
+    answer: q.correct_answer,
+    hint: 'No hint available', // You can enhance this if needed
+    fact: 'No fact available'  // You can enhance this if needed
+  }));
+  state.index = 0;
+  state.correctCount = 0;
+  renderQuestion();
+}
+
+// Update the game to reflect the selected difficulty
+function pickDifficulty(level) {
+  state.difficulty = level;
+  // Shuffle the question pool for the selected difficulty
+  const pool = shuffleArray(questionBank[level].slice()); // Shuffle the pool
+  state.pool = pool.slice(0, Math.min(10, pool.length)); // Take the first 10 questions
+  state.index = 0;
+  state.correctCount = 0;
+  state.used5050 = false;
+  state.usedHint = false;
+
+  // reset lifeline buttons
+  byId('btn5050').classList.remove('used');
+  byId('btnHint').classList.remove('used');
+  showView('view-quiz');
+  renderQuestion();
+}
+
 
 /* start over handlers */
 function restartFromEnd(){
@@ -834,3 +937,4 @@ showView('view-start');
 </script>
 </body>
 </html>
+
