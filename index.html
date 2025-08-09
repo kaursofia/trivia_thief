@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
 <title>Trivia Thief — Quiz</title>
 <style>
   :root{
@@ -1204,5 +1208,13 @@ function getAvatarEmoji(id){
 /* initial */
 showView('view-start');
 </script>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+    .then(reg => console.log('Service Worker Registered', reg))
+    .catch(err => console.log('Service Worker Failed', err));
+}
+</script>
 </body>
 </html>
+
