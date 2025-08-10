@@ -3,10 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="manifest" href="site.webmanifest">
-<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#ffffff">
 <title>Trivia Thief — Quiz</title>
 <style>
   :root{
@@ -31,7 +27,8 @@
     padding:26px; box-sizing:border-box; text-align:center; position:relative; overflow:hidden;
   }
   .logo{ width:100px; height:auto; margin-bottom:10px; }
-  h1{ margin:6px 0 4px; font-family:"Comic Sans MS", cursive; color:var(--accent); font-size:28px; }
+  h1{ margin:6px 0 4px; font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif; color:var(--accent); font-size:28px; font-weight: bold;
+  letter-spacing: 1px; /* thoda stylish spacing */}
   .tag{ margin:0 0 12px; color:#444; font-weight:600; font-size:14px; }
 
   input[type="text"]{
@@ -47,6 +44,13 @@
   }
   .avatar:hover{ transform:translateY(-4px) }
   .avatar.selected{ border-color:var(--primary); transform:scale(1.08); box-shadow:0 8px 18px rgba(255,165,0,0.15); }
+
+.avatar-small {
+  width: 60px;  /* Pehle 36px tha */
+  height: 60px;
+  border-radius: 50%;
+  font-size: 32px; /* Emoji bhi bada ho jayega */
+}
 
   .btn{
     display:inline-block; width:100%; padding:14px; border-radius:28px; border:none;
@@ -74,9 +78,10 @@
 
   .lifelines{ display:flex; gap:10px; justify-content:center; margin-top:12px; }
   .lifeline-btn{
-    width:56px; height:56px; border-radius:50%; display:grid; place-items:center;
+    width:56px; height:56px; border-radius:50%; display:flex;
+    align-items: center; justify-content: center; 
     background: linear-gradient(135deg,var(--primary),var(--accent)); color:white; font-size:22px; border:none;
-    box-shadow:0 8px 18px rgba(255,152,0,0.16); cursor:pointer;
+    box-shadow:0 8px 18px rgba(255,152,0,0.16); cursor:pointer; line-height: 1; /* Ensures emoji stays centered */
   }
   .lifeline-btn.used{ opacity:.45; transform:scale(.96); cursor:not-allowed; }
 
@@ -95,27 +100,62 @@
 
   .meta{ font-size:14px; color:var(--muted); margin-top:8px }
   .row{ display:flex; gap:8px; align-items:center; justify-content:center; margin-top:8px }
-  .avatar-small{ width:36px;height:36px;border-radius:50%; }
 
   .view{ display:none; }
   .view.active{ display:block; animation:fadeIn .28s ease both; }
   @keyframes fadeIn{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none} }
+
+  /* Modal styles */
+  #instructionsModal {
+    display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.36);
+    align-items:center; justify-content:center;
+  }
+  #instructionsModal .modal-content {
+    background:white; max-width:360px; margin:auto; border-radius:18px; box-shadow:0 8px 28px rgba(0,0,0,0.14);
+    padding:28px 20px 20px 20px; position:relative; text-align:left;
+    animation:fadeInModal .23s ease;
+  }
+  @keyframes fadeInModal { from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none} }
+  #instructionsModal h2 { margin-top:0; color:#ff9800; }
+  #closeInstructions {
+    position:absolute; top:10px; right:14px; background:none; border:none; font-size:20px; color:#999; cursor:pointer;
+  }
 
   @media (max-width:420px){
     .screen{ padding:18px; border-radius:16px; }
     .logo{ width:88px; }
     .avatar{ width:56px;height:56px;font-size:30px; }
     .lifeline-btn{ width:48px;height:48px;font-size:20px; }
+    #instructionsModal .modal-content { max-width:97vw; padding:18px 6vw 16px 6vw; }
   }
 </style>
 </head>
 <body>
 
+<!-- Instruction Modal -->
+<div id="instructionsModal">
+  <div class="modal-content">
+    <button id="closeInstructions" aria-label="Close Instructions">&times;</button>
+    <h2>How to Play</h2>
+    <ol style="padding-left:18px; margin-bottom:10px;">
+      <li>Pick an avatar and enter your name.</li>
+      <li>Click "Start" and select your difficulty.</li>
+      <li>Answer as many questions as you can! Each round is timed.</li>
+      <li>You have two lifelines: <b>50/50</b> (removes 2 wrong answers), and <b>Hint</b>.</li>
+      <li>Try to answer all questions correctly to win!</li>
+      <li>Check the leaderboard to see your best scores.</li>
+    </ol>
+    <div style="color:#666;font-size:13px;margin-top:10px;">
+      <b>Tips:</b> Use lifelines wisely. Don’t run out of time!
+    </div>
+  </div>
+</div>
+
 <div class="screen" role="application" aria-label="Trivia Thief Game">
 
   <!-- Start View -->
   <div id="view-start" class="view active">
-    <img src="c65af28a-f6d2-4671-93b0-e1eb499e3b6c_removalai_preview.png" class="logo" alt="Logo">
+    <img src="c65af28a-f6d2-4671-93b0-e1eb499e3b6c_removalai_preview.png" class="logo" alt="Trivia Thief Logo">
     <p class="tag"><strong>A Game Can Make You Millionaire</strong></p>
     <h1>QUIZ GAME</h1>
 
@@ -129,6 +169,9 @@
     <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name">
     <div style="height:10px"></div>
     <button id="startBtn" class="btn" aria-label="Start">Start</button>
+    <div style="margin-top:10px;">
+      <button class="btn small" type="button" onclick="showInstructions()">Instructions</button>
+    </div>
     <div class="meta">Tap avatar, enter name, then press Start</div>
   </div>
 
@@ -179,7 +222,6 @@
   </div>
 </div>
 
-
 <!-- Fun fact popup -->
 <div id="funFact" class="funfact" aria-hidden="true"></div>
 
@@ -188,7 +230,7 @@
 // Change this to change number of questions per play (always picks randomly from pool)
 const QUESTION_LIMIT = 10;
 
-/* ---------- data & state ----------
+/* ---------- data & state ---------- 
    >> To add more questions later:
       - Find the block "questionBank" below.
       - For each difficulty (easy, medium, hard) append new objects:
@@ -313,8 +355,7 @@ const questionBank = {
   { q:"What is the freezing point of water in Celsius?", options:["0°C","32°C","100°C","-1°C"], answer:"0°C", hint:"Freezes at zero", fact:"Water freezes at 0 degrees Celsius." },
   { q:"Which ocean is the smallest?", options:["Pacific","Atlantic","Indian","Arctic"], answer:"Arctic", hint:"Near the North Pole", fact:"The Arctic Ocean is the smallest ocean." },
   { q:"Which element is represented by 'O' on the periodic table?", options:["Oxygen","Gold","Osmium","Iron"], answer:"Oxygen", hint:"We breathe it", fact:"O is the symbol for oxygen." },
-  { q:"What is 5 minus 3?", options:["2","3","4","1"], answer:"2", hint:"Less than three", fact:"5 - 3 equals 2." },
-  
+  { q:"What is 5 minus 3?", options:["2","3","4","1"], answer:"2", hint:"Less than three", fact:"5 - 3 equals 2." }, 
   { q:"Which fruit is yellow and curved?", options:["Apple","Banana","Grape","Orange"], answer:"Banana", hint:"Monkeys love it", fact:"Bananas are yellow and curved." },
   { q:"Which planet is called the Earth's twin?", options:["Mars","Venus","Mercury","Saturn"], answer:"Venus", hint:"Similar size to Earth", fact:"Venus is known as Earth's twin due to similar size." },
   { q:"What is the capital city of Canada?", options:["Toronto","Ottawa","Vancouver","Montreal"], answer:"Ottawa", hint:"Not the largest city", fact:"Ottawa is the capital of Canada." },
@@ -604,7 +645,6 @@ const questionBank = {
 { q:"In computing, what does 'HTTP' stand for?", options:["Hyper Text Transfer Protocol","High Tech Transfer Program","Hyper Transfer Text Protocol","Hyperlink Text Transmission Process"], answer:"Hyper Text Transfer Protocol", hint:"Used in web addresses", fact:"HTTP stands for Hyper Text Transfer Protocol." },
 { q:"Which galaxy is closest to the Milky Way?", options:["Andromeda","Whirlpool","Sombrero","Triangulum"], answer:"Andromeda", hint:"Our future colliding neighbor", fact:"The Andromeda Galaxy is the closest spiral galaxy to the Milky Way." },
 { q:"The chemical formula C6H12O6 represents which compound?", options:["Glucose","Sucrose","Fructose","Lactose"], answer:"Glucose", hint:"Simple sugar", fact:"C6H12O6 is the molecular formula for glucose." },
-
 { q:"In physics, Planck’s constant is approximately ____ × 10⁻³⁴ Js.", options:["6.63","3.14","9.81","1.61"], answer:"6.63", hint:"Quantum mechanics constant", fact:"Planck’s constant is about 6.63 × 10⁻³⁴ Js." },
 { q:"The Great Fire of London occurred in which year?", options:["1666","1588","1750","1649"], answer:"1666", hint:"Year also associated with a plague", fact:"The Great Fire of London happened in 1666." },
 { q:"Which scientist discovered the neutron in 1932?", options:["James Chadwick","Ernest Rutherford","Niels Bohr","J.J. Thomson"], answer:"James Chadwick", hint:"British physicist", fact:"James Chadwick discovered the neutron in 1932." },
@@ -879,6 +919,18 @@ const showView = id => {
   const el = byId(id); el.classList.add('active'); el.setAttribute('aria-hidden','false');
 };
 
+/* ---------- instruction modal ---------- */
+function showInstructions() {
+  document.getElementById('instructionsModal').style.display = 'flex';
+}
+document.getElementById('closeInstructions').onclick = function() {
+  document.getElementById('instructionsModal').style.display = 'none';
+};
+// Optional: close on outside click
+document.getElementById('instructionsModal').onclick = function(e) {
+  if (e.target === this) this.style.display = 'none';
+};
+
 /* ---------- start screen ---------- */
 const avatarEls = document.querySelectorAll('.avatar');
 avatarEls.forEach(a=>{
@@ -919,7 +971,6 @@ function clearTimer(){ if(state.timerHandle){ clearInterval(state.timerHandle); 
 
 /* ---------- answer handling ---------- */
 function onAnswer(btn, selected){
-  // disable all options to prevent double-clicks
   const opts = Array.from(document.querySelectorAll('.answer-btn'));
   opts.forEach(b=>{ b.classList.add('disabled'); b.disabled = true; });
 
@@ -930,7 +981,6 @@ function onAnswer(btn, selected){
   if(selected === correct){
     btn.classList.add('correct');
     state.correctCount++;
-    // show fact if available
     if(q.fact) showFunFact(q.fact);
     setTimeout(()=>{
       state.index++;
@@ -945,7 +995,6 @@ function onAnswer(btn, selected){
 
 /* ---------- timeout ---------- */
 function onTimeout(){
-  // reveal correct then end
   const q = state.pool[state.index];
   const correct = q.answer;
   const opts = Array.from(document.querySelectorAll('.answer-btn'));
@@ -961,10 +1010,8 @@ byId('btn5050').addEventListener('click', ()=>{
 
   const q = state.pool[state.index];
   const opts = Array.from(document.querySelectorAll('.answer-btn'));
-  // collect wrong buttons
   const wrongBtns = opts.filter(b => b.textContent !== q.answer && !b.classList.contains('disabled') && b.style.visibility !== 'hidden');
   shuffleArray(wrongBtns);
-  // hide two wrong options (or as many as available)
   const toHide = wrongBtns.slice(0,2);
   toHide.forEach(b => { b.style.visibility = 'hidden'; });
 });
@@ -987,7 +1034,7 @@ function showFunFact(text, closeAfter=1600){
   setTimeout(()=>{ funFactEl.classList.remove('show'); funFactEl.setAttribute('aria-hidden','true'); }, closeAfter);
 }
 
-// Add this near the top of your script
+// Motivational quotes
 const MOTIVATIONAL_QUOTES = [
   "Don't give up! Every failure is a step to success.",
   "Mistakes are proof you are trying.",
@@ -999,43 +1046,36 @@ const MOTIVATIONAL_QUOTES = [
   "Persistence guarantees that results are inevitable.",
   "Success is not final, failure is not fatal: It is the courage to continue that counts.",
   "Your next attempt could be your best yet!"
-  //Array add karo
 ];
 
 /* ---------- finish game & leaderboard ---------- */
 function finishGame(win){
   clearTimer();
-  // ---- Yeh line add karo funfact close ke liye ----
   funFactEl.classList.remove('show');
   funFactEl.setAttribute('aria-hidden','true');
-  //---------------------------------------------------
   showView('view-end');
   const title = byId('endTitle');
   const playerSummary = byId('playerSummary');
   const badge = byId('badge');
 
-
- if(win){
-  title.textContent = `🎉 Congratulations, ${state.name}! You Won!`;
-  badge.classList.add('win');
-  badge.style.display = 'flex'; // Show trophy if win
-  // Remove motivational quote if any
-  if (byId('motivationalQuote')) byId('motivationalQuote').textContent = '';
-} else {
-  title.textContent = `😢 You Lose, Better Luck Next Time`;
-  badge.classList.remove('win');
-  badge.style.display = 'none'; // Hide trophy if lose
-
-  // Show a random motivational quote
-  let quote = MOTIVATIONAL_QUOTES[Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)];
-  if (byId('motivationalQuote')) {
-    byId('motivationalQuote').textContent = quote;
+  if(win){
+    title.textContent = `🎉 Congratulations, ${state.name}! You Won!`;
+    badge.classList.add('win');
+    badge.style.display = 'flex';
+    if (byId('motivationalQuote')) byId('motivationalQuote').textContent = '';
+  } else {
+    title.textContent = `😢 You Lose, Better Luck Next Time`;
+    badge.classList.remove('win');
+    badge.style.display = 'none';
+    let quote = MOTIVATIONAL_QUOTES[Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)];
+    if (byId('motivationalQuote')) {
+      byId('motivationalQuote').textContent = quote;
+    }
   }
-}
 
   playerSummary.innerHTML = `
     <div style="display:flex; align-items:center; gap:10px; justify-content:center; margin-top:8px">
-      <div class="avatar-small" style="background:#fff; display:flex; align-items:center; justify-content:center; font-size:18px;">
+      <div class="avatar-small" style="background:#fff; display:flex; align-items:center; justify-content:center;">
         ${getAvatarEmoji(state.avatarId)}
       </div>
       <div style="text-align:left">
@@ -1077,16 +1117,14 @@ function renderLeaderboard(){
 }
 
 /* utility: shuffle */
-// Function to shuffle an array
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 }
 
-// Fix: Shuffling answer options
 function renderQuestion() {
   clearTimer();
   if (state.index >= state.pool.length) {
@@ -1097,78 +1135,61 @@ function renderQuestion() {
   const q = state.pool[state.index];
   byId('questionText').textContent = q.q;
 
-  // Shuffle the options before rendering
   const shuffledOptions = shuffleArray(q.options.slice());
 
   const optContainer = byId('optionsContainer');
-  optContainer.innerHTML = ''; // Clear any existing options
+  optContainer.innerHTML = '';
   shuffledOptions.forEach((opt) => {
     const btn = document.createElement('button');
     btn.className = 'answer-btn';
     btn.textContent = opt;
-    btn.addEventListener('click', () => onAnswer(btn, opt)); // Handle button click
+    btn.addEventListener('click', () => onAnswer(btn, opt));
     optContainer.appendChild(btn);
   });
 
-  // progress
   updateProgress();
-  // restore progress-fill transition smooth
   byId('progressFill').style.transition = 'width 1s linear';
-  // reset timer UI & start
   startTimer();
 }
 
-
-// Fix: Adding session timeout to avoid memorization
+// Session timeout
 let sessionTimeout;
 function startSessionTimeout() {
   sessionTimeout = setTimeout(() => {
     alert("Session expired. Please start again.");
-    window.location.reload(); // Reload the page to restart the game
-  }, 600000); // 10 minutes in milliseconds
+    window.location.reload();
+  }, 600000);
 }
-
 function resetSessionTimeout() {
   clearTimeout(sessionTimeout);
-  startSessionTimeout(); // Reset the session timeout if needed
+  startSessionTimeout();
 }
 
-// This will be called when a question is rendered and timer is started
-//startSessionTimeout();
 byId('startBtn').addEventListener('click', ()=>{
   const nm = (byId('nameInput').value||'').trim();
-  if(!nm){ alert('Please enter your name'); byId('nameInput').focus(); return; }
-  if(!state.avatarId){ alert('Please pick an avatar'); return; }
+  if(!state.avatarId){ alert('Please pick an avatar').focus(); return; }
   state.name = nm;
-  startSessionTimeout(); // <-- Sahi jagah
+  startSessionTimeout();
   showView('view-difficulty');
 });
-// Function to fetch questions dynamically (optional: if you plan to use API for questions)
 
-
-// Update the game to reflect the selected difficulty
 function pickDifficulty(level) {
   state.difficulty = level;
-  // Shuffle the question pool for the selected difficulty
-  const pool = shuffleArray(questionBank[level].slice()); // Shuffle the pool
-  state.pool = pool.slice(0, Math.min(10, pool.length)); // Take the first 10 questions
+  const pool = shuffleArray(questionBank[level].slice());
+  state.pool = pool.slice(0, Math.min(10, pool.length));
   state.index = 0;
   state.correctCount = 0;
   state.used5050 = false;
   state.usedHint = false;
 
-  // reset lifeline buttons
   byId('btn5050').classList.remove('used');
   byId('btnHint').classList.remove('used');
   showView('view-quiz');
   renderQuestion();
 }
 
-/* start over handlers */
 function restartFromEnd(){
-  // reset state and go home
-  clearTimer(); // <-- Add this line!// Stop timer if running
-  // NAYA QUESTIONS POOL SHUFFLE
+  clearTimer();
   const pool = shuffleArray(questionBank[state.difficulty].slice());
   state.pool = pool.slice(0, Math.min(10, pool.length));
   state.index = 0;
@@ -1182,25 +1203,13 @@ function restartFromEnd(){
 }
 
 function returnToMenu(){
-  // reset state and go home
-  clearTimer(); // <-- Add this line!// Stop timer if running
+  clearTimer();
   state = { name:'', avatarId:'', difficulty:'', pool:[], index:0, correctCount:0, timerVal:10, timerHandle:null, used5050:false, usedHint:false };
-  // clear inputs
   byId('nameInput').value = '';
   avatarEls.forEach(a=>a.classList.remove('selected'));
   showView('view-start');
 }
 
-byId('startBtn').addEventListener('click', ()=>{
-  const nm = (byId('nameInput').value||'').trim();
-  if(!nm){ alert('Please enter your name'); byId('nameInput').focus(); return; }
-  if(!state.avatarId){ alert('Please pick an avatar'); return; }
-  state.name = nm;
-  startSessionTimeout(); // <-- Sahi jagah
-  showView('view-difficulty');
-});
-
-/* get avatar emoji by id */
 function getAvatarEmoji(id){
   return ({ cat:'🐱', dog:'🐶', owl:'🦉', alien:'👽' }[id]||'🙂');
 }
@@ -1208,13 +1217,5 @@ function getAvatarEmoji(id){
 /* initial */
 showView('view-start');
 </script>
-<script>
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-    .then(reg => console.log('Service Worker Registered', reg))
-    .catch(err => console.log('Service Worker Failed', err));
-}
-</script>
 </body>
 </html>
-
