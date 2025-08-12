@@ -22,6 +22,8 @@
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffb300">
 <title>Trivia Thief — Quiz</title>
 <style>
   :root{
@@ -609,6 +611,7 @@ document.querySelectorAll('.avatar').forEach(a => {
   });
 });
 byId('startBtn').addEventListener('click', () => {
+  playSFX('sfxStart'); // start music right after user interaction
   if (!state.avatarId) return alert("Select an avatar first");
   if (!byId('nameInput').value.trim()) return alert("Enter your name");
   state.name = byId('nameInput').value.trim();
@@ -646,6 +649,15 @@ state.coins = parseInt(localStorage.getItem('quizCoins') || '0', 10);
 byId('coinCount').textContent = state.coins;
 byId('coinCountQuiz').textContent = state.coins;
 loadQuestions();
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('Service Worker registered', reg))
+      .catch(err => console.log('SW registration failed:', err));
+  });
+}
 </script>
 </body>
 </html>
