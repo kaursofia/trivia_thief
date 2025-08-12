@@ -11,8 +11,15 @@ const ASSETS_TO_CACHE = [
   '/tick.wav',
   '/coin.wav',
   '/chest.wav',
-  '/Questions.json',
+  '/questions.json',
+  '/apple-touch-icon.png',
   '/site.webmanifest',
+  '/favicon-96x96.png',
+  '/favicon.ico',
+  '/favicon.svg',
+  '/web-app-manifest-192x192.png',
+  '/web-app-manifest-512x512.png',
+  
   // Add any other assets you want cached
 ];
 
@@ -44,3 +51,4 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
