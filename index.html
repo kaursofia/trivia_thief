@@ -1,6 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PZSNLRJ4'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PZSNLRJ4');
+  </script>
+  <!-- End Google Tag Manager -->
+   <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1B1RV7TDY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P1B1RV7TDY');
+  </script>
+  <!-- End Google Analytics 4 -->
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Trivia Thief — Quiz</title>
@@ -22,15 +41,15 @@
   .screen{
     background:var(--card);
     width:100%;
-    max-width:370px; /* smaller, more content-hugging */
+    max-width:370px;
     border-radius:22px;box-shadow:var(--card-shadow);
-    padding:28px 18px 22px 18px; /* less vertical padding */
+    padding:28px 18px 22px 18px;
     box-sizing:border-box;
     text-align:center;
     position:relative;
     overflow:hidden;
     margin:auto;
-    min-height:auto; /* let content define height */
+    min-height:auto;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
@@ -105,7 +124,6 @@
   .answer-btn.wrong{background:var(--danger);color:#fff;border-color:var(--danger);}
   .answer-btn.disabled{opacity:.6;cursor:not-allowed}
   .avatar-small { width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;font-size:21px;}
-  /* ========== Lifelines visually attached ========== */
   .lifeline-row{
     margin: 10px auto 0 auto;
     padding: 0 0 0 0;
@@ -163,64 +181,69 @@
 </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZSNLRJ4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+<!-- Start View -->
 <div class="screen" role="application" aria-label="Trivia Thief Game">
-  <!-- Start View -->
   <div id="view-start" class="view active">
-    <img class="logo" src="c65af28a-f6d2-4671-93b0-e1eb499e3b6c_removalai_preview.png" alt="Logo">
+    <img class="logo" src="logo.png" alt="Trivia Thief Logo">
     <p class="tag"><strong>A Game Can Make You Millionaire</strong></p>
     <h1>QUIZ GAME</h1>
     <div class="avatars" id="avatarRow">
-      <div class="avatar" data-id="cat" title="Cat">🐱</div>
-      <div class="avatar" data-id="dog" title="Dog">🐶</div>
-      <div class="avatar" data-id="owl" data-locked="true" title="Owl">🦉</div>
-      <div class="avatar" data-id="alien" data-locked="true" title="Alien">👽</div>
+      <div class="avatar" data-id="cat" title="Cat" role="button" aria-label="Select Cat avatar" tabindex="0">🐱</div>
+      <div class="avatar" data-id="dog" title="Dog" role="button" aria-label="Select Dog avatar" tabindex="0">🐶</div>
+      <div class="avatar" data-id="owl" data-locked="true" title="Owl" role="button" aria-label="Select Owl avatar (locked)" aria-disabled="true" tabindex="0">🦉</div>
+      <div class="avatar" data-id="alien" data-locked="true" title="Alien" role="button" aria-label="Select Alien avatar (locked)" aria-disabled="true" tabindex="0">👽</div>
     </div>
-    <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name">
+    <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name" autocomplete="name" />
     <div style="height:10px"></div>
-    <button id="startBtn" class="btn">Start</button>
-    <div style="margin-top:10px"><button class="btn small" type="button" id="instructionsBtn">Instructions</button></div>
+    <button id="startBtn" class="btn" aria-label="Start the quiz">Start</button>
+    <div style="margin-top:10px"><button class="btn small" type="button" id="instructionsBtn" aria-label="Show instructions">Instructions</button></div>
     <div class="meta">Tap avatar, enter name, then press Start</div>
     <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;">
       <img src="coin.png" alt="Coins" style="width:20px;height:20px">
-      <span id="coinCount" style="font-weight:600">0</span>
+      <span id="coinCount" style="font-weight:600" aria-live="polite">0</span>
     </div>
   </div>
   <!-- Difficulty View -->
   <div id="view-difficulty" class="view" style="display:none">
     <h2 style="margin-bottom:18px;">Select Difficulty</h2>
     <div style="display:flex;flex-direction:column;gap:10px;">
-      <button class="btn" data-diff="easy">Easy</button>
-      <button class="btn" data-diff="medium">Medium</button>
-      <button class="btn" data-diff="hard">Hard</button>
+      <button class="btn" data-diff="easy" aria-label="Select easy difficulty">Easy</button>
+      <button class="btn" data-diff="medium" aria-label="Select medium difficulty">Medium</button>
+      <button class="btn" data-diff="hard" aria-label="Select hard difficulty">Hard</button>
     </div>
     <div class="meta" style="margin-top:14px;">Questions will be pulled randomly from the chosen pool.</div>
-    <div style="margin-top:16px"><button class="btn small" id="backToStart">Back</button></div>
+    <div style="margin-top:16px"><button class="btn small" id="backToStart" aria-label="Back to main menu">Back</button></div>
   </div>
   <!-- Quiz View -->
   <div id="view-quiz" class="view" style="display:none;position:relative;">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
       <div style="display:flex;align-items:center;gap:8px">
-        <div class="avatar-small" id="headerAvatar"></div>
-        <span id="headerUsername" style="font-weight:600"></span>
+        <div class="avatar-small" id="headerAvatar" aria-label="Selected avatar"></div>
+        <span id="headerUsername" style="font-weight:600" aria-label="Player name"></span>
       </div>
       <div style="display:flex;align-items:center;gap:6px">
         <img src="coin.png" alt="Coins" style="width:20px;height:20px">
-        <span id="coinCountQuiz" style="font-weight:600">0</span>
+        <span id="coinCountQuiz" style="font-weight:600" aria-live="polite">0</span>
       </div>
     </div>
-    <div id="progressText" class="meta"></div>
-    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
-    <div id="questionText" class="question">Question will appear here</div>
+    <div id="progressText" class="meta" aria-live="polite"></div>
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" aria-label="Quiz progress"><div id="progressFill" class="progress-fill"></div></div>
+    <div id="questionText" class="question" aria-live="polite">Question will appear here</div>
     <div id="optionsContainer" class="options" role="list"></div>
-    <!-- Lifeline row just below options -->
     <div class="lifeline-row" id="lifelineRow">
-      <button id="btnHint" class="lifeline-btn lifeline-hint">
+      <button id="btnHint" class="lifeline-btn lifeline-hint" aria-label="Use hint lifeline (costs 20 coins)">
         <span style="font-size:1.2em;line-height:1.1;">💡</span>
-        <span class="lifeline-cost-label">20 <img src="coin.png" width="13"></span>
+        <span class="lifeline-cost-label">20 <img src="coin.png" width="13" alt="Coins"></span>
       </button>
-      <button id="btn5050" class="lifeline-btn lifeline-5050">
+      <button id="btn5050" class="lifeline-btn lifeline-5050" aria-label="Use 50/50 lifeline (costs 30 coins)">
         <span style="font-size:1.1em;line-height:1.1;">✂️</span>
-        <span class="lifeline-cost-label">30 <img src="coin.png" width="13"></span>
+        <span class="lifeline-cost-label">30 <img src="coin.png" width="13" alt="Coins"></span>
       </button>
     </div>
   </div>
@@ -231,24 +254,23 @@
     <div id="motivationalQuote" class="meta" style="color:#b97b16;margin-bottom:8px;font-weight:600"></div>
     <div id="playerSummary" class="meta"></div>
     <div style="margin-top:12px">
-      <button class="btn" id="playAgainBtn">Play Again</button>
-      <button class="btn small" id="mainMenuBtn" style="margin-top:8px">Main Menu</button>
+      <button class="btn" id="playAgainBtn" aria-label="Play again">Play Again</button>
+      <button class="btn small" id="mainMenuBtn" style="margin-top:8px" aria-label="Go to main menu">Main Menu</button>
     </div>
     <div id="rewardChest" style="text-align:center;display:none">
       <img src="chest_closed.png" id="chestImage" alt="Chest">
-      <div style="margin-top:8px"><button id="openChestBtn" class="btn small">Open Chest</button></div>
+      <div style="margin-top:8px"><button id="openChestBtn" class="btn small" aria-label="Open reward chest">Open Chest</button></div>
     </div>
     <div style="margin-top:14px;text-align:left">
       <h3 style="margin:8px 0 6px">Leaderboard</h3>
       <ol id="leaderboardList" style="padding-left:18px;margin:0 0 6px 0"></ol>
     </div>
   </div>
-  <div id="funFact" class="funfact" aria-hidden="true"></div>
+  <div id="funFact" class="funfact" aria-live="polite" aria-hidden="true"></div>
 </div>
-<!-- Minimal instructions modal -->
 <div id="instructionsModal" style="display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,.36);align-items:center;justify-content:center;z-index:200">
   <div style="background:white;padding:20px;border-radius:12px;max-width:340px;margin:auto;text-align:left">
-    <button id="closeInstructions" style="float:right">×</button>
+    <button id="closeInstructions" style="float:right" aria-label="Close instructions">×</button>
     <h2 style="color:var(--accent)">How to Play</h2>
     <ol>
       <li>Pick avatar and enter name.</li>
@@ -257,8 +279,15 @@
     </ol>
   </div>
 </div>
+
+<!-- SOUND EFFECTS -->
+<audio id="sfxStart" src="start.mp3" preload="auto"></audio>
+<audio id="sfxTimer" src="tick.mp3" preload="auto" loop></audio>
+<audio id="sfxCoin" src="coin.mp3" preload="auto"></audio>
+<audio id="sfxChest" src="chest.mp3" preload="auto"></audio>
+
 <script>
-const QUESTION_LIMIT = 5, HINT_COST = 20, FIFTY_COST = 30, AVATAR_UNLOCK_COST = 100;
+const QUESTION_LIMIT = 10, HINT_COST = 20, FIFTY_COST = 30, AVATAR_UNLOCK_COST = 100;
 const MOTIVATIONAL_QUOTES = [
   "Don't give up! Every failure is a step to success.",
   "Mistakes are proof you are trying.",
@@ -285,12 +314,32 @@ const state = {
   usedHint: false
 };
 const byId = id => document.getElementById(id);
+
+// --- SOUND FX HELPERS ---
+function playSFX(id, loop=false) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.loop = loop;
+    el.currentTime = 0;
+    el.play().catch(()=>{});
+  }
+}
+function stopSFX(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.pause();
+    el.currentTime = 0;
+  }
+}
+// ---
+
 function updateCoins(amount) {
   state.coins += amount;
   if (state.coins < 0) state.coins = 0;
   localStorage.setItem('quizCoins', String(state.coins));
   byId('coinCount').textContent = state.coins;
   byId('coinCountQuiz').textContent = state.coins;
+  if(amount > 0) playSFX('sfxCoin');
 }
 function getAvatarEmoji(id) {
   return ({cat:'🐱', dog:'🐶', owl:'🦉', alien:'👽'}[id] || '🙂');
@@ -301,6 +350,13 @@ function showView(id) {
     if (!el) return;
     el.style.display = (v === id) ? 'block' : 'none';
   });
+  // --- SOUND HANDLING ---
+  if (id === 'view-start' || id === 'view-end') {
+    playSFX('sfxStart');
+    stopSFX('sfxTimer');
+  } else {
+    stopSFX('sfxStart');
+  }
 }
 function resetLifelines() {
   state.used5050 = false;
@@ -327,345 +383,49 @@ function startTimer() {
 }
 function clearTimer() {
   if (state.timerHandle) { clearInterval(state.timerHandle); state.timerHandle = null; }
+  stopSFX('sfxTimer');
 }
+const fallbackQuestions = {
+  easy: [
+    { q:"2 + 2 = ?", options:["3","4","5","6"], answer:"4", hint:"Even", fact:"2+2=4 — basic math" },
+    { q:"Color of the sky?", options:["Blue","Green","Red","Yellow"], answer:"Blue", hint:"Daytime", fact:"Sky appears blue due to scattering" },
+    { q:"Which animal barks?", options:["Cat","Dog","Cow","Tiger"], answer:"Dog", hint:"Man's best friend", fact:"Dogs bark to communicate." },
+    { q:"Sun rises in?", options:["North","South","East","West"], answer:"East", hint:"Opposite of west", fact:"Because Earth rotates west→east." },
+    { q:"How many days in a week?", options:["5","6","7","8"], answer:"7", hint:"Lucky number", fact:"A week has seven days." }
+  ],
+  medium: [
+    { q:"Capital of France?", options:["Berlin","Paris","Rome","Madrid"], answer:"Paris", hint:"City of Light", fact:"Paris is very famous." },
+    { q:"Who wrote '1984'?", options:["Orwell","Huxley","Austen","Shakespeare"], answer:"Orwell", hint:"Also wrote Animal Farm", fact:"George Orwell wrote 1984." },
+    { q:"Square root of 144?", options:["10","11","12","13"], answer:"12", hint:"A dozen", fact:"12 × 12 = 144." },
+    { q:"Gas needed for combustion?", options:["Nitrogen","Oxygen","CO2","Helium"], answer:"Oxygen", hint:"We breathe it", fact:"Oxygen supports fire." },
+    { q:"Fastest land animal?", options:["Lion","Cheetah","Elephant","Horse"], answer:"Cheetah", hint:"Spotted cat", fact:"Cheetahs exceed 100 km/h." }
+  ],
+  hard: [
+    { q:"Who developed relativity?", options:["Newton","Einstein","Bohr","Tesla"], answer:"Einstein", hint:"E=mc²", fact:"Einstein proposed relativity." },
+    { q:"Atomic number of Oxygen?", options:["6","7","8","9"], answer:"8", hint:"Even number", fact:"Oxygen is atomic number 8." },
+    { q:"Speed of light approx?", options:["3×10^8 m/s","3×10^6 m/s","3×10^5 m/s","3×10^7 m/s"], answer:"3×10^8 m/s", hint:"Very fast", fact:"Light is ~300,000 km/s." },
+    { q:"Avogadro's number approx?", options:["6.02×10^23","3.14","1.6×10^-19","9.8"], answer:"6.02×10^23", hint:"Huge", fact:"Particles in one mole." },
+    { q:"Element with symbol 'Au'?", options:["Silver","Gold","Argon","Platinum"], answer:"Gold", hint:"Precious metal", fact:"Au = Aurum (Latin)." }
+  ]
+};
 let questionBank = {easy:[],medium:[],hard:[]};
-function loadQuestions() {
-  questionBank = {
-    easy: [
-      { q:"What planet do we live on?", options:["Mars","Venus","Earth","Jupiter"], answer:"Earth", hint:"Blue oceans and green land", fact:"Earth is our home planet." },
-{ q:"2 + 2 = ?", options:["3","4","5","6"], answer:"4", hint:"Basic addition", fact:"2 + 2 equals 4." },
-{ q:"Water freezes at 0 degrees on which scale?", options:["Kelvin","Celsius","Fahrenheit","Rankine"], answer:"Celsius", hint:"Metric temperature", fact:"Water freezes at 0 °C." },
-{ q:"The Sun rises in the ____.", options:["West","North","East","South"], answer:"East", hint:"Opposite of west", fact:"Earth rotates toward the east." },
-{ q:"Which gas do plants absorb?", options:["Oxygen","Nitrogen","Carbon dioxide","Helium"], answer:"Carbon dioxide", hint:"Exhaled and absorbed by plants", fact:"Plants use CO₂ for photosynthesis." },
-{ q:"H₂O is the chemical formula for ___?", options:["Salt","Water","Oxygen","Hydrogen"], answer:"Water", hint:"Life’s essential liquid", fact:"H₂O is water." },
-{ q:"How many continents are there on Earth?", options:["5","6","7","8"], answer:"7", hint:"Asia, Africa, …", fact:"There are seven continents." },
-{ q:"Red + white makes what color?", options:["Pink","Purple","Orange","Brown"], answer:"Pink", hint:"Light red", fact:"Mixing red and white makes pink." },
-{ q:"Day after Monday is ___?", options:["Sunday","Tuesday","Wednesday","Thursday"], answer:"Tuesday", hint:"Second working day", fact:"Tuesday follows Monday." },
-{ q:"A figure with 4 equal sides & right angles is a ___?", options:["Rectangle","Circle","Square","Triangle"], answer:"Square", hint:"All sides equal", fact:"Square has four equal sides and right angles." },
-{ q:"The opposite of hot is ___?", options:["Cold","Warm","Cool","Freezing"], answer:"Cold", hint:"Very low temperature", fact:"Cold is the opposite of hot." },
-{ q:"What color is the sky on a clear day?", options:["Green","Red","Blue","Yellow"], answer:"Blue", hint:"Color of clear daytime sky", fact:"Rayleigh scattering makes sky look blue." },
-{ q:"How many days are in a week?", options:["5","6","7","8"], answer:"7", hint:"Work week plus weekend", fact:"There are seven days in a week." },
-{ q:"What is 5 + 3?", options:["7","8","9","6"], answer:"8", hint:"Next after seven", fact:"5 + 3 equals 8." },
-{ q:"Snow is frozen ___?", options:["Rain","Ice","Water","Steam"], answer:"Water", hint:"Liquid before freezing", fact:"Snow is frozen water." },
-{ q:"Which animal says 'Meow'?", options:["Dog","Cat","Cow","Duck"], answer:"Cat", hint:"Independent pet that purrs", fact:"Cats meow." },
-{ q:"Which color is the sun often drawn as?", options:["White","Yellow","Green","Purple"], answer:"Yellow", hint:"Bright and sunny", fact:"The Sun is often drawn yellow." },
-{ q:"The opposite of up is ___?", options:["Left","Right","Down","Backward"], answer:"Down", hint:"Opposite of above", fact:"Down is opposite of up." },
-{ q:"Which fruit is typically red and sweet?", options:["Banana","Apple","Lemon","Blueberry"], answer:"Apple", hint:"Keeps doctor away", fact:"Apples are red and sweet." },
-{ q:"What do we breathe in to stay alive?", options:["Oxygen","Carbon dioxide","Helium","Argon"], answer:"Oxygen", hint:"Essential to life", fact:"Oxygen is essential for respiration." },
-{ q:"How many hours in one day?", options:["12","24","36","48"], answer:"24", hint:"Two dozen", fact:"There are 24 hours in a day." },
-{ q:"What’s the opposite of 'yes'?", options:["Maybe","No","Always","Never"], answer:"No", hint:"Negative response", fact:"No is opposite of yes." },
-{ q:"Which month comes after January?", options:["March","April","February","May"], answer:"February", hint:"Second month", fact:"February follows January." },
-{ q:"The star at the center of our solar system is the ___?", options:["Moon","Earth","Sun","Mars"], answer:"Sun", hint:"Gives light and heat", fact:"The Sun is the central star of our solar system." },
-{ q:"We see with our ___?", options:["Hands","Ears","Eyes","Nose"], answer:"Eyes", hint:"Organ of sight", fact:"Eyes are organs used for seeing." },
-{ q:"Ice is ___ than water?", options:["Hotter","Colder","Heavier","Lighter"], answer:"Colder", hint:"Low temperature state", fact:"Ice is colder than water." },
-{ q:"What does a thermometer measure?", options:["Speed","Temperature","Distance","Weight"], answer:"Temperature", hint:"Hot or cold", fact:"Thermometers measure temperature." },
-{ q:"Which sense is used for tasting?", options:["Sight","Hearing","Smell","Taste"], answer:"Taste", hint:"On the tongue", fact:"Taste is detected by the tongue." },
-{ q:"Chairs are for ___?", options:["Eating","Sitting","Sleeping","Running"], answer:"Sitting", hint:"We do it to rest", fact:"Chairs are for sitting." },
-{ q:"What grows on trees and falls in autumn?", options:["Snow","Leaves","Sand","Rocks"], answer:"Leaves", hint:"Green, then colorful", fact:"Leaves fall from trees in autumn." },
-{ q:"Lightning is a kind of ___?", options:["Fire","Storm","Spark","Earthquake"], answer:"Spark", hint:"Electrical flash", fact:"Lightning is an electrical spark in the sky." },
-{ q:"The opposite of big is ___?", options:["Huge","Large","Small","Tall"], answer:"Small", hint:"Very little", fact:"Small is opposite of big." },
-{ q:"What color is grass?", options:["Red","Blue","Green","Yellow"], answer:"Green", hint:"Color of most grass", fact:"Grass is green due to chlorophyll." },
-{ q:"A year has ___ months?", options:["10","11","12","13"], answer:"12", hint:"12 in a year", fact:"There are 12 months in a year." },
-{ q:"What animal barks?", options:["Cat","Dog","Cow","Sheep"], answer:"Dog", hint:"Man’s best friend", fact:"Dogs bark." },
-{ q:"Which is used to write on paper?", options:["Paint","Pen","Scissors","Glue"], answer:"Pen", hint:"Holds ink", fact:"Pens are used for writing." },
-{ q:"We drink ___ to stay hydrated.", options:["Oil","Water","Sand","Smoke"], answer:"Water", hint:"Clear liquid", fact:"Water hydrates the body." },
-{ q:"Eggs come from ___?", options:["Trees","Clouds","Chickens","Rocks"], answer:"Chickens", hint:"Feathered farm birds", fact:"Chickens lay eggs." },
-{ q:"What is 10 – 5?", options:["2","3","5","7"], answer:"5", hint:"Half of ten", fact:"10 minus 5 equals 5." },
-{ q:"We read a ___?", options:["Book","Spoon","Pencil","Car"], answer:"Book", hint:"Pages of words", fact:"Books contain written content." },
-{ q:"Which one’s a green vegetable?", options:["Carrot","Lettuce","Banana","Apple"], answer:"Lettuce", hint:"Used in salads", fact:"Lettuce is a green leafy vegetable." },
-{ q:"Hot weather makes us ___?", options:["Cold","Sweaty","Sleepy","Hungry"], answer:"Sweaty", hint:"You perspire", fact:"Heat causes sweating for cooling." },
-{ q:"Pigs say ___?", options:["Moo","Neigh","Oink","Meow"], answer:"Oink", hint:"Pig sound", fact:"Pigs oink." },
-{ q:"Don’t ___ over broken glass.", options:["Walk","Talk","Sing","Dance"], answer:"Walk", hint:"It’s dangerous", fact:"Walking over broken glass can hurt." },
-{ q:"Which animal lives in water and says 'quack'?", options:["Dog","Duck","Cat","Horse"], answer:"Duck", hint:"Webbed feet", fact:"Ducks quack." },
-{ q:"What color are bananas usually?", options:["Blue","Yellow","Red","Black"], answer:"Yellow", hint:"Bright fruit", fact:"Bananas are typically yellow when ripe." },
-{ q:"How many legs does a spider have?", options:["6","8","10","12"], answer:"8", hint:"Eight-legged", fact:"Spiders have eight legs." },
-{ q:"What do fish breathe in water?", options:["Oxygen","Carbon dioxide","Helium","Water"], answer:"Oxygen", hint:"Dissolved in water", fact:"Fish take in oxygen through gills." },
-{ q:"Banks keep ___ safe.", options:["Books","Money","Pets","Shoes"], answer:"Money", hint:"Your funds", fact:"Banks store money securely." },
-{ q:"Which insect makes honey?", options:["Ant","Bee","Butterfly","Fly"], answer:"Bee", hint:"Buzzing, yellow-black", fact:"Bees produce honey." },
-{ q:"We drive on the ___?", options:["Sky","Road","Water","Cloud"], answer:"Road", hint:"Where cars go", fact:"Cars drive on roads." },
-{ q:"Which month is the holiday of Christmas in?", options:["January","February","December","July"], answer:"December", hint:"End-of-year month", fact:"Christmas is celebrated in December." },
-{ q:"Ice cream is ___?", options:["Hot","Cold","Dry","Hard"], answer:"Cold", hint:"From freezer", fact:"Ice cream is served cold." },
-{ q:"Birds ___ to fly.", options:["Use wings","Use fins","Use legs","Use head"], answer:"Use wings", hint:"Feathered limbs", fact:"Birds fly using wings." },
-{ q:"Which sport uses a ball and hoop?", options:["Tennis","Basketball","Baseball","Golf"], answer:"Basketball", hint:"Shoot into a hoop", fact:"Basketball involves shooting a ball into a hoop." },
-{ q:"We sleep in a ___?", options:["Car","Bed","Boat","Shoe"], answer:"Bed", hint:"Where you rest at night", fact:"Beds are for sleeping." },
-{ q:"A bus takes ___ to school?", options:["Food","Books","People","Cars"], answer:"People", hint:"Passengers", fact:"Buses carry people." },
-{ q:"What is 3 × 3?", options:["6","9","12","15"], answer:"9", hint:"Square of three", fact:"3 times 3 equals 9." },
-{ q:"__ and a half feet make one yard?", options:["2","3","4","5"], answer:"3", hint:"Three feet", fact:"One yard is three feet." },
-{ q:"What is the first month of the year?", options:["March","January","May","June"], answer:"January", hint:"Start of year", fact:"January is the first month." },
-{ q:"You look with your ___?", options:["Tongue","Eyes","Ears","Nose"], answer:"Eyes", hint:"Organ of vision", fact:"We use eyes to see." },
-{ q:"Which is a fruit: carrot or peach?", options:["Carrot","Peach","Both","None"], answer:"Peach", hint:"Fuzzy, sweet", fact:"Peach is a fruit." },
-{ q:"Dogs have ___ legs?", options:["Two","Three","Four","Five"], answer:"Four", hint:"Quadraped", fact:"Dogs walk on four legs." },
-{ q:"We write with a ___?", options:["Fork","Pencil","Spoon","Plate"], answer:"Pencil", hint:"Graphite stick", fact:"Pencils are used for writing." },
-{ q:"The opposite of fast is ___?", options:["Slow","Quick","Rapid","Swift"], answer:"Slow", hint:"Not fast", fact:"Slow is opposite of fast." },
-{ q:"The day after Sunday is ___?", options:["Saturday","Monday","Tuesday","Friday"], answer:"Monday", hint:"Start of work week", fact:"Monday follows Sunday." },
-{ q:"Which tool hammers nails?", options:["Saw","Hammer","Drill","Wrench"], answer:"Hammer", hint:"Strikes nails", fact:"Hammers drive nails into surfaces." },
-{ q:"Rain falls from the ___?", options:["Ground","Sun","Clouds","Rocks"], answer:"Clouds", hint:"In the sky", fact:"Rain forms and falls from clouds." },
-{ q:"We _____ in school.", options:["Sleep","Learn","Eat","Drive"], answer:"Learn", hint:"Gain knowledge", fact:"Schools are for learning." },
-{ q:"What is 1 + 0?", options:["0","1","2","3"], answer:"1", hint:"One plus zero", fact:"1 + 0 equals 1." },
-{ q:"A baby cat is called a ___?", options:["Puppy","Kitten","Cub","Calf"], answer:"Kitten", hint:"Young feline", fact:"Baby cats are called kittens." },
-{ q:"Carrots are ___ in color?", options:["Purple","Orange","Blue","Pink"], answer:"Orange", hint:"Bright vegetable", fact:"Carrots are typically orange." },
-{ q:"We use an umbrella when it ___?", options:["Rains","Shines","Freezes","Dries"], answer:"Rains", hint:"Drops from sky", fact:"Umbrellas protect from rain." },
-{ q:"Which tool writes in ink?", options:["Pen","Knife","Ruler","Scissors"], answer:"Pen", hint:"Ink-based writing", fact:"Pens write using ink." },
-{ q:"What does a cow say?", options:["Tweet","Moo","Bark","Neigh"], answer:"Moo", hint:"Farm sound", fact:"Cows moo." },
-{ q:"Milk comes from ___?", options:["Trees","Cows","Fish","Cars"], answer:"Cows", hint:"Farm animal", fact:"Cows produce milk." },
-{ q:"Which is bigger: a cat or a mouse?", options:["Cat","Mouse","Same","None"], answer:"Cat", hint:"Predator vs prey", fact:"Cats are larger than mice." },
-{ q:"What do you use to call someone?", options:["Phone","Book","Car","Table"], answer:"Phone", hint:"Makes calls", fact:"Phones are used to call people." },
-{ q:"A circle is ___ shape.", options:["Square","Curved","Pointy","Straight"], answer:"Curved", hint:"No corners", fact:"Circles are curved with no angles." },
-{ q:"Which weather is sunny?", options:["Cloudy","Rainy","Sunny","Windy"], answer:"Sunny", hint:"Bright daylight", fact:"Sunny means lots of sunlight." },
-{ q:"Which runs faster: cheetah or turtle?", options:["Cheetah","Turtle","Same","Neither"], answer:"Cheetah", hint:"Fastest land animal", fact:"Cheetahs run much faster than turtles." },
-{ q:"We eat with ___?", options:["Fork","Shirt","Shoe","Hat"], answer:"Fork", hint:"Prongs for food", fact:"Forks help pick up food." }
-    ],
-    medium: [
-      { q:"Capital of France?", options:["Berlin","Paris","Rome","Madrid"], answer:"Paris", hint:"City of Light", fact:"Paris is very famous." },
-      { q:"Who wrote '1984'?", options:["Orwell","Huxley","Austen","Shakespeare"], answer:"Orwell", hint:"Also wrote Animal Farm", fact:"George Orwell wrote 1984." },
-      { q:"Square root of 144?", options:["10","11","12","13"], answer:"12", hint:"A dozen", fact:"12 × 12 = 144." },
-      { q:"Gas needed for combustion?", options:["Nitrogen","Oxygen","CO2","Helium"], answer:"Oxygen", hint:"We breathe it", fact:"Oxygen supports fire." },
-      { q:"Fastest land animal?", options:["Lion","Cheetah","Elephant","Horse"], answer:"Cheetah", hint:"Spotted cat", fact:"Cheetahs exceed 100 km/h." },
-      { q:"An isosceles triangle has at least how many equal sides?", options:["1","2","3","None"], answer:"2", hint:"Symmetry", fact:"It has at least two equal sides." },
-{ q:"The Great Wall is in which country?", options:["Japan","China","India","Korea"], answer:"China", hint:"East Asia", fact:"The Great Wall is in China." },
-{ q:"Photosynthesis happens in the ____?", options:["Chloroplast","Nucleus","Cell wall","Mitochondria"], answer:"Chloroplast", hint:"Green parts", fact:"Photosynthesis takes place in chloroplasts." },
-{ q:"Who wrote 'Romeo and Juliet'?", options:["Shakespeare","Dickens","Austen","Tolstoy"], answer:"Shakespeare", hint:"Bard of Avon", fact:"William Shakespeare wrote it." },
-{ q:"Earth is the ____ planet from the Sun.", options:["1st","2nd","3rd","4th"], answer:"3rd", hint:"Between Venus and Mars", fact:"Earth is the third planet." },
-{ q:"What is the largest mammal?", options:["Elephant","Blue whale","Giraffe","Hippo"], answer:"Blue whale", hint:"Lives in ocean", fact:"Blue whales are the largest animals." },
-{ q:"Which metal has the symbol 'Au'?", options:["Silver","Gold","Copper","Iron"], answer:"Gold", hint:"Precious yellow metal", fact:"Au is gold." },
-{ q:"Speed = distance ÷ ____?", options:["Area","Time","Mass","Volume"], answer:"Time", hint:"Rate of travel", fact:"Speed is distance divided by time." },
-{ q:"What gas do humans exhale?", options:["Oxygen","Carbon dioxide","Nitrogen","Helium"], answer:"Carbon dioxide", hint:"Plants need it", fact:"Humans exhale CO₂." },
-{ q:"Which blood type is known as the universal donor?", options:["O-","O+","AB+","AB-"], answer:"O-", hint:"Can give to all", fact:"O-negative is the universal donor." },
-{ q:"What is 12 × 12?", options:["124","122","144","132"], answer:"144", hint:"Dozen dozen", fact:"12 × 12 = 144." },
-{ q:"What is the capital of Japan?", options:["Beijing","Seoul","Tokyo","Kyoto"], answer:"Tokyo", hint:"Largest city in Japan", fact:"Tokyo is Japan's capital." },
-{ q:"What organ pumps blood?", options:["Lungs","Brain","Heart","Liver"], answer:"Heart", hint:"Circulatory system", fact:"The heart pumps blood." },
-{ q:"E = mc² is from which theory?", options:["Quantum","Relativity","Gravity","Evolution"], answer:"Relativity", hint:"Einstein's work", fact:"E = mc² is from the theory of relativity." },
-{ q:"What is the chemical symbol for sodium?", options:["So","Na","S","Sn"], answer:"Na", hint:"From Latin", fact:"Na comes from 'natrium'." },
-{ q:"Which ocean is the largest?", options:["Atlantic","Indian","Pacific","Arctic"], answer:"Pacific", hint:"Covers a third of Earth", fact:"The Pacific Ocean is the largest." },
-{ q:"The human skeleton has about how many bones?", options:["106","206","306","406"], answer:"206", hint:"Over two hundred", fact:"Adults have 206 bones." },
-{ q:"Which planet is called the Red Planet?", options:["Mars","Venus","Jupiter","Saturn"], answer:"Mars", hint:"Dusty and red", fact:"Mars is called the Red Planet." },
-{ q:"What does DNA stand for?", options:["Deoxyribonucleic Acid","Dynamic Nuclear Atom","Digital Number Array","None"], answer:"Deoxyribonucleic Acid", hint:"Genetic material", fact:"DNA = Deoxyribonucleic Acid." },
-{ q:"In computing, what does 'CPU' stand for?", options:["Central Processing Unit","Computer Power Unit","Central Program Utility","Control Process Unit"], answer:"Central Processing Unit", hint:"The brain of the computer", fact:"CPU is Central Processing Unit." },
-{ q:"The tallest building in the world in 2025 is?", options:["Shanghai Tower","Burj Khalifa","One World Trade","Petronas Towers"], answer:"Burj Khalifa", hint:"In Dubai", fact:"Burj Khalifa is the tallest." },
-{ q:"What is 50% of 200?", options:["50","100","150","200"], answer:"100", hint:"Half", fact:"50% of 200 is 100." },
-{ q:"Which country invented paper?", options:["Egypt","China","India","Greece"], answer:"China", hint:"Ancient innovation", fact:"Paper was invented in China." },
-{ q:"The largest desert on Earth is the ____?", options:["Sahara","Gobi","Arctic","Antarctic"], answer:"Antarctic", hint:"Cold desert", fact:"Antarctic Desert is the largest." },
-{ q:"Which gas is most abundant in Earth's atmosphere?", options:["Oxygen","Nitrogen","Carbon dioxide","Argon"], answer:"Nitrogen", hint:"Over 70%", fact:"Nitrogen makes up ~78% of air." },
-{ q:"What is 15 squared?", options:["200","225","250","275"], answer:"225", hint:"15 × 15", fact:"15² = 225." },
-{ q:"The human brain is protected by the ____?", options:["Ribs","Skull","Spine","Pelvis"], answer:"Skull", hint:"Bone around head", fact:"The skull protects the brain." },
-{ q:"Who painted the Mona Lisa?", options:["Van Gogh","Da Vinci","Picasso","Rembrandt"], answer:"Da Vinci", hint:"Italian Renaissance", fact:"Leonardo da Vinci painted Mona Lisa." },
-{ q:"Which number is a prime: 9, 15, 17, 21?", options:["9","15","17","21"], answer:"17", hint:"Only divisible by 1 and itself", fact:"17 is a prime number." },
-{ q:"The study of earthquakes is called?", options:["Seismology","Meteorology","Geology","Volcanology"], answer:"Seismology", hint:"Seismic waves", fact:"Seismology is study of earthquakes." },
-{ q:"Which country gifted the Statue of Liberty to the USA?", options:["France","UK","Spain","Germany"], answer:"France", hint:"European ally", fact:"France gifted it in 1886." },
-{ q:"How many strings does a standard guitar have?", options:["4","5","6","7"], answer:"6", hint:"Common for music", fact:"Guitars usually have six strings." },
-{ q:"What is the square root of 81?", options:["8","9","10","7"], answer:"9", hint:"9 × 9", fact:"√81 = 9." },
-{ q:"Which planet has rings?", options:["Earth","Saturn","Venus","Mars"], answer:"Saturn", hint:"Gas giant", fact:"Saturn is famous for its rings." },
-{ q:"Light travels at about ____ km/s?", options:["100,000","200,000","300,000","400,000"], answer:"300,000", hint:"3 × 10⁵ km/s", fact:"Light speed ≈ 300,000 km/s." },
-{ q:"The tallest mountain in the world is?", options:["K2","Everest","Kangchenjunga","Makalu"], answer:"Everest", hint:"In Himalayas", fact:"Mount Everest is tallest." },
-{ q:"Which vitamin is produced when skin is exposed to sunlight?", options:["A","B","C","D"], answer:"D", hint:"Bone health", fact:"Sunlight triggers vitamin D production." },
-{ q:"In music, a piano has how many keys?", options:["88","76","72","100"], answer:"88", hint:"Over seven octaves", fact:"Pianos have 88 keys." },
-{ q:"What is HCl commonly called?", options:["Hydrochloric acid","Sulfuric acid","Nitric acid","Acetic acid"], answer:"Hydrochloric acid", hint:"Stomach acid", fact:"HCl is hydrochloric acid." },
-{ q:"Which layer of Earth is liquid?", options:["Crust","Mantle","Outer core","Inner core"], answer:"Outer core", hint:"Molten metal", fact:"Outer core is liquid iron and nickel." },
-{ q:"The currency of Japan is the ____?", options:["Yuan","Yen","Won","Dollar"], answer:"Yen", hint:"Starts with Y", fact:"Japan uses the yen." },
-{ q:"How many players in a football (soccer) team?", options:["9","10","11","12"], answer:"11", hint:"Standard match", fact:"Teams have 11 players." },
-{ q:"A triangle’s angles add up to ____ degrees?", options:["90","180","270","360"], answer:"180", hint:"Two right angles", fact:"Triangle angles sum to 180°." },
-{ q:"Who invented the telephone?", options:["Tesla","Bell","Edison","Morse"], answer:"Bell", hint:"Scottish inventor", fact:"Alexander Graham Bell invented it." },
-{ q:"The main gas in the Sun is?", options:["Oxygen","Helium","Hydrogen","Carbon"], answer:"Hydrogen", hint:"Fuel for fusion", fact:"Sun is mostly hydrogen." },
-{ q:"Which instrument measures atmospheric pressure?", options:["Thermometer","Barometer","Hygrometer","Anemometer"], answer:"Barometer", hint:"Pressure gauge", fact:"Barometer measures air pressure." },
-{ q:"What is the largest internal organ in humans?", options:["Liver","Heart","Lungs","Brain"], answer:"Liver", hint:"Filters toxins", fact:"The liver is largest internal organ." },
-{ q:"Which element has the chemical symbol 'Fe'?", options:["Fluorine","Iron","Lead","Zinc"], answer:"Iron", hint:"From Latin ferrum", fact:"Fe stands for iron." },
-{ q:"What is 1000 grams called?", options:["Milligram","Kilogram","Centigram","Tonne"], answer:"Kilogram", hint:"Metric weight", fact:"1 kg = 1000 g." },
-{ q:"Which planet is closest to the Sun?", options:["Earth","Mercury","Venus","Mars"], answer:"Mercury", hint:"Fastest orbit", fact:"Mercury is closest to the Sun." },
-{ q:"The Pyramids of Giza are in which country?", options:["Peru","Egypt","Mexico","India"], answer:"Egypt", hint:"North Africa", fact:"They are in Egypt." },
-{ q:"Who was the first man on the moon?", options:["Buzz Aldrin","Yuri Gagarin","Neil Armstrong","Michael Collins"], answer:"Neil Armstrong", hint:"1969", fact:"Neil Armstrong walked on the moon in 1969." },
-{ q:"The SI unit of force is the ____?", options:["Newton","Joule","Pascal","Watt"], answer:"Newton", hint:"Named after Isaac Newton", fact:"Force is measured in newtons." },
-{ q:"Which gas is used to fill balloons?", options:["Oxygen","Helium","Carbon dioxide","Nitrogen"], answer:"Helium", hint:"Lighter than air", fact:"Helium is non-flammable and lighter than air." },
-{ q:"Which is heavier: gold or silver?", options:["Gold","Silver","Same","Depends"], answer:"Gold", hint:"Precious metals", fact:"Gold is denser than silver." },
-{ q:"Which blood cells fight infection?", options:["Red","White","Platelets","Plasma"], answer:"White", hint:"Immune defense", fact:"White blood cells fight infection." },
-{ q:"The smallest prime number is?", options:["0","1","2","3"], answer:"2", hint:"Even prime", fact:"2 is the smallest prime." },
-{ q:"What is the capital of Australia?", options:["Sydney","Melbourne","Canberra","Perth"], answer:"Canberra", hint:"Planned city", fact:"Canberra is Australia's capital." },
-{ q:"What instrument has black and white keys?", options:["Guitar","Piano","Flute","Violin"], answer:"Piano", hint:"Played with fingers", fact:"Pianos have black and white keys." },
-{ q:"Who is known as the father of computers?", options:["Turing","Babbage","Jobs","Gates"], answer:"Babbage", hint:"19th-century inventor", fact:"Charles Babbage is called the father of computers." },
-{ q:"How many continents are there?", options:["5","6","7","8"], answer:"7", hint:"Asia, Africa, …", fact:"Earth has 7 continents." },
-{ q:"The chemical formula for table salt is?", options:["H₂O","NaCl","CO₂","CH₄"], answer:"NaCl", hint:"Sodium + Chlorine", fact:"Salt is NaCl." },
-{ q:"The fastest land animal is?", options:["Horse","Cheetah","Tiger","Leopard"], answer:"Cheetah", hint:"Spotted sprinter", fact:"Cheetah can reach ~100 km/h." },
-{ q:"The currency of the USA is the ____?", options:["Dollar","Euro","Pound","Peso"], answer:"Dollar", hint:"Green bills", fact:"USA uses the dollar." },
-{ q:"Which gas do plants release during photosynthesis?", options:["Oxygen","Carbon dioxide","Nitrogen","Methane"], answer:"Oxygen", hint:"We breathe it", fact:"Plants release oxygen." },
-{ q:"What is the capital of France?", options:["London","Berlin","Paris","Rome"], answer:"Paris", hint:"City of Light", fact:"Paris is France's capital." },
-{ q:"The largest planet in our solar system?", options:["Earth","Jupiter","Saturn","Neptune"], answer:"Jupiter", hint:"Gas giant", fact:"Jupiter is largest." },
-{ q:"What is the study of weather called?", options:["Geology","Meteorology","Seismology","Climatology"], answer:"Meteorology", hint:"Forecasts storms", fact:"Meteorology studies weather." },
-{ q:"The human heart has how many chambers?", options:["2","3","4","5"], answer:"4", hint:"Double pump", fact:"The heart has four chambers." },
-{ q:"What is the capital of Italy?", options:["Venice","Rome","Milan","Naples"], answer:"Rome", hint:"Ancient city", fact:"Rome is the capital of Italy." },
-{ q:"Which element has the symbol 'O'?", options:["Oxygen","Osmium","Oganesson","Opium"], answer:"Oxygen", hint:"We breathe it", fact:"O is oxygen." },
-{ q:"How many minutes are in an hour?", options:["30","60","90","120"], answer:"60", hint:"Half an hour is 30", fact:"An hour has 60 minutes." },
-{ q:"The smallest country in the world is?", options:["Monaco","Vatican City","Nauru","San Marino"], answer:"Vatican City", hint:"Inside Rome", fact:"Vatican City is smallest by area." },
-{ q:"What is 9 × 8?", options:["72","81","64","88"], answer:"72", hint:"9 times eight", fact:"9 × 8 = 72." },
-{ q:"The Taj Mahal is in which country?", options:["India","Pakistan","Nepal","Bangladesh"], answer:"India", hint:"In Agra", fact:"The Taj Mahal is in India." },
-{ q:"What type of star is the Sun?", options:["Neutron","Red giant","Yellow dwarf","White dwarf"], answer:"Yellow dwarf", hint:"Main sequence", fact:"The Sun is a yellow dwarf star." },
-{ q:"In which galaxy do we live?", options:["Andromeda","Milky Way","Sombrero","Whirlpool"], answer:"Milky Way", hint:"Named after appearance", fact:"We live in the Milky Way galaxy." },
-{ q:"The three states of matter are solid, liquid, and ____?", options:["Gas","Energy","Ice","Plasma"], answer:"Gas", hint:"Air form", fact:"Gas is the third state of matter." },
-{ q:"Which organ is part of the digestive system?", options:["Liver","Heart","Lung","Brain"], answer:"Liver", hint:"Processes nutrients", fact:"The liver aids digestion." },
-    ],
-    hard: [
-      { q:"Who developed relativity?", options:["Newton","Einstein","Bohr","Tesla"], answer:"Einstein", hint:"E=mc²", fact:"Einstein proposed relativity." },
-      { q:"Atomic number of Oxygen?", options:["6","7","8","9"], answer:"8", hint:"Even number", fact:"Oxygen is atomic number 8." },
-      { q:"Speed of light approx?", options:["3×10^8 m/s","3×10^6 m/s","3×10^5 m/s","3×10^7 m/s"], answer:"3×10^8 m/s", hint:"Very fast", fact:"Light is ~300,000 km/s." },
-      { q:"Avogadro's number approx?", options:["6.02×10^23","3.14","1.6×10^-19","9.8"], answer:"6.02×10^23", hint:"Huge", fact:"Particles in one mole." },
-      { q:"Element with symbol 'Au'?", options:["Silver","Gold","Argon","Platinum"], answer:"Gold", hint:"Precious metal", fact:"Au = Aurum (Latin)." },
-      { q:"Heisenberg principle about?", options:["Energy levels","Uncertainty","Gravity","Electrostatics"], answer:"Uncertainty", hint:"Measurement limits", fact:"Limits precision of position & momentum." },
-      { q:"In mathematics, e is approximately equal to?", options:["2.71","3.14","1.61","2.17"], answer:"2.71", hint:"Base of natural logarithms", fact:"e (Euler’s number) ≈ 2.71828." },
-{ q:"Which organ produces insulin?", options:["Liver","Pancreas","Kidney","Spleen"], answer:"Pancreas", hint:"Behind the stomach", fact:"The pancreas secretes insulin to regulate blood sugar." },
-{ q:"What is the capital of Mongolia?", options:["Ulaanbaatar","Astana","Kathmandu","Thimphu"], answer:"Ulaanbaatar", hint:"City with many yurt festivals", fact:"Ulaanbaatar is the capital and largest city of Mongolia." },
-{ q:"The Battle of Hastings occurred in which year?", options:["1066","1215","1415","1666"], answer:"1066", hint:"Norman conquest of England", fact:"The Battle of Hastings took place in 1066." },
-{ q:"In physics, velocity is the derivative of ____ with respect to time.", options:["Displacement","Acceleration","Force","Mass"], answer:"Displacement", hint:"Position change", fact:"Velocity is the time derivative of displacement." },
-{ q:"The highest mountain in Africa is ____.", options:["Kilimanjaro","Everest","Elbrus","Denali"], answer:"Kilimanjaro", hint:"In Tanzania", fact:"Mount Kilimanjaro is Africa’s highest peak." },
-{ q:"Who proposed the general theory of relativity?", options:["Newton","Einstein","Bohr","Curie"], answer:"Einstein", hint:"Famous physicist with E=mc²", fact:"Albert Einstein proposed general relativity in 1915." },
-{ q:"The longest river in South America is the ____.", options:["Amazon","Nile","Mississippi","Yangtze"], answer:"Amazon", hint:"Huge basin in Brazil", fact:"The Amazon is the longest river in South America." },
-{ q:"In algebra, the quadratic formula solves ax² + bx + c = 0; what’s the formula?", options:["(–b ± √(b²–4ac))/(2a)","(b ± √(b²–4ac))/(2a)","(–b ± √(4ac–b²))/(2a)","(–b ± √(b²+4ac))/(2a)"], answer:"(–b ± √(b²–4ac))/(2a)", hint:"Famous formula", fact:"The quadratic formula is (–b ± √(b²–4ac))⁄(2a)." },
-{ q:"DNA stands for deoxyribonucleic ____.", options:["Acid","Alkali","Agent","Structure"], answer:"Acid", hint:"It’s a type of acid", fact:"DNA stands for deoxyribonucleic acid." },
-{ q:"The Taj Mahal was commissioned by which Mughal emperor?", options:["Akbar","Shah Jahan","Aurangzeb","Babur"], answer:"Shah Jahan", hint:"Built in memory of Mumtaz Mahal", fact:"Shah Jahan commissioned the Taj Mahal in the 17th century." },
-{ q:"Which element has the chemical symbol 'W'?", options:["Tungsten","Tin","Silver","Gold"], answer:"Tungsten", hint:"Also called wolfram", fact:"The symbol 'W' comes from the name wolfram." },
-{ q:"Which layer of Earth's atmosphere contains the ozone layer?", options:["Troposphere","Stratosphere","Mesosphere","Thermosphere"], answer:"Stratosphere", hint:"Above the troposphere", fact:"The ozone layer is located in the stratosphere." },
-{ q:"What is the SI unit of electric current?", options:["Ampere","Volt","Ohm","Watt"], answer:"Ampere", hint:"Named after a French physicist", fact:"The ampere is the SI unit of electric current." },
-{ q:"The term 'Renaissance' means ____.", options:["Rebirth","Reform","Revolution","Renewal"], answer:"Rebirth", hint:"Period of cultural revival", fact:"The Renaissance means 'rebirth' of art and learning." },
-{ q:"Which metal is liquid at room temperature besides mercury?", options:["Gallium","Lead","Sodium","Zinc"], answer:"Gallium", hint:"Melts in your hand", fact:"Gallium has a melting point of about 30°C." },
-{ q:"Who developed the first successful polio vaccine?", options:["Alexander Fleming","Jonas Salk","Louis Pasteur","Edward Jenner"], answer:"Jonas Salk", hint:"1950s breakthrough", fact:"Jonas Salk developed the polio vaccine in 1955." },
-{ q:"In computing, what does 'HTTP' stand for?", options:["Hyper Text Transfer Protocol","High Tech Transfer Program","Hyper Transfer Text Protocol","Hyperlink Text Transmission Process"], answer:"Hyper Text Transfer Protocol", hint:"Used in web addresses", fact:"HTTP stands for Hyper Text Transfer Protocol." },
-{ q:"Which galaxy is closest to the Milky Way?", options:["Andromeda","Whirlpool","Sombrero","Triangulum"], answer:"Andromeda", hint:"Our future colliding neighbor", fact:"The Andromeda Galaxy is the closest spiral galaxy to the Milky Way." },
-{ q:"The chemical formula C6H12O6 represents which compound?", options:["Glucose","Sucrose","Fructose","Lactose"], answer:"Glucose", hint:"Simple sugar", fact:"C6H12O6 is the molecular formula for glucose." },
-{ q:"In physics, Planck’s constant is approximately ____ × 10⁻³⁴ Js.", options:["6.63","3.14","9.81","1.61"], answer:"6.63", hint:"Quantum mechanics constant", fact:"Planck’s constant is about 6.63 × 10⁻³⁴ Js." },
-{ q:"The Great Fire of London occurred in which year?", options:["1666","1588","1750","1649"], answer:"1666", hint:"Year also associated with a plague", fact:"The Great Fire of London happened in 1666." },
-{ q:"Which scientist discovered the neutron in 1932?", options:["James Chadwick","Ernest Rutherford","Niels Bohr","J.J. Thomson"], answer:"James Chadwick", hint:"British physicist", fact:"James Chadwick discovered the neutron in 1932." },
-{ q:"The capital of Kazakhstan is ____.", options:["Astana","Almaty","Tashkent","Bishkek"], answer:"Astana", hint:"Renamed from Nur-Sultan", fact:"Astana is the capital of Kazakhstan." },
-{ q:"What is the largest known prime number as of 2025 measured in digits?", options:["Over 24 million","Over 10 million","Over 5 million","Over 30 million"], answer:"Over 24 million", hint:"It’s a Mersenne prime", fact:"The largest known prime number exceeds 24 million digits." },
-{ q:"The mitochondria are often called the ____ of the cell.", options:["Powerhouse","Brain","Skeleton","Heart"], answer:"Powerhouse", hint:"Energy production", fact:"Mitochondria produce ATP, the energy currency of the cell." },
-{ q:"Who was the first woman to win a Nobel Prize?", options:["Marie Curie","Dorothy Hodgkin","Rosalind Franklin","Lise Meitner"], answer:"Marie Curie", hint:"Won in Physics 1903", fact:"Marie Curie was the first woman Nobel laureate." },
-{ q:"The Suez Canal connects the Mediterranean Sea to the ____.", options:["Red Sea","Black Sea","Arabian Sea","Caspian Sea"], answer:"Red Sea", hint:"Near Egypt", fact:"The Suez Canal links the Mediterranean and Red Sea." },
-{ q:"In chemistry, Avogadro’s number is ____ × 10²³ particles/mol.", options:["6.022","9.81","3.141","1.618"], answer:"6.022", hint:"Mole constant", fact:"Avogadro’s number is 6.022 × 10²³." },
-{ q:"The Magna Carta was signed in the year ____.", options:["1215","1066","1492","1776"], answer:"1215", hint:"Medieval England", fact:"The Magna Carta was signed in 1215." },
-{ q:"Which gas makes up about 78% of Earth's atmosphere?", options:["Nitrogen","Oxygen","Argon","Carbon dioxide"], answer:"Nitrogen", hint:"Most abundant", fact:"Nitrogen makes up about 78% of the air." },
-{ q:"Euler’s identity states e^(iπ) + 1 = ____.", options:["0","1","-1","i"], answer:"0", hint:"Mathematical beauty", fact:"Euler’s identity equals zero." },
-{ q:"In which part of the human body would you find the cochlea?", options:["Ear","Eye","Heart","Brain"], answer:"Ear", hint:"Related to hearing", fact:"The cochlea is part of the inner ear." },
-{ q:"The city of Timbuktu is located in which country?", options:["Mali","Niger","Sudan","Ethiopia"], answer:"Mali", hint:"West Africa", fact:"Timbuktu is a historic city in Mali." },
-{ q:"What is the hardest naturally occurring mineral?", options:["Diamond","Corundum","Topaz","Quartz"], answer:"Diamond", hint:"Highest Mohs hardness", fact:"Diamond ranks 10 on the Mohs scale." },
-{ q:"The study of fungi is called ____.", options:["Mycology","Bryology","Entomology","Botany"], answer:"Mycology", hint:"Mushroom science", fact:"Mycology is the branch of biology that studies fungi." },
-{ q:"Which Roman emperor was assassinated on the Ides of March?", options:["Julius Caesar","Augustus","Nero","Caligula"], answer:"Julius Caesar", hint:"44 BCE", fact:"Julius Caesar was assassinated on March 15, 44 BCE." },
-{ q:"The element with atomic number 79 is ____.", options:["Gold","Platinum","Silver","Mercury"], answer:"Gold", hint:"Precious metal", fact:"Gold’s atomic number is 79." },
-{ q:"Which is the largest moon of Saturn?", options:["Titan","Enceladus","Rhea","Iapetus"], answer:"Titan", hint:"Thick atmosphere", fact:"Titan is the largest moon of Saturn." },
-{ q:"In computing, 'bit' is short for ____.", options:["Binary digit","Binary term","Bitrate","Byte integer"], answer:"Binary digit", hint:"Basic unit of data", fact:"Bit stands for binary digit." },
-{ q:"The deepest point in Earth's oceans is the ____ Trench.", options:["Mariana","Tonga","Philippine","Kuril"], answer:"Mariana", hint:"Near Guam", fact:"The Mariana Trench is the deepest part of the ocean." },
-{ q:"The Black Death was primarily caused by which bacterium?", options:["Yersinia pestis","E. coli","Salmonella","Vibrio cholerae"], answer:"Yersinia pestis", hint:"Spread by fleas", fact:"Yersinia pestis caused the Black Death." },
-{ q:"Which scientist is credited with the laws of planetary motion?", options:["Kepler","Galileo","Copernicus","Newton"], answer:"Kepler", hint:"Elliptical orbits", fact:"Johannes Kepler formulated the laws of planetary motion." },
-{ q:"The city of Petra is located in which country?", options:["Jordan","Egypt","Israel","Syria"], answer:"Jordan", hint:"Rose-red city", fact:"Petra is an archaeological site in Jordan." },
-{ q:"Which blood type is known as the universal donor?", options:["O negative","O positive","AB positive","A negative"], answer:"O negative", hint:"Compatible with all", fact:"O negative blood can be given to any recipient." },
-{ q:"In music, the term 'forte' means ____.", options:["Loud","Soft","Fast","Slow"], answer:"Loud", hint:"Opposite of piano", fact:"Forte means to play loudly." },
-{ q:"The Great Wall of China was primarily built during which dynasty?", options:["Ming","Qin","Han","Tang"], answer:"Ming", hint:"14th to 17th centuries", fact:"Most existing sections of the Great Wall date to the Ming Dynasty." },
-{ q:"Which scientist introduced the concept of the photon?", options:["Einstein","Planck","Bohr","Feynman"], answer:"Einstein", hint:"1905 light theory", fact:"Einstein proposed the idea of photons in his photoelectric effect paper." },
-{ q:"Which desert is the largest in the world?", options:["Antarctic","Sahara","Arctic","Gobi"], answer:"Antarctic", hint:"It’s icy", fact:"The Antarctic Desert is the largest desert by area." },
-{ q:"In Greek mythology, who is the god of the sea?", options:["Poseidon","Zeus","Hades","Apollo"], answer:"Poseidon", hint:"Carries a trident", fact:"Poseidon was the Greek god of the sea." },
-{ q:"In physics, Planck’s constant is approximately ____ × 10⁻³⁴ Js.", options:["6.63","3.14","9.81","1.61"], answer:"6.63", hint:"Quantum mechanics constant", fact:"Planck’s constant is about 6.63 × 10⁻³⁴ Js." },
-{ q:"The Great Fire of London occurred in which year?", options:["1666","1588","1750","1649"], answer:"1666", hint:"Year also associated with a plague", fact:"The Great Fire of London happened in 1666." },
-{ q:"Which scientist discovered the neutron in 1932?", options:["James Chadwick","Ernest Rutherford","Niels Bohr","J.J. Thomson"], answer:"James Chadwick", hint:"British physicist", fact:"James Chadwick discovered the neutron in 1932." },
-{ q:"The capital of Kazakhstan is ____.", options:["Astana","Almaty","Tashkent","Bishkek"], answer:"Astana", hint:"Renamed from Nur-Sultan", fact:"Astana is the capital of Kazakhstan." },
-{ q:"What is the largest known prime number as of 2025 measured in digits?", options:["Over 24 million","Over 10 million","Over 5 million","Over 30 million"], answer:"Over 24 million", hint:"It’s a Mersenne prime", fact:"The largest known prime number exceeds 24 million digits." },
-{ q:"The mitochondria are often called the ____ of the cell.", options:["Powerhouse","Brain","Skeleton","Heart"], answer:"Powerhouse", hint:"Energy production", fact:"Mitochondria produce ATP, the energy currency of the cell." },
-{ q:"Who was the first woman to win a Nobel Prize?", options:["Marie Curie","Dorothy Hodgkin","Rosalind Franklin","Lise Meitner"], answer:"Marie Curie", hint:"Won in Physics 1903", fact:"Marie Curie was the first woman Nobel laureate." },
-{ q:"The Suez Canal connects the Mediterranean Sea to the ____.", options:["Red Sea","Black Sea","Arabian Sea","Caspian Sea"], answer:"Red Sea", hint:"Near Egypt", fact:"The Suez Canal links the Mediterranean and Red Sea." },
-{ q:"In chemistry, Avogadro’s number is ____ × 10²³ particles/mol.", options:["6.022","9.81","3.141","1.618"], answer:"6.022", hint:"Mole constant", fact:"Avogadro’s number is 6.022 × 10²³." },
-{ q:"The Magna Carta was signed in the year ____.", options:["1215","1066","1492","1776"], answer:"1215", hint:"Medieval England", fact:"The Magna Carta was signed in 1215." },
-{ q:"Which gas makes up about 78% of Earth's atmosphere?", options:["Nitrogen","Oxygen","Argon","Carbon dioxide"], answer:"Nitrogen", hint:"Most abundant", fact:"Nitrogen makes up about 78% of the air." },
-{ q:"Euler’s identity states e^(iπ) + 1 = ____.", options:["0","1","-1","i"], answer:"0", hint:"Mathematical beauty", fact:"Euler’s identity equals zero." },
-{ q:"In which part of the human body would you find the cochlea?", options:["Ear","Eye","Heart","Brain"], answer:"Ear", hint:"Related to hearing", fact:"The cochlea is part of the inner ear." },
-{ q:"The city of Timbuktu is located in which country?", options:["Mali","Niger","Sudan","Ethiopia"], answer:"Mali", hint:"West Africa", fact:"Timbuktu is a historic city in Mali." },
-{ q:"What is the hardest naturally occurring mineral?", options:["Diamond","Corundum","Topaz","Quartz"], answer:"Diamond", hint:"Highest Mohs hardness", fact:"Diamond ranks 10 on the Mohs scale." },
-{ q:"The study of fungi is called ____.", options:["Mycology","Bryology","Entomology","Botany"], answer:"Mycology", hint:"Mushroom science", fact:"Mycology is the branch of biology that studies fungi." },
-{ q:"Which Roman emperor was assassinated on the Ides of March?", options:["Julius Caesar","Augustus","Nero","Caligula"], answer:"Julius Caesar", hint:"44 BCE", fact:"Julius Caesar was assassinated on March 15, 44 BCE." },
-{ q:"The element with atomic number 79 is ____.", options:["Gold","Platinum","Silver","Mercury"], answer:"Gold", hint:"Precious metal", fact:"Gold’s atomic number is 79." },
-{ q:"Which is the largest moon of Saturn?", options:["Titan","Enceladus","Rhea","Iapetus"], answer:"Titan", hint:"Thick atmosphere", fact:"Titan is the largest moon of Saturn." },
-{ q:"In computing, 'bit' is short for ____.", options:["Binary digit","Binary term","Bitrate","Byte integer"], answer:"Binary digit", hint:"Basic unit of data", fact:"Bit stands for binary digit." },
-{ q:"The deepest point in Earth's oceans is the ____ Trench.", options:["Mariana","Tonga","Philippine","Kuril"], answer:"Mariana", hint:"Near Guam", fact:"The Mariana Trench is the deepest part of the ocean." },
-{ q:"The Black Death was primarily caused by which bacterium?", options:["Yersinia pestis","E. coli","Salmonella","Vibrio cholerae"], answer:"Yersinia pestis", hint:"Spread by fleas", fact:"Yersinia pestis caused the Black Death." },
-{ q:"Which scientist is credited with the laws of planetary motion?", options:["Kepler","Galileo","Copernicus","Newton"], answer:"Kepler", hint:"Elliptical orbits", fact:"Johannes Kepler formulated the laws of planetary motion." },
-{ q:"The city of Petra is located in which country?", options:["Jordan","Egypt","Israel","Syria"], answer:"Jordan", hint:"Rose-red city", fact:"Petra is an archaeological site in Jordan." },
-{ q:"Which blood type is known as the universal donor?", options:["O negative","O positive","AB positive","A negative"], answer:"O negative", hint:"Compatible with all", fact:"O negative blood can be given to any recipient." },
-{ q:"In music, the term 'forte' means ____.", options:["Loud","Soft","Fast","Slow"], answer:"Loud", hint:"Opposite of piano", fact:"Forte means to play loudly." },
-{ q:"The Great Wall of China was primarily built during which dynasty?", options:["Ming","Qin","Han","Tang"], answer:"Ming", hint:"14th to 17th centuries", fact:"Most existing sections of the Great Wall date to the Ming Dynasty." },
-{ q:"Which scientist introduced the concept of the photon?", options:["Einstein","Planck","Bohr","Feynman"], answer:"Einstein", hint:"1905 light theory", fact:"Einstein proposed the idea of photons in his photoelectric effect paper." },
-{ q:"Which desert is the largest in the world?", options:["Antarctic","Sahara","Arctic","Gobi"], answer:"Antarctic", hint:"It’s icy", fact:"The Antarctic Desert is the largest desert by area." },
-{ q:"In Greek mythology, who is the god of the sea?", options:["Poseidon","Zeus","Hades","Apollo"], answer:"Poseidon", hint:"Carries a trident", fact:"Poseidon was the Greek god of the sea." },
-{ q:"In which year was the United Nations founded?", options:["1945","1919","1939","1950"], answer:"1945", hint:"After World War II", fact:"The UN was established in 1945." },
-{ q:"Which organ in the human body is primarily responsible for detoxification?", options:["Liver","Kidney","Spleen","Pancreas"], answer:"Liver", hint:"Also produces bile", fact:"The liver detoxifies harmful substances in the body." },
-{ q:"In which galaxy is our Solar System located?", options:["Milky Way","Andromeda","Sombrero","Whirlpool"], answer:"Milky Way", hint:"Spiral galaxy", fact:"Our Solar System lies in the Milky Way galaxy." },
-{ q:"The Battle of Hastings took place in which year?", options:["1066","1215","1415","1588"], answer:"1066", hint:"Norman conquest", fact:"The Battle of Hastings happened in 1066." },
-{ q:"What is the SI unit of electric current?", options:["Ampere","Volt","Ohm","Watt"], answer:"Ampere", hint:"Named after a French scientist", fact:"The SI unit of current is the ampere." },
-{ q:"Which country has the longest coastline in the world?", options:["Canada","Russia","Australia","Indonesia"], answer:"Canada", hint:"More than 200,000 km", fact:"Canada has the world’s longest coastline." },
-{ q:"Who formulated the theory of general relativity?", options:["Einstein","Newton","Hawking","Galileo"], answer:"Einstein", hint:"Space-time curvature", fact:"Albert Einstein developed general relativity." },
-{ q:"Which metal has the chemical symbol 'Hg'?", options:["Mercury","Magnesium","Hafnium","Manganese"], answer:"Mercury", hint:"Liquid at room temperature", fact:"Hg comes from the Latin 'hydrargyrum'." },
-{ q:"The Rosetta Stone helped scholars to decode which ancient script?", options:["Egyptian hieroglyphs","Cuneiform","Linear B","Mayan"], answer:"Egyptian hieroglyphs", hint:"Found in 1799", fact:"The Rosetta Stone was key to decoding hieroglyphs." },
-{ q:"Which is the fastest land animal?", options:["Cheetah","Pronghorn","Lion","Horse"], answer:"Cheetah", hint:"Can reach 100 km/h", fact:"The cheetah is the fastest land animal." },
-{ q:"The smallest bone in the human body is the ____.", options:["Stapes","Incus","Malleus","Fibula"], answer:"Stapes", hint:"Located in the ear", fact:"The stapes is the smallest human bone." },
-
-
-{ q:"Which ancient wonder was located in the city of Ephesus?", options:["Temple of Artemis","Hanging Gardens","Statue of Zeus","Colossus of Rhodes"], answer:"Temple of Artemis", hint:"Greek temple", fact:"The Temple of Artemis at Ephesus was one of the Seven Wonders of the Ancient World." },
-{ q:"Which scientist is credited with discovering penicillin?", options:["Alexander Fleming","Louis Pasteur","Robert Koch","Edward Jenner"], answer:"Alexander Fleming", hint:"1928 discovery", fact:"Fleming discovered penicillin in 1928." },
-{ q:"In which layer of Earth's atmosphere does the ozone layer lie?", options:["Stratosphere","Troposphere","Mesosphere","Thermosphere"], answer:"Stratosphere", hint:"Above the troposphere", fact:"The ozone layer is located in the stratosphere." },
-{ q:"Which mathematician introduced the concept of imaginary numbers?", options:["Rafael Bombelli","Leonhard Euler","Carl Gauss","René Descartes"], answer:"Rafael Bombelli", hint:"16th century", fact:"Rafael Bombelli described the rules for imaginary numbers." },
-{ q:"What is the chemical symbol for tungsten?", options:["W","Tg","Tu","Tn"], answer:"W", hint:"From Wolfram", fact:"The symbol W comes from the old name 'wolfram'." },
-{ q:"The Inca citadel Machu Picchu is located in which country?", options:["Peru","Bolivia","Ecuador","Chile"], answer:"Peru", hint:"Andes Mountains", fact:"Machu Picchu is in Peru." },
-{ q:"In which year did World War I begin?", options:["1914","1918","1939","1905"], answer:"1914", hint:"Assassination of Archduke Franz Ferdinand", fact:"World War I began in 1914." },
-{ q:"Which scientist is famous for the uncertainty principle?", options:["Werner Heisenberg","Niels Bohr","Max Planck","Erwin Schrödinger"], answer:"Werner Heisenberg", hint:"Quantum mechanics", fact:"Heisenberg proposed the uncertainty principle." },
-{ q:"Which is the largest internal organ in the human body?", options:["Liver","Lungs","Kidneys","Heart"], answer:"Liver", hint:"Located in the abdomen", fact:"The liver is the largest internal organ." },
-{ q:"The island of Madagascar lies in which ocean?", options:["Indian Ocean","Atlantic Ocean","Pacific Ocean","Southern Ocean"], answer:"Indian Ocean", hint:"Off Africa's southeast coast", fact:"Madagascar is in the Indian Ocean." },
-{ q:"Which particle has no electric charge?", options:["Neutron","Proton","Electron","Positron"], answer:"Neutron", hint:"Found in the nucleus", fact:"Neutrons are neutral particles in atomic nuclei." },
-{ q:"Who was the first person to reach the South Pole?", options:["Roald Amundsen","Robert Scott","Ernest Shackleton","Edmund Hillary"], answer:"Roald Amundsen", hint:"Norwegian explorer", fact:"Amundsen reached the South Pole in 1911." },
-{ q:"The Taj Mahal was commissioned by which Mughal emperor?", options:["Shah Jahan","Akbar","Aurangzeb","Babur"], answer:"Shah Jahan", hint:"Built in memory of Mumtaz Mahal", fact:"Shah Jahan commissioned the Taj Mahal." },
-{ q:"Which gas is used in atomic clocks?", options:["Cesium","Argon","Helium","Neon"], answer:"Cesium", hint:"Atomic number 55", fact:"Cesium is used in atomic clocks." },
-{ q:"In economics, GDP stands for ____.", options:["Gross Domestic Product","Gross Development Plan","General Domestic Price","Global Demand Percentage"], answer:"Gross Domestic Product", hint:"Measures economic activity", fact:"GDP is the total value of goods and services produced in a country." },
-{ q:"The 'Father of Genetics' is ____.", options:["Gregor Mendel","Charles Darwin","Francis Crick","Alfred Wallace"], answer:"Gregor Mendel", hint:"Pea plant experiments", fact:"Gregor Mendel is known as the father of genetics." },
-{ q:"What is the freezing point of pure water in Kelvin?", options:["273.15","0","100","373.15"], answer:"273.15", hint:"Absolute scale", fact:"Water freezes at 273.15 K." },
-{ q:"The Parthenon is located in which city?", options:["Athens","Rome","Istanbul","Alexandria"], answer:"Athens", hint:"Capital of Greece", fact:"The Parthenon is in Athens." },
-{ q:"Which vitamin is produced when skin is exposed to sunlight?", options:["Vitamin D","Vitamin C","Vitamin A","Vitamin K"], answer:"Vitamin D", hint:"Also found in fish oils", fact:"Vitamin D is synthesized when skin is exposed to UV light." },
-{ q:"In astronomy, what is a pulsar?", options:["Rotating neutron star","Supernova remnant","Black hole","Quasar"], answer:"Rotating neutron star", hint:"Emits radio waves", fact:"A pulsar is a highly magnetized, rotating neutron star." },
-{ q:"The 'Iron Curtain' phrase was popularized by which leader?", options:["Winston Churchill","Joseph Stalin","Franklin Roosevelt","Harry Truman"], answer:"Winston Churchill", hint:"Post-WWII speech", fact:"Churchill coined 'Iron Curtain' in 1946." },
-{ q:"Which organelle contains chlorophyll?", options:["Chloroplast","Mitochondria","Nucleus","Golgi apparatus"], answer:"Chloroplast", hint:"Photosynthesis site", fact:"Chloroplasts contain chlorophyll for photosynthesis." },
-{ q:"The Pythagorean theorem applies to which type of triangle?", options:["Right-angled","Equilateral","Isosceles","Scalene"], answer:"Right-angled", hint:"Involves a² + b² = c²", fact:"It applies to right-angled triangles." },
-{ q:"Which is the second longest river in the world?", options:["Amazon","Nile","Yangtze","Mississippi"], answer:"Amazon", hint:"South America", fact:"The Amazon River is slightly shorter than the Nile but carries more water." },
-{ q:"What is the largest planet in our Solar System?", options:["Jupiter","Saturn","Neptune","Earth"], answer:"Jupiter", hint:"Has a Great Red Spot", fact:"Jupiter is the largest planet." },
-{ q:"In which century did the Industrial Revolution begin?", options:["18th","17th","19th","16th"], answer:"18th", hint:"Late 1700s", fact:"The Industrial Revolution began in the 18th century." },
-{ q:"Which element has the highest melting point?", options:["Tungsten","Carbon","Osmium","Platinum"], answer:"Tungsten", hint:"Over 3400°C", fact:"Tungsten has the highest melting point of all metals." },
-{ q:"The 'Three Gorges Dam' is located in which country?", options:["China","Brazil","USA","India"], answer:"China", hint:"Yangtze River", fact:"The Three Gorges Dam is in China." },
-{ q:"Which scientist is known for the laws of motion?", options:["Isaac Newton","Galileo Galilei","Albert Einstein","Johannes Kepler"], answer:"Isaac Newton", hint:"Published in 1687", fact:"Newton described the three laws of motion." },
-{ q:"The currency of Switzerland is the ____.", options:["Swiss franc","Euro","Pound","Krone"], answer:"Swiss franc", hint:"Not part of the Eurozone", fact:"Switzerland uses the Swiss franc." },
-{ q:"Which planet has the shortest day?", options:["Jupiter","Mars","Earth","Neptune"], answer:"Jupiter", hint:"About 10 hours", fact:"Jupiter rotates the fastest, making its day about 10 hours long." },
-{ q:"What is the chemical formula for table salt?", options:["NaCl","KCl","Na2CO3","CaCl2"], answer:"NaCl", hint:"Sodium and chlorine", fact:"Table salt is sodium chloride, NaCl." },
-{ q:"The Berlin Wall fell in which year?", options:["1989","1991","1985","1979"], answer:"1989", hint:"End of Cold War", fact:"The Berlin Wall fell in 1989." },
-{ q:"Which instrument measures atmospheric pressure?", options:["Barometer","Hygrometer","Anemometer","Thermometer"], answer:"Barometer", hint:"Invented by Torricelli", fact:"A barometer measures air pressure." },
-{ q:"Which ancient civilization built the city of Tenochtitlán?", options:["Aztec","Maya","Inca","Olmec"], answer:"Aztec", hint:"Modern-day Mexico City", fact:"The Aztecs built Tenochtitlán." },
-{ q:"What is the main gas found in the Sun?", options:["Hydrogen","Helium","Oxygen","Carbon"], answer:"Hydrogen", hint:"Over 70% composition", fact:"The Sun is mostly hydrogen." },
-{ q:"The Richter scale measures the magnitude of ____.", options:["Earthquakes","Volcanoes","Tsunamis","Cyclones"], answer:"Earthquakes", hint:"Logarithmic scale", fact:"The Richter scale measures earthquake magnitude." },
-{ q:"Which city is known as the 'City of Canals'?", options:["Venice","Amsterdam","Bangkok","Bruges"], answer:"Venice", hint:"Located in Italy", fact:"Venice is famous for its canals." },
-{ q:"The periodic table is arranged in order of increasing ____.", options:["Atomic number","Atomic mass","Density","Electronegativity"], answer:"Atomic number", hint:"Protons in nucleus", fact:"Elements are ordered by atomic number." },
-{ q:"Which is the tallest waterfall in the world?", options:["Angel Falls","Niagara Falls","Iguazu Falls","Victoria Falls"], answer:"Angel Falls", hint:"Located in Venezuela", fact:"Angel Falls is the tallest waterfall." },
-{ q:"What is the study of earthquakes called?", options:["Seismology","Volcanology","Meteorology","Geology"], answer:"Seismology", hint:"From Greek 'shake'", fact:"Seismology is the study of earthquakes." },
-{ q:"Which is the largest desert in Africa?", options:["Sahara","Kalahari","Namib","Libyan"], answer:"Sahara", hint:"Covers 11 countries", fact:"The Sahara is the largest desert in Africa." },
-{ q:"Which blood type is known as the universal recipient?", options:["AB positive","O negative","A positive","B positive"], answer:"AB positive", hint:"Can receive from all", fact:"AB positive is the universal recipient." },
-{ q:"What is the main language spoken in Brazil?", options:["Portuguese","Spanish","French","English"], answer:"Portuguese", hint:"Colonial history", fact:"Brazil’s official language is Portuguese." },
-{ q:"The Panama Canal connects the Atlantic Ocean with the ____.", options:["Pacific Ocean","Indian Ocean","Southern Ocean","Arctic Ocean"], answer:"Pacific Ocean", hint:"Located in Central America", fact:"The Panama Canal links the Atlantic and Pacific Oceans." },
-{ q:"Which scientist is famous for the laws of heredity?", options:["Gregor Mendel","Charles Darwin","Louis Pasteur","Francis Crick"], answer:"Gregor Mendel", hint:"Pea plants", fact:"Mendel discovered the basic laws of inheritance." },
-{ q:"Which is the hottest planet in the Solar System?", options:["Venus","Mercury","Mars","Jupiter"], answer:"Venus", hint:"Thick CO₂ atmosphere", fact:"Venus is the hottest due to its greenhouse effect." },
-{ q:"The Andromeda Galaxy is expected to collide with the Milky Way in about ____ years.", options:["4 billion","1 billion","10 million","400 million"], answer:"4 billion", hint:"Future cosmic event", fact:"Andromeda and the Milky Way will collide in around 4 billion years." },
-{ q:"The Colosseum is located in which city?", options:["Rome","Athens","Istanbul","Paris"], answer:"Rome", hint:"Capital of Italy", fact:"The Colosseum is in Rome." },
-{ q:"In which year did man first walk on the Moon?", options:["1969","1971","1965","1973"], answer:"1969", hint:"Apollo 11 mission", fact:"Neil Armstrong walked on the Moon in 1969." },
-{ q:"Which is the rarest blood type?", options:["AB negative","O negative","A positive","B negative"], answer:"AB negative", hint:"Less than 1% of people", fact:"AB negative is the rarest blood type." },
-{ q:"What is the boiling point of water at sea level in Celsius?", options:["100","0","212","90"], answer:"100", hint:"Standard condition", fact:"Water boils at 100°C at sea level." },
-{ q:"The Great Barrier Reef is located in which country?", options:["Australia","Indonesia","Philippines","New Zealand"], answer:"Australia", hint:"Largest coral reef system", fact:"The Great Barrier Reef is in Australia." },
-{ q:"Which is the lightest element in the periodic table?", options:["Hydrogen","Helium","Lithium","Oxygen"], answer:"Hydrogen", hint:"Atomic number 1", fact:"Hydrogen is the lightest element." },
-{ q:"The currency of Japan is the ____.", options:["Yen","Won","Yuan","Ringgit"], answer:"Yen", hint:"Asian currency", fact:"Japan uses the yen." },
-{ q:"What is the capital city of Canada?", options:["Ottawa","Toronto","Vancouver","Montreal"], answer:"Ottawa", hint:"Located in Ontario", fact:"Ottawa is the capital of Canada." },
-{ q:"Which chemical element has the symbol 'K'?", options:["Potassium","Krypton","Kelvin","Kalium"], answer:"Potassium", hint:"From Latin 'kalium'", fact:"Potassium’s symbol is K." },
-{ q:"The human adult skeleton has how many bones?", options:["206","210","196","212"], answer:"206", hint:"Over 200", fact:"Adults have 206 bones." },
-{ q:"Which is the second largest ocean in the world?", options:["Atlantic","Indian","Pacific","Southern"], answer:"Atlantic", hint:"Separates Americas from Europe/Africa", fact:"The Atlantic Ocean is the second largest." },
-{ q:"Who wrote 'The Origin of Species'?", options:["Charles Darwin","Alfred Wallace","Carl Linnaeus","Jean-Baptiste Lamarck"], answer:"Charles Darwin", hint:"Published 1859", fact:"Darwin wrote 'On the Origin of Species'." },
-{ q:"Which gas causes the greenhouse effect the most?", options:["Carbon dioxide","Methane","Ozone","Nitrous oxide"], answer:"Carbon dioxide", hint:"From fossil fuels", fact:"CO₂ is the main driver of the greenhouse effect." },
-{ q:"In which country did the Olympic Games originate?", options:["Greece","Italy","Egypt","China"], answer:"Greece", hint:"Ancient Olympia", fact:"The Olympics originated in ancient Greece." },
-    
-    ]
-  };
+async function loadQuestions() {
+  try {
+    const res = await fetch('Questions.json');
+    if (!res.ok) throw new Error("Failed to fetch");
+    const data = await res.json();
+    if (data && Array.isArray(data.easy) && Array.isArray(data.medium) && Array.isArray(data.hard)) {
+      questionBank = {
+        easy: (data.easy.length >= 5 ? data.easy.slice(0) : data.easy.concat(fallbackQuestions.easy.slice(0,5-data.easy.length))),
+        medium: (data.medium.length >= 5 ? data.medium.slice(0) : data.medium.concat(fallbackQuestions.medium.slice(0,5-data.medium.length))),
+        hard: (data.hard.length >= 5 ? data.hard.slice(0) : data.hard.concat(fallbackQuestions.hard.slice(0,5-data.hard.length)))
+      };
+    } else {
+      questionBank = {...fallbackQuestions};
+    }
+  } catch(e) {
+    questionBank = {...fallbackQuestions};
+  }
 }
 function getShuffledQuestions(level, count) {
   let arr = questionBank[level].slice();
@@ -674,7 +434,13 @@ function getShuffledQuestions(level, count) {
 }
 function updateProgress() {
   const total = state.pool.length || 1;
-  byId('progressText').textContent = `Question ${Math.min(state.index+1, total)} of ${total}`;
+  const current = Math.min(state.index+1, total);
+  byId('progressText').textContent = `Question ${current} of ${total}`;
+  const progressBar = document.querySelector('.progress-bar');
+  if(progressBar) {
+    progressBar.setAttribute('aria-valuenow', current);
+    progressBar.setAttribute('aria-valuemax', String(total));
+  }
 }
 function onAnswer(btn, selected) {
   const opts = Array.from(document.querySelectorAll('.answer-btn'));
@@ -800,6 +566,8 @@ function renderQuestion() {
   shuffledOptions.forEach(opt => {
     const btn = document.createElement('button');
     btn.className = 'answer-btn';
+    btn.setAttribute('role', 'listitem');
+    btn.setAttribute('aria-label', `Answer option: ${opt}`);
     btn.textContent = opt;
     btn.onclick = () => onAnswer(btn, opt);
     container.appendChild(btn);
@@ -809,6 +577,7 @@ function renderQuestion() {
   byId('headerUsername').textContent = state.name;
   byId('coinCountQuiz').textContent = state.coins;
   updateLifelineStates();
+  playSFX('sfxTimer', true); // Timer ticking sound
   startTimer();
 }
 function shuffleArray(a) {
@@ -818,21 +587,27 @@ function shuffleArray(a) {
   }
   return a;
 }
-document.querySelectorAll('.avatar').forEach(a => a.addEventListener('click', () => {
-  if (a.dataset.locked === "true") {
-    if (state.coins >= AVATAR_UNLOCK_COST && confirm(`Unlock this avatar for ${AVATAR_UNLOCK_COST} coins?`)) {
-      updateCoins(-AVATAR_UNLOCK_COST);
-      a.dataset.locked = "false";
-      alert("Avatar unlocked!");
-    } else {
-      alert("This avatar is locked. Earn more coins to unlock.");
-      return;
+document.querySelectorAll('.avatar').forEach(a => {
+  a.addEventListener('click', () => {
+    if (a.dataset.locked === "true") {
+      if (state.coins >= AVATAR_UNLOCK_COST && confirm(`Unlock this avatar for ${AVATAR_UNLOCK_COST} coins?`)) {
+        updateCoins(-AVATAR_UNLOCK_COST);
+        a.dataset.locked = "false";
+        a.removeAttribute('aria-disabled');
+        alert("Avatar unlocked!");
+      } else {
+        alert("This avatar is locked. Earn more coins to unlock.");
+        return;
+      }
     }
-  }
-  document.querySelectorAll('.avatar').forEach(x => x.classList.remove('selected'));
-  a.classList.add('selected');
-  state.avatarId = a.dataset.id;
-}));
+    document.querySelectorAll('.avatar').forEach(x => x.classList.remove('selected'));
+    a.classList.add('selected');
+    state.avatarId = a.dataset.id;
+  });
+  a.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') a.click();
+  });
+});
 byId('startBtn').addEventListener('click', () => {
   if (!state.avatarId) return alert("Select an avatar first");
   if (!byId('nameInput').value.trim()) return alert("Enter your name");
@@ -843,16 +618,17 @@ byId('openChestBtn').addEventListener('click', () => {
   const btn = byId('openChestBtn');
   if (!btn) return;
   if (btn.dataset.opened === '1') return;
-  const coinsWon = Math.floor(Math.random() * 41) + 10; // 10–50 coins
+  const coinsWon = Math.floor(Math.random() * 41) + 10;
   updateCoins(coinsWon);
   byId('chestImage').classList.add('opened');
   btn.dataset.opened = '1';
   btn.disabled = true;
   btn.classList.add('faded');
+  playSFX('sfxChest');
   alert(`🎉 You won ${coinsWon} coins!`);
 });
-document.querySelectorAll('#view-difficulty .btn[data-diff]').forEach(btn => btn.addEventListener('click', () => {
-  loadQuestions();
+document.querySelectorAll('#view-difficulty .btn[data-diff]').forEach(btn => btn.addEventListener('click', async () => {
+  await loadQuestions();
   state.difficulty = btn.dataset.diff;
   state.pool = getShuffledQuestions(state.difficulty, QUESTION_LIMIT);
   state.index = 0;
