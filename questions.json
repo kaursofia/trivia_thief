@@ -1,0 +1,3608 @@
+{
+  "easy": [
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 4 × 7?",
+      "options": [
+        "32",
+        "24",
+        "28",
+        "33"
+      ],
+      "answer": "28",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 4 + 8?",
+      "options": [
+        "10",
+        "8",
+        "12",
+        "14"
+      ],
+      "answer": "12",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 15 + 19?",
+      "options": [
+        "39",
+        "34",
+        "32",
+        "37"
+      ],
+      "answer": "34",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is 20 × 12?",
+      "options": [
+        "240",
+        "245",
+        "241",
+        "243"
+      ],
+      "answer": "240",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 8 + 9?",
+      "options": [
+        "21",
+        "18",
+        "17",
+        "20"
+      ],
+      "answer": "17",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 20 + 17?",
+      "options": [
+        "37",
+        "35",
+        "40",
+        "36"
+      ],
+      "answer": "37",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 18 × 18?",
+      "options": [
+        "324",
+        "322",
+        "328",
+        "319"
+      ],
+      "answer": "324",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 1 × 11?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "answer": "11",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 17 + 13?",
+      "options": [
+        "28",
+        "26",
+        "31",
+        "30"
+      ],
+      "answer": "30",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 8 + 3?",
+      "options": [
+        "6",
+        "7",
+        "9",
+        "11"
+      ],
+      "answer": "11",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 11 × 12?",
+      "options": [
+        "127",
+        "132",
+        "135",
+        "131"
+      ],
+      "answer": "132",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 7 × 8?",
+      "options": [
+        "57",
+        "51",
+        "59",
+        "56"
+      ],
+      "answer": "56",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 3 + 16?",
+      "options": [
+        "19",
+        "14",
+        "23",
+        "24"
+      ],
+      "answer": "19",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 7 × 13?",
+      "options": [
+        "93",
+        "92",
+        "91",
+        "94"
+      ],
+      "answer": "91",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 16 × 18?",
+      "options": [
+        "286",
+        "293",
+        "292",
+        "288"
+      ],
+      "answer": "288",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 15 × 19?",
+      "options": [
+        "285",
+        "290",
+        "281",
+        "283"
+      ],
+      "answer": "285",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 18 × 11?",
+      "options": [
+        "195",
+        "198",
+        "197",
+        "201"
+      ],
+      "answer": "198",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 1 + 8?",
+      "options": [
+        "5",
+        "7",
+        "9",
+        "4"
+      ],
+      "answer": "9",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is 6 × 4?",
+      "options": [
+        "24",
+        "28",
+        "20",
+        "19"
+      ],
+      "answer": "24",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 5 × 20?",
+      "options": [
+        "105",
+        "100",
+        "99",
+        "98"
+      ],
+      "answer": "100",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 17 + 8?",
+      "options": [
+        "25",
+        "24",
+        "21",
+        "26"
+      ],
+      "answer": "25",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 20 + 10?",
+      "options": [
+        "33",
+        "28",
+        "30",
+        "27"
+      ],
+      "answer": "30",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is 15 + 20?",
+      "options": [
+        "40",
+        "32",
+        "39",
+        "35"
+      ],
+      "answer": "35",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 20 × 5?",
+      "options": [
+        "102",
+        "98",
+        "100",
+        "99"
+      ],
+      "answer": "100",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    }
+  ],
+  "medium": [
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 5 + 20?",
+      "options": [
+        "28",
+        "20",
+        "24",
+        "25"
+      ],
+      "answer": "25",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 1 × 14?",
+      "options": [
+        "11",
+        "14",
+        "19",
+        "17"
+      ],
+      "answer": "14",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 10 + 15?",
+      "options": [
+        "22",
+        "25",
+        "28",
+        "20"
+      ],
+      "answer": "25",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 5 × 13?",
+      "options": [
+        "62",
+        "67",
+        "70",
+        "65"
+      ],
+      "answer": "65",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 5 + 18?",
+      "options": [
+        "24",
+        "22",
+        "20",
+        "23"
+      ],
+      "answer": "23",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 5 × 3?",
+      "options": [
+        "15",
+        "19",
+        "14",
+        "11"
+      ],
+      "answer": "15",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 7 + 3?",
+      "options": [
+        "9",
+        "13",
+        "6",
+        "10"
+      ],
+      "answer": "10",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 3 + 12?",
+      "options": [
+        "13",
+        "15",
+        "19",
+        "16"
+      ],
+      "answer": "15",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 10 + 5?",
+      "options": [
+        "18",
+        "15",
+        "20",
+        "19"
+      ],
+      "answer": "15",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 8 × 5?",
+      "options": [
+        "36",
+        "43",
+        "41",
+        "40"
+      ],
+      "answer": "40",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 2 × 11?",
+      "options": [
+        "19",
+        "25",
+        "22",
+        "18"
+      ],
+      "answer": "22",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 10 × 17?",
+      "options": [
+        "167",
+        "172",
+        "170",
+        "168"
+      ],
+      "answer": "170",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 20 + 4?",
+      "options": [
+        "24",
+        "27",
+        "29",
+        "19"
+      ],
+      "answer": "24",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 11 × 15?",
+      "options": [
+        "163",
+        "161",
+        "167",
+        "165"
+      ],
+      "answer": "165",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 7 + 10?",
+      "options": [
+        "17",
+        "21",
+        "22",
+        "15"
+      ],
+      "answer": "17",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 18 × 7?",
+      "options": [
+        "128",
+        "124",
+        "127",
+        "126"
+      ],
+      "answer": "126",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 8 × 16?",
+      "options": [
+        "133",
+        "130",
+        "128",
+        "132"
+      ],
+      "answer": "128",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 17 × 6?",
+      "options": [
+        "107",
+        "99",
+        "103",
+        "102"
+      ],
+      "answer": "102",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 10 × 8?",
+      "options": [
+        "76",
+        "75",
+        "80",
+        "78"
+      ],
+      "answer": "80",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 6 × 4?",
+      "options": [
+        "26",
+        "28",
+        "24",
+        "23"
+      ],
+      "answer": "24",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 7 + 13?",
+      "options": [
+        "19",
+        "24",
+        "25",
+        "20"
+      ],
+      "answer": "20",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 15 + 4?",
+      "options": [
+        "19",
+        "15",
+        "23",
+        "21"
+      ],
+      "answer": "19",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 16 × 4?",
+      "options": [
+        "63",
+        "60",
+        "64",
+        "65"
+      ],
+      "answer": "64",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 9 + 1?",
+      "options": [
+        "7",
+        "9",
+        "10",
+        "6"
+      ],
+      "answer": "10",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 9 × 4?",
+      "options": [
+        "36",
+        "33",
+        "38",
+        "37"
+      ],
+      "answer": "36",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 18 + 7?",
+      "options": [
+        "25",
+        "26",
+        "30",
+        "20"
+      ],
+      "answer": "25",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is 6 × 14?",
+      "options": [
+        "80",
+        "84",
+        "82",
+        "86"
+      ],
+      "answer": "84",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 5 × 2?",
+      "options": [
+        "14",
+        "7",
+        "15",
+        "10"
+      ],
+      "answer": "10",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 16 × 8?",
+      "options": [
+        "130",
+        "129",
+        "128",
+        "124"
+      ],
+      "answer": "128",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 18 + 11?",
+      "options": [
+        "28",
+        "29",
+        "34",
+        "31"
+      ],
+      "answer": "29",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 7 + 6?",
+      "options": [
+        "14",
+        "10",
+        "8",
+        "13"
+      ],
+      "answer": "13",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 4 × 19?",
+      "options": [
+        "80",
+        "76",
+        "73",
+        "79"
+      ],
+      "answer": "76",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 10 × 13?",
+      "options": [
+        "134",
+        "131",
+        "130",
+        "125"
+      ],
+      "answer": "130",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    }
+  ],
+  "hard": [
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 10 + 18?",
+      "options": [
+        "29",
+        "32",
+        "26",
+        "28"
+      ],
+      "answer": "28",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 20 × 19?",
+      "options": [
+        "379",
+        "376",
+        "377",
+        "380"
+      ],
+      "answer": "380",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 12 × 4?",
+      "options": [
+        "44",
+        "47",
+        "51",
+        "48"
+      ],
+      "answer": "48",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 16 × 4?",
+      "options": [
+        "69",
+        "64",
+        "67",
+        "62"
+      ],
+      "answer": "64",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 8 × 18?",
+      "options": [
+        "146",
+        "144",
+        "142",
+        "147"
+      ],
+      "answer": "144",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 9 + 16?",
+      "options": [
+        "26",
+        "20",
+        "21",
+        "25"
+      ],
+      "answer": "25",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 15 × 4?",
+      "options": [
+        "64",
+        "65",
+        "57",
+        "60"
+      ],
+      "answer": "60",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 15 × 5?",
+      "options": [
+        "71",
+        "77",
+        "74",
+        "75"
+      ],
+      "answer": "75",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 12 + 10?",
+      "options": [
+        "18",
+        "26",
+        "19",
+        "22"
+      ],
+      "answer": "22",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is 6 + 16?",
+      "options": [
+        "24",
+        "17",
+        "27",
+        "22"
+      ],
+      "answer": "22",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 13 + 18?",
+      "options": [
+        "32",
+        "33",
+        "28",
+        "31"
+      ],
+      "answer": "31",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is 9 × 2?",
+      "options": [
+        "20",
+        "22",
+        "13",
+        "18"
+      ],
+      "answer": "18",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 15 + 3?",
+      "options": [
+        "19",
+        "21",
+        "13",
+        "18"
+      ],
+      "answer": "18",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is 19 × 17?",
+      "options": [
+        "326",
+        "323",
+        "324",
+        "325"
+      ],
+      "answer": "323",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is 16 + 19?",
+      "options": [
+        "32",
+        "31",
+        "35",
+        "33"
+      ],
+      "answer": "35",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 5 + 11?",
+      "options": [
+        "12",
+        "21",
+        "16",
+        "11"
+      ],
+      "answer": "16",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 16 + 20?",
+      "options": [
+        "41",
+        "37",
+        "36",
+        "40"
+      ],
+      "answer": "36",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What is the capital of France?",
+      "options": [
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin"
+      ],
+      "answer": "Paris",
+      "hint": "It's known as the city of love",
+      "fact": "Paris is France's capital."
+    },
+    {
+      "q": "What gas do humans breathe in?",
+      "options": [
+        "Oxygen",
+        "Carbon Dioxide",
+        "Nitrogen",
+        "Hydrogen"
+      ],
+      "answer": "Oxygen",
+      "hint": "It's essential for life",
+      "fact": "Oxygen is vital for cellular respiration."
+    },
+    {
+      "q": "What is 5 × 12?",
+      "options": [
+        "60",
+        "56",
+        "63",
+        "55"
+      ],
+      "answer": "60",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 9 × 9?",
+      "options": [
+        "81",
+        "82",
+        "84",
+        "86"
+      ],
+      "answer": "81",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Which is the largest planet in our solar system?",
+      "options": [
+        "Jupiter",
+        "Mars",
+        "Earth",
+        "Saturn"
+      ],
+      "answer": "Jupiter",
+      "hint": "It's a gas giant",
+      "fact": "Jupiter is the largest planet."
+    },
+    {
+      "q": "What is 8 + 13?",
+      "options": [
+        "16",
+        "21",
+        "25",
+        "22"
+      ],
+      "answer": "21",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 19 × 15?",
+      "options": [
+        "281",
+        "287",
+        "285",
+        "283"
+      ],
+      "answer": "285",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 17 + 4?",
+      "options": [
+        "24",
+        "23",
+        "21",
+        "26"
+      ],
+      "answer": "21",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    },
+    {
+      "q": "What is the chemical symbol for water?",
+      "options": [
+        "H₂O",
+        "O₂",
+        "CO₂",
+        "NaCl"
+      ],
+      "answer": "H₂O",
+      "hint": "It's two hydrogen atoms and one oxygen atom",
+      "fact": "Water's chemical formula is H₂O."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 9 × 15?",
+      "options": [
+        "130",
+        "135",
+        "140",
+        "136"
+      ],
+      "answer": "135",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Who wrote 'Hamlet'?",
+      "options": [
+        "William Shakespeare",
+        "Charles Dickens",
+        "Mark Twain",
+        "Leo Tolstoy"
+      ],
+      "answer": "William Shakespeare",
+      "hint": "Famous English playwright",
+      "fact": "'Hamlet' is a tragedy by Shakespeare."
+    },
+    {
+      "q": "What is 16 × 8?",
+      "options": [
+        "131",
+        "125",
+        "128",
+        "132"
+      ],
+      "answer": "128",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "Mount Everest lies in which mountain range?",
+      "options": [
+        "Himalayas",
+        "Andes",
+        "Rockies",
+        "Alps"
+      ],
+      "answer": "Himalayas",
+      "hint": "Highest mountain range",
+      "fact": "The Himalayas span five countries in Asia."
+    },
+    {
+      "q": "What is 16 × 3?",
+      "options": [
+        "48",
+        "51",
+        "49",
+        "45"
+      ],
+      "answer": "48",
+      "hint": "Multiply the two numbers",
+      "fact": "Multiplication is repeated addition."
+    },
+    {
+      "q": "What is 18 + 7?",
+      "options": [
+        "30",
+        "22",
+        "25",
+        "29"
+      ],
+      "answer": "25",
+      "hint": "Add the two numbers",
+      "fact": "Addition is one of the basic arithmetic operations."
+    }
+  ]
+}
