@@ -19,7 +19,10 @@ const ASSETS_TO_CACHE = [
   'favicon.ico',
   'favicon.svg',
   'web-app-manifest-192x192.png',
-  'web-app-manifest-512x512.png'
+  'web-app-manifest-512x512.png',
+  'service-worker.js',
+  'README.md',
+  'LICENSE.txt'
   // Add any other assets you want cached here (no comma after last item)
 ];
 
