@@ -1,7 +1,8 @@
 {
   "manifest": {
-    "name": "Trivia Quiz Game",
-    "short_name": "QuizGame",
+    "name": "Trivia Thief - Quiz Game",
+  "short_name": "Trivia Thief",
+  "description": "A fun and challenging trivia quiz game with multiple difficulty levels.",
     "start_url": "index.html",
     "display": "standalone",
     "display_override": ["standalone", "window-controls-overlay"],
@@ -17,12 +18,14 @@
       {
         "src": "web-app-manifest-192x192.png",
         "sizes": "192x192",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any maskable"
       },
       {
         "src": "web-app-manifest-512x512.png",
         "sizes": "512x512",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any maskable"
       }
     ],
     "shortcuts": [
