@@ -51,4 +51,8 @@ self.addEventListener('fetch', event => {
     })
   );
 });
-
+/*
+All Rights Reserved
+Copyright (c) 2025 Sofia Kaur
+Unauthorized copying of this file, via any medium is strictly prohibited.
+*/
