@@ -1,4 +1,5 @@
 {
+  "_license": "All Rights Reserved - Copyright (c) 2025 Sofia Kaur. Unauthorized copying is strictly prohibited.",
   "easy": [
     { "q": "Which planet is closest to the Sun?", "options": ["Mercury", "Venus", "Earth", "Mars"], "answer": "Mercury", "hint": "Smallest and hottest", "fact": "Mercury is the closest planet to the Sun." },
   { "q": "Which color is made by mixing red and blue?", "options": ["Purple", "Orange", "Green", "Pink"], "answer": "Purple", "hint": "Common in flowers", "fact": "Mixing red and blue produces purple." },
