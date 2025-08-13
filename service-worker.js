@@ -1,25 +1,24 @@
 const CACHE_NAME = 'trivia-thief-cache-v1';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/logo.png',
-  '/coin.png',
-  '/chest_closed.png',
-  '/badgeone.png',
-  '/badgetwo.png',
-  '/start.wav',
-  '/tick.wav',
-  '/coin.wav',
-  '/chest.wav',
-  '/questions.json',
-  '/apple-touch-icon.png',
-  '/site.webmanifest',
-  '/favicon-96x96.png',
-  '/favicon.ico',
-  '/favicon.svg',
-  '/web-app-manifest-192x192.png',
-  '/web-app-manifest-512x512.png',
-  
+  './',
+  './index.html',
+  './logo.png',
+  './coin.png',
+  './chest_closed.png',
+  './badgeone.png',
+  './badgetwo.png',
+  './start.wav',
+  './tick.wav',
+  './coin.wav',
+  './chest.wav',
+  './questions.json',
+  './apple-touch-icon.png',
+  './site.webmanifest',
+  './favicon-96x96.png',
+  './favicon.ico',
+  './favicon.svg',
+  './web-app-manifest-192x192.png',
+  './web-app-manifest-512x512.png',
   // Add any other assets you want cached
 ];
 
@@ -56,3 +55,4 @@ All Rights Reserved
 Copyright (c) 2025 Sofia Kaur
 Unauthorized copying of this file, via any medium is strictly prohibited.
 */
+
