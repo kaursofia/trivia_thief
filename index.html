@@ -610,13 +610,20 @@ document.querySelectorAll('.avatar').forEach(a => {
     if (e.key === 'Enter' || e.key === ' ') a.click();
   });
 });
-byId('startBtn').addEventListener('click', () => {
-  playSFX('sfxStart'); // start music right after user interaction
+byId('startBtn').addEventListener('click', function initMusic() {
+  const startEl = document.getElementById('sfxStart');
+  if (startEl) {
+    startEl.loop = true;
+    startEl.currentTime = 0;
+    startEl.play().catch(() => {});
+  }
   if (!state.avatarId) return alert("Select an avatar first");
   if (!byId('nameInput').value.trim()) return alert("Enter your name");
   state.name = byId('nameInput').value.trim();
   showView('view-difficulty');
+  byId('startBtn').removeEventListener('click', initMusic);
 });
+
 byId('openChestBtn').addEventListener('click', () => {
   const btn = byId('openChestBtn');
   if (!btn) return;
@@ -659,6 +666,46 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome from showing the default mini-infobar
+  e.preventDefault();
+  // Store the event so you can trigger it later
+  deferredPrompt = e;
+
+  // Create an install button
+  const installBtn = document.createElement('button');
+  installBtn.textContent = '📥 Install App';
+  installBtn.style.position = 'fixed';
+  installBtn.style.bottom = '20px';
+  installBtn.style.right = '20px';
+  installBtn.style.zIndex = '9999';
+  installBtn.style.padding = '10px 15px';
+  installBtn.style.background = '#ff9800';
+  installBtn.style.color = 'white';
+  installBtn.style.border = 'none';
+  installBtn.style.borderRadius = '5px';
+  installBtn.style.cursor = 'pointer';
+
+  // Add click event to trigger install prompt
+  installBtn.addEventListener('click', () => {
+    installBtn.style.display = 'none';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install');
+      } else {
+        console.log('User dismissed the install');
+      }
+      deferredPrompt = null;
+    });
+  });
+
+  // Append the button to the body
+  document.body.appendChild(installBtn);
+});
+</script>
 </body>
 </html>
-
