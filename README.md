@@ -49,10 +49,10 @@ trivia-thief/
 ├── chest_closed.png
 ├── badgeone.png
 ├── badgetwo.png
-├── start.mp3
-├── tick.mp3
-├── coin.mp3
-├── chest.mp3
+├── start.wav
+├── tick.wav
+├── coin.wav
+├── chest.wav
 └── README.md
 ```
 
