@@ -1,0 +1,932 @@
+{
+  "easy": [
+    { "q": "Which planet is closest to the Sun?", "options": ["Mercury", "Venus", "Earth", "Mars"], "answer": "Mercury", "hint": "Smallest and hottest", "fact": "Mercury is the closest planet to the Sun." },
+  { "q": "Which color is made by mixing red and blue?", "options": ["Purple", "Orange", "Green", "Pink"], "answer": "Purple", "hint": "Common in flowers", "fact": "Mixing red and blue produces purple." },
+  { "q": "Spell correction: 'Goverment'", "options": ["Government", "Goverment", "Govenment", "Governmant"], "answer": "Government", "hint": "Contains 'rn' in the middle", "fact": "The correct spelling is 'Government'." },
+  { "q": "Which gas do plants produce during photosynthesis?", "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Helium"], "answer": "Oxygen", "hint": "We breathe it", "fact": "Plants release oxygen during photosynthesis." },
+  { "q": "The capital of Japan is ____.", "options": ["Tokyo", "Kyoto", "Osaka", "Hiroshima"], "answer": "Tokyo", "hint": "Most populated city", "fact": "Tokyo is the capital of Japan." },
+  { "q": "What is 8 + 6?", "options": ["14", "12", "16", "15"], "answer": "14", "hint": "Addition", "fact": "8 plus 6 equals 14." },
+  { "q": "Which animal gives us wool?", "options": ["Sheep", "Goat", "Cow", "Horse"], "answer": "Sheep", "hint": "Baa!", "fact": "Wool comes mainly from sheep." },
+  { "q": "Fill in the blank: The sky is usually ____ during the day.", "options": ["Blue", "Green", "Yellow", "White"], "answer": "Blue", "hint": "Color of the ocean", "fact": "A clear sky appears blue due to scattering of light." },
+  { "q": "Which country is famous for the Eiffel Tower?", "options": ["France", "Italy", "Spain", "Germany"], "answer": "France", "hint": "Paris is here", "fact": "The Eiffel Tower is in Paris, France." },
+  { "q": "What is 12 ÷ 4?", "options": ["3", "4", "6", "2"], "answer": "3", "hint": "Division", "fact": "12 divided by 4 equals 3." },
+  { "q": "Which fruit is red and often used in ketchup?", "options": ["Tomato", "Apple", "Strawberry", "Cherry"], "answer": "Tomato", "hint": "Botanically a fruit", "fact": "Tomatoes are the main ingredient in ketchup." },
+  { "q": "Spell correction: 'Febuary'", "options": ["February", "Febuary", "Februery", "Febraury"], "answer": "February", "hint": "Has 'rua' in the middle", "fact": "The correct spelling is 'February'." },
+  { "q": "Which is the largest mammal?", "options": ["Blue Whale", "Elephant", "Giraffe", "Hippopotamus"], "answer": "Blue Whale", "hint": "Lives in the ocean", "fact": "The blue whale is the largest animal on Earth." },
+  { "q": "What is 3 × 7?", "options": ["21", "27", "24", "30"], "answer": "21", "hint": "Multiplication", "fact": "3 times 7 equals 21." },
+  { "q": "The Taj Mahal is in which country?", "options": ["India", "Pakistan", "Bangladesh", "Nepal"], "answer": "India", "hint": "Agra city", "fact": "The Taj Mahal is located in Agra, India." },
+  { "q": "Fill in the blank: Opposite of 'happy' is ____.", "options": ["Sad", "Angry", "Tired", "Bored"], "answer": "Sad", "hint": "Emotional opposite", "fact": "'Sad' is the opposite of 'happy'." },
+  { "q": "Which planet is known for its Great Red Spot?", "options": ["Jupiter", "Mars", "Saturn", "Neptune"], "answer": "Jupiter", "hint": "Largest planet", "fact": "The Great Red Spot is a massive storm on Jupiter." },
+  { "q": "Which instrument has strings and is played with a bow?", "options": ["Violin", "Piano", "Drum", "Flute"], "answer": "Violin", "hint": "Held under the chin", "fact": "The violin is played with a bow." },
+  { "q": "Spell correction: 'Writting'", "options": ["Writing", "Writting", "Writen", "Writin"], "answer": "Writing", "hint": "Only one t in the middle", "fact": "The correct spelling is 'Writing'." },
+  { "q": "How many hours are there in a day?", "options": ["24", "12", "48", "60"], "answer": "24", "hint": "Earth's rotation", "fact": "There are 24 hours in one day." },
+  { "q": "Which shape has four equal sides?", "options": ["Square", "Rectangle", "Rhombus", "Triangle"], "answer": "Square", "hint": "All sides equal", "fact": "A square has four equal sides and four right angles." },
+  { "q": "What is 100 - 25?", "options": ["75", "80", "85", "70"], "answer": "75", "hint": "Subtract", "fact": "100 minus 25 equals 75." },
+  { "q": "The capital of the USA is ____.", "options": ["Washington, D.C.", "New York", "Los Angeles", "Chicago"], "answer": "Washington, D.C.", "hint": "Named after the first president", "fact": "Washington, D.C. is the capital of the USA." },
+  { "q": "Which bird lays the largest eggs?", "options": ["Ostrich", "Eagle", "Penguin", "Goose"], "answer": "Ostrich", "hint": "Fastest running bird", "fact": "The ostrich lays the largest eggs of any living bird." },
+  { "q": "Spell correction: 'Beleive'", "options": ["Believe", "Beleive", "Believ", "Belive"], "answer": "Believe", "hint": "i before e except after c", "fact": "The correct spelling is 'Believe'." },
+  { "q": "Which continent is Egypt in?", "options": ["Africa", "Asia", "Europe", "South America"], "answer": "Africa", "hint": "Northern part of continent", "fact": "Egypt is located in northeastern Africa." },
+  { "q": "What is 50 ÷ 5?", "options": ["10", "15", "5", "12"], "answer": "10", "hint": "Division", "fact": "50 divided by 5 equals 10." },
+  { "q": "The Statue of Liberty was a gift from which country?", "options": ["France", "UK", "Spain", "Germany"], "answer": "France", "hint": "European ally", "fact": "France gifted the Statue of Liberty to the USA." },
+  { "q": "Which animal is known for building dams?", "options": ["Beaver", "Otter", "Frog", "Bear"], "answer": "Beaver", "hint": "Has large teeth", "fact": "Beavers build dams to create ponds." },
+  { "q": "What is the largest desert in the world?", "options": ["Sahara", "Gobi", "Kalahari", "Arctic"], "answer": "Sahara", "hint": "In Africa", "fact": "The Sahara is the largest hot desert in the world." },
+  { "q": "Fill in the blank: The color of grass is ____.", "options": ["Green", "Yellow", "Brown", "Blue"], "answer": "Green", "hint": "Think plants", "fact": "Grass appears green due to chlorophyll." },
+  { "q": "Which month has 28 or 29 days?", "options": ["February", "March", "January", "April"], "answer": "February", "hint": "Leap year effect", "fact": "February has 28 days, or 29 in a leap year." },
+  { "q": "Spell correction: 'Resturant'", "options": ["Restaurant", "Resturant", "Resteraunt", "Restorant"], "answer": "Restaurant", "hint": "Think of 'rest' and 'rant'", "fact": "The correct spelling is 'Restaurant'." },
+  { "q": "Which fruit keeps the doctor away if eaten daily?", "options": ["Apple", "Banana", "Orange", "Grape"], "answer": "Apple", "hint": "Red or green skin", "fact": "An apple a day keeps the doctor away." },
+  { "q": "Which star is at the center of our solar system?", "options": ["Sun", "Sirius", "Polaris", "Vega"], "answer": "Sun", "hint": "We orbit it", "fact": "The Sun is the center of our solar system." },
+  { "q": "What is 6 × 6?", "options": ["36", "30", "42", "32"], "answer": "36", "hint": "Multiplication", "fact": "6 times 6 equals 36." },
+  { "q": "The currency of the USA is ____.", "options": ["Dollar", "Euro", "Pound", "Peso"], "answer": "Dollar", "hint": "Symbol is $", "fact": "The US Dollar is used in the United States." },
+  { "q": "Which shape has no sides?", "options": ["Circle", "Square", "Triangle", "Hexagon"], "answer": "Circle", "hint": "Round shape", "fact": "A circle has no straight sides." },
+  { "q": "What is the main gas in the air we breathe?", "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Hydrogen"], "answer": "Nitrogen", "hint": "About 78%", "fact": "Nitrogen makes up about 78% of Earth's atmosphere." },
+  { "q": "Spell correction: 'Seperated'", "options": ["Separated", "Seperated", "Sepereted", "Separrated"], "answer": "Separated", "hint": "Think 'separate' + 'd'", "fact": "The correct spelling is 'Separated'." },
+  { "q": "Which country invented paper?", "options": ["China", "Egypt", "India", "Greece"], "answer": "China", "hint": "Eastern origin", "fact": "Paper was invented in China over 2000 years ago." },
+  { "q": "What is 18 ÷ 6?", "options": ["3", "4", "2", "5"], "answer": "3", "hint": "Division", "fact": "18 divided by 6 equals 3." },
+  { "q": "Which fruit is known for its high vitamin C?", "options": ["Orange", "Apple", "Banana", "Grapes"], "answer": "Orange", "hint": "Citrus fruit", "fact": "Oranges are a great source of vitamin C." },
+  { "q": "The Great Wall of China was built to keep out which group?", "options": ["Mongols", "Romans", "Huns", "Vikings"], "answer": "Mongols", "hint": "Nomadic warriors", "fact": "It was built to protect China from Mongol invasions." },
+  { "q": "Which bird is a symbol of peace?", "options": ["Dove", "Eagle", "Crow", "Peacock"], "answer": "Dove", "hint": "White in color", "fact": "The white dove symbolizes peace." },
+  { "q": "Fill in the blank: The opposite of 'light' is ____.", "options": ["Dark", "Bright", "Shiny", "Dim"], "answer": "Dark", "hint": "Think night", "fact": "'Dark' is the opposite of 'light'." },
+  { "q": "Spell correction: 'Tommorow'", "options": ["Tomorrow", "Tommorow", "Tomorow", "Tommorrow"], "answer": "Tomorrow", "hint": "One m, two r's", "fact": "The correct spelling is 'Tomorrow'." },
+  { "q": "Which animal is known for its long neck?", "options": ["Giraffe", "Camel", "Ostrich", "Flamingo"], "answer": "Giraffe", "hint": "Tallest land animal", "fact": "Giraffes have the longest necks of any land animal." },
+  { "q": "What is 4 × 8?", "options": ["32", "28", "36", "24"], "answer": "32", "hint": "Multiplication", "fact": "4 times 8 equals 32." },
+  { "q": "Which planet is called Earth's twin?", "options": ["Venus", "Mars", "Jupiter", "Mercury"], "answer": "Venus", "hint": "Similar size", "fact": "Venus is often called Earth's twin because of its size and mass." },
+  { "q": "Which is the smallest planet in our solar system?", "options": ["Mercury", "Mars", "Venus", "Pluto"], "answer": "Mercury", "hint": "It's closest to the Sun", "fact": "Mercury is the smallest planet in our solar system." },
+  { "q": "The capital of France is ____.", "options": ["Paris", "Rome", "Berlin", "Madrid"], "answer": "Paris", "hint": "City of Light", "fact": "Paris is known as the City of Light and is the capital of France." },
+  { "q": "Which gas do we breathe in to survive?", "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"], "answer": "Oxygen", "hint": "Essential for respiration", "fact": "Oxygen is essential for most life on Earth." },
+  { "q": "2 + 5 = ?", "options": ["7", "8", "6", "9"], "answer": "7", "hint": "Add them together", "fact": "2 + 5 equals 7." },
+  { "q": "Which animal is known as the 'King of the Jungle'?", "options": ["Lion", "Tiger", "Elephant", "Cheetah"], "answer": "Lion", "hint": "It roars loudly", "fact": "The lion is often called the King of the Jungle." },
+  { "q": "Fill in the blank: The Sun rises in the ____.", "options": ["East", "West", "North", "South"], "answer": "East", "hint": "Opposite to where it sets", "fact": "The Sun rises in the east and sets in the west." },
+  { "q": "Spell correction: 'Recieve'", "options": ["Receive", "Recieve", "Receeve", "Recive"], "answer": "Receive", "hint": "i before e except after c", "fact": "The correct spelling is 'Receive'." },
+  { "q": "Which ocean is the largest?", "options": ["Pacific", "Atlantic", "Indian", "Arctic"], "answer": "Pacific", "hint": "Covers more than 30% of Earth", "fact": "The Pacific Ocean is the largest ocean on Earth." },
+  { "q": "Who was the first President of the United States?", "options": ["George Washington", "Abraham Lincoln", "John Adams", "Thomas Jefferson"], "answer": "George Washington", "hint": "Appears on the $1 bill", "fact": "George Washington served as the first U.S. President from 1789 to 1797." },
+  { "q": "Which number is even?", "options": ["4", "7", "9", "11"], "answer": "4", "hint": "Divisible by 2", "fact": "4 is an even number." },
+  { "q": "Which country is known for the Great Wall?", "options": ["China", "India", "Japan", "Russia"], "answer": "China", "hint": "The wall is visible from space", "fact": "The Great Wall of China is over 21,000 km long." },
+  { "q": "How many continents are there?", "options": ["7", "5", "6", "8"], "answer": "7", "hint": "Think about world map", "fact": "There are 7 continents: Asia, Africa, North America, South America, Antarctica, Europe, and Australia." },
+  { "q": "Fill in the blank: Water freezes at ___ degrees Celsius.", "options": ["0", "100", "32", "50"], "answer": "0", "hint": "It's the starting point for ice", "fact": "Water freezes at 0°C." },
+  { "q": "Which shape has three sides?", "options": ["Triangle", "Square", "Rectangle", "Circle"], "answer": "Triangle", "hint": "Starts with 'Tri'", "fact": "A triangle has three sides." },
+  { "q": "Spell correction: 'Definately'", "options": ["Definitely", "Definately", "Defenitely", "Definatly"], "answer": "Definitely", "hint": "It has 'ite' in the middle", "fact": "The correct spelling is 'Definitely'." },
+  { "q": "What is 10 - 4?", "options": ["6", "5", "7", "8"], "answer": "6", "hint": "Subtract", "fact": "10 - 4 = 6." },
+  { "q": "Which planet is known as the Red Planet?", "options": ["Mars", "Venus", "Jupiter", "Saturn"], "answer": "Mars", "hint": "Named after the Roman god of war", "fact": "Mars is called the Red Planet due to its iron-rich surface." },
+  { "q": "Who wrote 'Romeo and Juliet'?", "options": ["William Shakespeare", "Mark Twain", "Charles Dickens", "Jane Austen"], "answer": "William Shakespeare", "hint": "Famous English playwright", "fact": "Shakespeare wrote 'Romeo and Juliet' in the late 16th century." },
+  { "q": "Which fruit is yellow and curved?", "options": ["Banana", "Mango", "Apple", "Pear"], "answer": "Banana", "hint": "Monkeys love it", "fact": "Bananas are naturally curved as they grow towards sunlight." },
+  { "q": "Fill in the blank: The opposite of 'hot' is ____.", "options": ["Cold", "Warm", "Cool", "Heat"], "answer": "Cold", "hint": "Think temperature", "fact": "'Cold' is the opposite of 'hot'." },
+  { "q": "Which metal is liquid at room temperature?", "options": ["Mercury", "Iron", "Gold", "Silver"], "answer": "Mercury", "hint": "Named after a Roman god", "fact": "Mercury is the only metal that is liquid at room temperature." },
+  { "q": "The national animal of Australia is ____.", "options": ["Kangaroo", "Koala", "Emu", "Platypus"], "answer": "Kangaroo", "hint": "It hops", "fact": "The kangaroo is featured on Australia's coat of arms." },
+  { "q": "What is 15 ÷ 3?", "options": ["5", "6", "4", "3"], "answer": "5", "hint": "Division", "fact": "15 divided by 3 is 5." },
+  { "q": "Which is the fastest land animal?", "options": ["Cheetah", "Horse", "Lion", "Tiger"], "answer": "Cheetah", "hint": "Spots and speed", "fact": "Cheetahs can reach speeds of up to 120 km/h." },
+  { "q": "Spell correction: 'Enviroment'", "options": ["Environment", "Enviroment", "Enviranment", "Environmment"], "answer": "Environment", "hint": "Think of 'iron' in the middle", "fact": "The correct spelling is 'Environment'." },
+  { "q": "Which country is famous for pizza?", "options": ["Italy", "France", "USA", "Spain"], "answer": "Italy", "hint": "Rome is here", "fact": "Pizza originated in Italy." },
+  { "q": "How many days are there in a leap year?", "options": ["366", "365", "364", "367"], "answer": "366", "hint": "One extra day", "fact": "A leap year has 366 days." },
+  { "q": "The currency of Japan is ____.", "options": ["Yen", "Dollar", "Euro", "Won"], "answer": "Yen", "hint": "Starts with Y", "fact": "Japan uses the Yen as currency." },
+  { "q": "Which instrument has black and white keys?", "options": ["Piano", "Guitar", "Violin", "Drum"], "answer": "Piano", "hint": "Played by pressing keys", "fact": "A piano has both black and white keys." },
+  { "q": "What is 9 × 3?", "options": ["27", "24", "21", "18"], "answer": "27", "hint": "Multiplication", "fact": "9 times 3 equals 27." },
+  { "q": "Which bird can mimic human speech?", "options": ["Parrot", "Crow", "Eagle", "Owl"], "answer": "Parrot", "hint": "Colorful feathers", "fact": "Parrots are known for mimicking sounds and speech." },
+  { "q": "The Great Pyramid of Giza is in which country?", "options": ["Egypt", "Mexico", "Peru", "India"], "answer": "Egypt", "hint": "Near the Nile River", "fact": "The Great Pyramid is one of the Seven Wonders of the Ancient World." },
+  { "q": "What is the boiling point of water in Celsius?", "options": ["100", "0", "50", "90"], "answer": "100", "hint": "It's when water turns to steam", "fact": "Water boils at 100°C." },
+  { "q": "Spell correction: 'Acommodate'", "options": ["Accommodate", "Acommodate", "Acommodete", "Accomadate"], "answer": "Accommodate", "hint": "Has two c's and two m's", "fact": "The correct spelling is 'Accommodate'." },
+  { "q": "Which planet has rings?", "options": ["Saturn", "Mars", "Venus", "Earth"], "answer": "Saturn", "hint": "Gas giant with rings", "fact": "Saturn's rings are made of ice and rock." },
+  { "q": "What is 20 - 8?", "options": ["12", "10", "14", "8"], "answer": "12", "hint": "Subtract", "fact": "20 - 8 equals 12." },
+  { "q": "Which sea creature has eight arms?", "options": ["Octopus", "Squid", "Starfish", "Crab"], "answer": "Octopus", "hint": "It squirts ink", "fact": "An octopus has eight arms." },
+  { "q": "Which country is known as the Land of the Rising Sun?", "options": ["Japan", "China", "Thailand", "India"], "answer": "Japan", "hint": "Flag has a red circle", "fact": "Japan is called the Land of the Rising Sun." },
+  { "q": "What is 5 × 5?", "options": ["25", "20", "15", "10"], "answer": "25", "hint": "Multiplication", "fact": "5 multiplied by 5 equals 25." },
+  { "q": "Fill in the blank: The opposite of 'big' is ____.", "options": ["Small", "Tiny", "Little", "Short"], "answer": "Small", "hint": "Think size", "fact": "'Small' is the opposite of 'big'." }
+    
+  ],
+  "medium": [
+  {
+    "q": "Which scientist proposed the three laws of motion?",
+    "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+    "answer": "Isaac Newton",
+    "hint": "He also studied gravity under an apple tree",
+    "fact": "Sir Isaac Newton formulated the laws of motion in the 17th century."
+  },
+  {
+    "q": "What is the capital city of Canada?",
+    "options": ["Ottawa", "Toronto", "Vancouver", "Montreal"],
+    "answer": "Ottawa",
+    "hint": "Located in Ontario, but not Toronto",
+    "fact": "Ottawa is the capital of Canada and the fourth largest city in the country."
+  },
+  {
+    "q": "Which element has the chemical symbol 'Fe'?",
+    "options": ["Iron", "Fluorine", "Francium", "Fermium"],
+    "answer": "Iron",
+    "hint": "Common in construction and found in blood",
+    "fact": "The symbol 'Fe' comes from the Latin word 'ferrum', meaning iron."
+  },
+  {
+    "q": "In which year did World War II end?",
+    "options": ["1945", "1940", "1939", "1950"],
+    "answer": "1945",
+    "hint": "Same year atomic bombs were dropped on Japan",
+    "fact": "World War II ended in 1945 with the surrender of Germany in May and Japan in August."
+  },
+  {
+    "q": "What is the square root of 144?",
+    "options": ["12", "14", "10", "16"],
+    "answer": "12",
+    "hint": "A dozen",
+    "fact": "The square root of 144 is 12."
+  },
+  {
+    "q": "Who painted the Mona Lisa?",
+    "options": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Donatello"],
+    "answer": "Leonardo da Vinci",
+    "hint": "Also an inventor and scientist",
+    "fact": "Leonardo da Vinci painted the Mona Lisa in the early 16th century."
+  },
+  {
+    "q": "Which organ in the human body produces insulin?",
+    "options": ["Pancreas", "Liver", "Stomach", "Kidney"],
+    "answer": "Pancreas",
+    "hint": "Located behind the stomach",
+    "fact": "The pancreas produces insulin, which regulates blood sugar levels."
+  },
+  {
+    "q": "Fill in the blank: The chemical formula for table salt is ___.",
+    "options": ["NaCl", "H2O", "CO2", "KCl"],
+    "answer": "NaCl",
+    "hint": "Contains sodium and chlorine",
+    "fact": "Table salt is made of sodium chloride, NaCl."
+  },
+  {
+    "q": "Which country hosted the first modern Olympic Games in 1896?",
+    "options": ["Greece", "France", "UK", "USA"],
+    "answer": "Greece",
+    "hint": "Birthplace of the ancient Olympics",
+    "fact": "The first modern Olympics were held in Athens, Greece, in 1896."
+  },
+  {
+    "q": "Spell correction: 'Occured'",
+    "options": ["Occurred", "Occured", "Ocurred", "Ockurred"],
+    "answer": "Occurred",
+    "hint": "Has a double 'r'",
+    "fact": "The correct spelling is 'Occurred', with two 'r's."
+  },
+  {
+    "q": "Who was the first woman to win a Nobel Prize?",
+    "options": ["Marie Curie", "Rosalind Franklin", "Ada Lovelace", "Dorothy Hodgkin"],
+    "answer": "Marie Curie",
+    "hint": "Won in Physics and Chemistry",
+    "fact": "Marie Curie was the first woman to win a Nobel Prize and remains the only person to win in two sciences."
+  },
+  {
+    "q": "Which planet has the most moons?",
+    "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+    "answer": "Saturn",
+    "hint": "Gas giant with rings",
+    "fact": "Saturn has 145 confirmed moons, more than any other planet."
+  },
+  {
+    "q": "The process by which plants lose water through leaves is called?",
+    "options": ["Transpiration", "Respiration", "Photosynthesis", "Evaporation"],
+    "answer": "Transpiration",
+    "hint": "Starts with 'T'",
+    "fact": "Transpiration is the release of water vapor from plant leaves."
+  },
+  {
+    "q": "Who discovered penicillin?",
+    "options": ["Alexander Fleming", "Louis Pasteur", "Joseph Lister", "Edward Jenner"],
+    "answer": "Alexander Fleming",
+    "hint": "Accidentally left a petri dish uncovered",
+    "fact": "Alexander Fleming discovered penicillin in 1928."
+  },
+  {
+    "q": "Fill in the blank: The Pythagorean theorem is a² + b² = ___.",
+    "options": ["c²", "2ab", "a² - b²", "b² - a²"],
+    "answer": "c²",
+    "hint": "Right triangles",
+    "fact": "The Pythagorean theorem states that a² + b² = c² in a right-angled triangle."
+  },
+  {
+    "q": "Which desert is the largest hot desert in the world?",
+    "options": ["Sahara", "Gobi", "Kalahari", "Arabian"],
+    "answer": "Sahara",
+    "hint": "Located in Africa",
+    "fact": "The Sahara Desert spans over 9 million square kilometers."
+  },
+  {
+    "q": "Spell correction: 'Aparently'",
+    "options": ["Apparently", "Aparently", "Apparantly", "Apperently"],
+    "answer": "Apparently",
+    "hint": "Has double 'p'",
+    "fact": "The correct spelling is 'Apparently'."
+  },
+  {
+    "q": "Which is the only metal that is liquid at room temperature?",
+    "options": ["Mercury", "Gallium", "Sodium", "Lead"],
+    "answer": "Mercury",
+    "hint": "Named after a Roman god",
+    "fact": "Mercury is the only metal that is liquid at standard conditions."
+  },
+  {
+    "q": "What is the hardest natural substance on Earth?",
+    "options": ["Diamond", "Quartz", "Corundum", "Topaz"],
+    "answer": "Diamond",
+    "hint": "Used in cutting tools",
+    "fact": "Diamond ranks 10 on the Mohs hardness scale."
+  },
+    {
+    "q": "Which planet has the longest day (time to rotate once on its axis)?",
+    "options": ["Venus", "Mercury", "Mars", "Jupiter"],
+    "answer": "Venus",
+    "hint": "Rotates in the opposite direction of most planets",
+    "fact": "A day on Venus is longer than its year."
+  },
+  {
+    "q": "What is the chemical symbol for potassium?",
+    "options": ["K", "P", "Pt", "Po"],
+    "answer": "K",
+    "hint": "From Latin 'kalium'",
+    "fact": "Potassium's symbol 'K' comes from the Latin name kalium."
+  },
+  {
+    "q": "Which ancient civilization built Machu Picchu?",
+    "options": ["Inca", "Maya", "Aztec", "Olmec"],
+    "answer": "Inca",
+    "hint": "Located in Peru",
+    "fact": "Machu Picchu was built by the Inca civilization in the 15th century."
+  },
+  {
+    "q": "Spell correction: 'Conceed'",
+    "options": ["Concede", "Conceed", "Conseed", "Consede"],
+    "answer": "Concede",
+    "hint": "Ends with 'ede'",
+    "fact": "The correct spelling is 'Concede'."
+  },
+  {
+    "q": "In computing, what does 'HTTP' stand for?",
+    "options": ["HyperText Transfer Protocol", "High Transfer Text Protocol", "HyperText Transmission Program", "Hyper Transfer Tech Process"],
+    "answer": "HyperText Transfer Protocol",
+    "hint": "Web communication standard",
+    "fact": "HTTP is the foundation of data communication for the World Wide Web."
+  },
+  {
+    "q": "Which gas makes up most of Earth's atmosphere?",
+    "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Argon"],
+    "answer": "Nitrogen",
+    "hint": "About 78%",
+    "fact": "Nitrogen comprises about 78% of Earth's atmosphere."
+  },
+  {
+    "q": "What is the capital of South Korea?",
+    "options": ["Seoul", "Busan", "Incheon", "Daegu"],
+    "answer": "Seoul",
+    "hint": "Most populous city",
+    "fact": "Seoul is the capital and largest city of South Korea."
+  },
+  {
+    "q": "Fill in the blank: H2O is commonly known as ____.",
+    "options": ["Water", "Oxygen", "Hydrogen", "Steam"],
+    "answer": "Water",
+    "hint": "Covers 71% of Earth's surface",
+    "fact": "H2O is the chemical formula for water."
+  },
+  {
+    "q": "Which country gifted the Statue of Liberty to the USA?",
+    "options": ["France", "UK", "Italy", "Germany"],
+    "answer": "France",
+    "hint": "Famous for Eiffel Tower",
+    "fact": "France gifted the Statue of Liberty in 1886."
+  },
+  {
+    "q": "Spell correction: 'Refered'",
+    "options": ["Referred", "Refered", "Refferd", "Referredd"],
+    "answer": "Referred",
+    "hint": "Double 'r' in the middle",
+    "fact": "The correct spelling is 'Referred'."
+  },
+  {
+    "q": "Who was known as the 'Maid of Orléans'?",
+    "options": ["Joan of Arc", "Marie Antoinette", "Catherine the Great", "Queen Elizabeth I"],
+    "answer": "Joan of Arc",
+    "hint": "French heroine",
+    "fact": "Joan of Arc was a French heroine and saint who led troops during the Hundred Years' War."
+  },
+  {
+    "q": "Which blood type is known as the universal donor?",
+    "options": ["O negative", "O positive", "AB positive", "A negative"],
+    "answer": "O negative",
+    "hint": "Can be given to anyone",
+    "fact": "O negative blood can be transfused to any blood type."
+  },
+  {
+    "q": "What is the largest internal organ in the human body?",
+    "options": ["Liver", "Heart", "Lungs", "Kidneys"],
+    "answer": "Liver",
+    "hint": "Helps in detoxification",
+    "fact": "The liver is the largest internal organ and performs over 500 functions."
+  },
+  {
+    "q": "Which country has the most islands in the world?",
+    "options": ["Sweden", "Norway", "Indonesia", "Canada"],
+    "answer": "Sweden",
+    "hint": "Located in Scandinavia",
+    "fact": "Sweden has over 267,000 islands."
+  },
+  {
+    "q": "Spell correction: 'Persue'",
+    "options": ["Pursue", "Persue", "Pursew", "Persew"],
+    "answer": "Pursue",
+    "hint": "Starts with 'Pur-'",
+    "fact": "The correct spelling is 'Pursue'."
+  },
+  {
+    "q": "What is the smallest prime number?",
+    "options": ["2", "3", "5", "1"],
+    "answer": "2",
+    "hint": "Only even prime number",
+    "fact": "2 is the only even prime number."
+  },
+  {
+    "q": "Which instrument measures atmospheric pressure?",
+    "options": ["Barometer", "Thermometer", "Anemometer", "Hygrometer"],
+    "answer": "Barometer",
+    "hint": "Used in weather forecasting",
+    "fact": "A barometer measures atmospheric pressure."
+  },
+  {
+    "q": "Which continent is the driest?",
+    "options": ["Antarctica", "Africa", "Australia", "Asia"],
+    "answer": "Antarctica",
+    "hint": "Also the coldest",
+    "fact": "Antarctica is the driest, coldest, and windiest continent."
+  },
+  {
+    "q": "Who developed the theory of relativity?",
+    "options": ["Albert Einstein", "Isaac Newton", "Niels Bohr", "Galileo Galilei"],
+    "answer": "Albert Einstein",
+    "hint": "Famous equation E=mc²",
+    "fact": "Albert Einstein published the theory of relativity in the early 20th century."
+  },
+  {
+    "q": "Which language has the most native speakers?",
+    "options": ["Mandarin Chinese", "English", "Hindi", "Spanish"],
+    "answer": "Mandarin Chinese",
+    "hint": "Spoken mainly in China",
+    "fact": "Mandarin Chinese has over 900 million native speakers."
+  },
+  {
+    "q": "Fill in the blank: The chemical symbol for gold is ___.",
+    "options": ["Au", "Ag", "Gd", "Go"],
+    "answer": "Au",
+    "hint": "From Latin 'Aurum'",
+    "fact": "Gold's chemical symbol 'Au' comes from the Latin word aurum."
+  },
+  {
+    "q": "What is the fastest bird in the world?",
+    "options": ["Peregrine Falcon", "Golden Eagle", "Ostrich", "Swift"],
+    "answer": "Peregrine Falcon",
+    "hint": "Can dive over 300 km/h",
+    "fact": "The peregrine falcon is the fastest bird, reaching speeds over 300 km/h during dives."
+  },
+  {
+    "q": "Which planet is tilted on its side?",
+    "options": ["Uranus", "Neptune", "Saturn", "Mars"],
+    "answer": "Uranus",
+    "hint": "Rolls like a ball",
+    "fact": "Uranus has an axial tilt of about 98 degrees."
+  },
+  {
+    "q": "Spell correction: 'Milennium'",
+    "options": ["Millennium", "Milennium", "Millenium", "Milennum"],
+    "answer": "Millennium",
+    "hint": "Two 'l's and two 'n's",
+    "fact": "The correct spelling is 'Millennium'."
+  },
+  {
+    "q": "Which country is the largest by area?",
+    "options": ["Russia", "Canada", "USA", "China"],
+    "answer": "Russia",
+    "hint": "Spans two continents",
+    "fact": "Russia is the largest country in the world by area."
+  },
+  {
+    "q": "Who was the first man to travel into space?",
+    "options": ["Yuri Gagarin", "Neil Armstrong", "Buzz Aldrin", "John Glenn"],
+    "answer": "Yuri Gagarin",
+    "hint": "From the Soviet Union",
+    "fact": "Yuri Gagarin was the first human to journey into outer space in 1961."
+  },
+    {
+    "q": "Which country is both an island and a continent?",
+    "options": ["Australia", "Greenland", "Madagascar", "New Zealand"],
+    "answer": "Australia",
+    "hint": "Known for kangaroos",
+    "fact": "Australia is the only country that is also a continent."
+  },
+  {
+    "q": "Spell correction: 'Enviroment'",
+    "options": ["Environment", "Enviroment", "Enviourment", "Environmment"],
+    "answer": "Environment",
+    "hint": "Has 'n' after 'iro'",
+    "fact": "The correct spelling is 'Environment'."
+  },
+  {
+    "q": "Which is the longest river in the world?",
+    "options": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+    "answer": "Nile",
+    "hint": "Flows through Egypt",
+    "fact": "The Nile River is about 6,650 km long."
+  },
+  {
+    "q": "What is the main ingredient in traditional sushi?",
+    "options": ["Rice", "Fish", "Seaweed", "Soy sauce"],
+    "answer": "Rice",
+    "hint": "Short-grain and sticky",
+    "fact": "Sushi is based on seasoned rice, with other ingredients added."
+  },
+  {
+    "q": "Which gas is essential for breathing?",
+    "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Helium"],
+    "answer": "Oxygen",
+    "hint": "We inhale it",
+    "fact": "Oxygen is essential for human respiration."
+  },
+  {
+    "q": "Which African country was formerly known as Abyssinia?",
+    "options": ["Ethiopia", "Sudan", "Somalia", "Eritrea"],
+    "answer": "Ethiopia",
+    "hint": "Landlocked country",
+    "fact": "Ethiopia was historically called Abyssinia."
+  },
+  {
+    "q": "Fill in the blank: The process of cell division is called ____.",
+    "options": ["Mitosis", "Meiosis", "Binary fission", "Cytokinesis"],
+    "answer": "Mitosis",
+    "hint": "Produces identical cells",
+    "fact": "Mitosis is the process of cell division that results in two identical daughter cells."
+  },
+  {
+    "q": "Who wrote 'Hamlet'?",
+    "options": ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
+    "answer": "William Shakespeare",
+    "hint": "Elizabethan playwright",
+    "fact": "'Hamlet' is one of Shakespeare's most famous tragedies."
+  },
+  {
+    "q": "What is the smallest planet in our solar system?",
+    "options": ["Mercury", "Mars", "Venus", "Pluto"],
+    "answer": "Mercury",
+    "hint": "Closest to the Sun",
+    "fact": "Mercury is the smallest planet since Pluto is no longer classified as a planet."
+  },
+  {
+    "q": "Spell correction: 'Recieve'",
+    "options": ["Receive", "Recieve", "Receeve", "Receve"],
+    "answer": "Receive",
+    "hint": "'i' before 'e' except after 'c'",
+    "fact": "The correct spelling is 'Receive'."
+  },
+  {
+    "q": "Which country invented gunpowder?",
+    "options": ["China", "India", "Greece", "Persia"],
+    "answer": "China",
+    "hint": "Also invented paper",
+    "fact": "Gunpowder was invented in China during the Tang dynasty."
+  },
+  {
+    "q": "The Great Barrier Reef is located in which country?",
+    "options": ["Australia", "USA", "Indonesia", "Philippines"],
+    "answer": "Australia",
+    "hint": "In the Coral Sea",
+    "fact": "The Great Barrier Reef is the world's largest coral reef system."
+  },
+  {
+    "q": "What is the largest moon of Saturn?",
+    "options": ["Titan", "Europa", "Ganymede", "Rhea"],
+    "answer": "Titan",
+    "hint": "Has a thick atmosphere",
+    "fact": "Titan is the largest moon of Saturn and the second-largest moon in the solar system."
+  },
+  {
+    "q": "Which scientist discovered the law of gravity?",
+    "options": ["Isaac Newton", "Galileo Galilei", "Einstein", "Kepler"],
+    "answer": "Isaac Newton",
+    "hint": "Apple story",
+    "fact": "Isaac Newton formulated the law of universal gravitation."
+  },
+  {
+    "q": "Spell correction: 'Accomodate'",
+    "options": ["Accommodate", "Accomodate", "Acommodate", "Accomadate"],
+    "answer": "Accommodate",
+    "hint": "Has double 'c' and 'm'",
+    "fact": "The correct spelling is 'Accommodate'."
+  },
+  {
+    "q": "Which is the highest mountain in Africa?",
+    "options": ["Kilimanjaro", "Mount Kenya", "Ras Dashen", "Simien"],
+    "answer": "Kilimanjaro",
+    "hint": "Located in Tanzania",
+    "fact": "Mount Kilimanjaro is the highest peak in Africa."
+  },
+  {
+    "q": "Who was the first president of the United States?",
+    "options": ["George Washington", "Thomas Jefferson", "John Adams", "Abraham Lincoln"],
+    "answer": "George Washington",
+    "hint": "On the US $1 bill",
+    "fact": "George Washington was the first US president, serving from 1789 to 1797."
+  },
+  {
+    "q": "What is the capital of Egypt?",
+    "options": ["Cairo", "Alexandria", "Luxor", "Giza"],
+    "answer": "Cairo",
+    "hint": "Largest city in the Arab world",
+    "fact": "Cairo is the capital and largest city of Egypt."
+  },
+  {
+    "q": "In which year did man first walk on the moon?",
+    "options": ["1969", "1965", "1971", "1975"],
+    "answer": "1969",
+    "hint": "Neil Armstrong",
+    "fact": "Apollo 11 landed on the moon in 1969."
+  },
+  {
+    "q": "Spell correction: 'Definately'",
+    "options": ["Definitely", "Definately", "Defanitely", "Definetly"],
+    "answer": "Definitely",
+    "hint": "Has 'nite' in the middle",
+    "fact": "The correct spelling is 'Definitely'."
+  },
+  {
+    "q": "Which sea separates Europe and Africa?",
+    "options": ["Mediterranean Sea", "Black Sea", "Red Sea", "Baltic Sea"],
+    "answer": "Mediterranean Sea",
+    "hint": "Connected to the Atlantic",
+    "fact": "The Mediterranean Sea lies between Europe to the north and Africa to the south."
+  },
+  {
+    "q": "What is the capital of Thailand?",
+    "options": ["Bangkok", "Phuket", "Chiang Mai", "Pattaya"],
+    "answer": "Bangkok",
+    "hint": "City of angels",
+    "fact": "Bangkok is the capital and most populous city of Thailand."
+  },
+  {
+    "q": "Which is the largest ocean on Earth?",
+    "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+    "answer": "Pacific Ocean",
+    "hint": "Covers more than 30% of the Earth's surface",
+    "fact": "The Pacific Ocean is the largest and deepest ocean."
+  },
+  {
+    "q": "What is the national flower of Japan?",
+    "options": ["Cherry Blossom", "Lotus", "Rose", "Orchid"],
+    "answer": "Cherry Blossom",
+    "hint": "Pink and seasonal",
+    "fact": "The cherry blossom is Japan's national flower."
+  },
+  {
+    "q": "Spell correction: 'Independance'",
+    "options": ["Independence", "Independance", "Indepedence", "Indepandance"],
+    "answer": "Independence",
+    "hint": "Ends with 'ence'",
+    "fact": "The correct spelling is 'Independence'."
+  },
+  {
+    "q": "Which country is home to the kangaroo?",
+    "options": ["Australia", "New Zealand", "South Africa", "Brazil"],
+    "answer": "Australia",
+    "hint": "Also home to koalas",
+    "fact": "Australia is famous for its kangaroo population."
+  },
+  {
+    "q": "Who invented the telephone?",
+    "options": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Guglielmo Marconi"],
+    "answer": "Alexander Graham Bell",
+    "hint": "Scottish inventor",
+    "fact": "Alexander Graham Bell patented the first practical telephone."
+  },
+  {
+    "q": "What is the chemical formula for methane?",
+    "options": ["CH4", "CO2", "C2H6", "H2O"],
+    "answer": "CH4",
+    "hint": "One carbon, four hydrogen atoms",
+    "fact": "Methane is a simple hydrocarbon with the formula CH4."
+  },
+  {
+    "q": "Which planet is known for its beautiful rings?",
+    "options": ["Saturn", "Uranus", "Neptune", "Jupiter"],
+    "answer": "Saturn",
+    "hint": "Gas giant",
+    "fact": "Saturn's rings are made of ice and rock."
+  },
+  {
+    "q": "Spell correction: 'Wierd'",
+    "options": ["Weird", "Wierd", "Weard", "Weardd"],
+    "answer": "Weird",
+    "hint": "'i' before 'e' rule has exceptions",
+    "fact": "The correct spelling is 'Weird'."
+  },
+  {
+    "q": "What is the boiling point of water at sea level in Celsius?",
+    "options": ["100", "90", "80", "110"],
+    "answer": "100",
+    "hint": "Standard boiling point",
+    "fact": "Water boils at 100°C at sea level."
+  },
+  {
+    "q": "Which instrument measures earthquakes?",
+    "options": ["Seismograph", "Barometer", "Thermometer", "Anemometer"],
+    "answer": "Seismograph",
+    "hint": "Records seismic waves",
+    "fact": "A seismograph measures and records the strength of earthquakes."
+  },
+  {
+    "q": "Which city is known as the 'Eternal City'?",
+    "options": ["Rome", "Athens", "Jerusalem", "Istanbul"],
+    "answer": "Rome",
+    "hint": "Capital of Italy",
+    "fact": "Rome is known as the 'Eternal City' because of its long history."
+  },
+  {
+    "q": "Spell correction: 'Calender'",
+    "options": ["Calendar", "Calender", "Callendar", "Calandar"],
+    "answer": "Calendar",
+    "hint": "Marks days and months",
+    "fact": "The correct spelling is 'Calendar'."
+  },
+  {
+    "q": "Which vitamin is produced when skin is exposed to sunlight?",
+    "options": ["Vitamin D", "Vitamin C", "Vitamin B12", "Vitamin A"],
+    "answer": "Vitamin D",
+    "hint": "Good for bones",
+    "fact": "The body produces vitamin D when skin is exposed to sunlight."
+  }
+  ],
+  "hard": [
+    {
+    "q": "Which scientist is credited with formulating the uncertainty principle?",
+    "options": ["Werner Heisenberg", "Niels Bohr", "Max Planck", "Erwin Schrödinger"],
+    "answer": "Werner Heisenberg",
+    "hint": "German physicist, quantum mechanics",
+    "fact": "Heisenberg's uncertainty principle states that certain pairs of physical properties cannot be measured exactly at the same time."
+  },
+  {
+    "q": "What is the derivative of sin(x) with respect to x?",
+    "options": ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"],
+    "answer": "cos(x)",
+    "hint": "Think calculus basics",
+    "fact": "The derivative of sin(x) is cos(x)."
+  },
+  {
+    "q": "Which ancient city was buried under volcanic ash from Mount Vesuvius in AD 79?",
+    "options": ["Pompeii", "Athens", "Carthage", "Petra"],
+    "answer": "Pompeii",
+    "hint": "Located near modern Naples",
+    "fact": "Pompeii was preserved under ash, giving archaeologists detailed insight into Roman life."
+  },
+  {
+    "q": "Spell correction: 'Conscienscious'",
+    "options": ["Conscientious", "Conscienscious", "Concientious", "Consciencious"],
+    "answer": "Conscientious",
+    "hint": "Has 'science' in it",
+    "fact": "The correct spelling is 'Conscientious'."
+  },
+  {
+    "q": "What is the largest desert in the world by area?",
+    "options": ["Antarctic Desert", "Sahara Desert", "Arctic Desert", "Gobi Desert"],
+    "answer": "Antarctic Desert",
+    "hint": "Not hot, but cold",
+    "fact": "The Antarctic Desert covers about 14 million square km."
+  },
+  {
+    "q": "Which mathematician is known as the 'Prince of Mathematicians'?",
+    "options": ["Carl Friedrich Gauss", "Leonhard Euler", "Pythagoras", "Euclid"],
+    "answer": "Carl Friedrich Gauss",
+    "hint": "German mathematician",
+    "fact": "Gauss made significant contributions to number theory, statistics, and analysis."
+  },
+  {
+    "q": "In Greek mythology, who is the goddess of wisdom?",
+    "options": ["Athena", "Aphrodite", "Hera", "Demeter"],
+    "answer": "Athena",
+    "hint": "Also associated with war strategy",
+    "fact": "Athena was worshipped as the goddess of wisdom, courage, and warfare."
+  },
+  {
+    "q": "What is the SI unit of electric capacitance?",
+    "options": ["Farad", "Ohm", "Henry", "Weber"],
+    "answer": "Farad",
+    "hint": "Named after Michael Faraday",
+    "fact": "The farad measures how much electric charge is stored per volt."
+  },
+  {
+    "q": "Which empire was ruled by Mansa Musa, the richest man in history?",
+    "options": ["Mali Empire", "Ottoman Empire", "Roman Empire", "Byzantine Empire"],
+    "answer": "Mali Empire",
+    "hint": "Located in West Africa",
+    "fact": "Mansa Musa's wealth came from gold and salt trade in the Mali Empire."
+  },
+  {
+    "q": "Fill in the blank: The capital of Kazakhstan is ____.",
+    "options": ["Astana", "Almaty", "Tashkent", "Bishkek"],
+    "answer": "Astana",
+    "hint": "Renamed several times",
+    "fact": "Astana, now called Nur-Sultan and back to Astana, is the capital of Kazakhstan."
+  },
+  {
+    "q": "Which blood cells are responsible for clotting?",
+    "options": ["Platelets", "Red blood cells", "White blood cells", "Plasma"],
+    "answer": "Platelets",
+    "hint": "Also called thrombocytes",
+    "fact": "Platelets are small blood components that help stop bleeding."
+  },
+  {
+    "q": "Spell correction: 'Occassionally'",
+    "options": ["Occasionally", "Occassionally", "Occasionaly", "Ocassionally"],
+    "answer": "Occasionally",
+    "hint": "One 's' and two 'c's",
+    "fact": "The correct spelling is 'Occasionally'."
+  },
+  {
+    "q": "What is the only country in the world without an official capital?",
+    "options": ["Nauru", "Vatican City", "Monaco", "San Marino"],
+    "answer": "Nauru",
+    "hint": "Small Pacific island",
+    "fact": "Nauru has no official capital, but government offices are in Yaren District."
+  },
+  {
+    "q": "Which gas is produced by radioactive decay of uranium?",
+    "options": ["Radon", "Argon", "Neon", "Xenon"],
+    "answer": "Radon",
+    "hint": "Colorless and radioactive",
+    "fact": "Radon is a radioactive noble gas that can accumulate indoors."
+  },
+  {
+    "q": "Which war was fought between the houses of Lancaster and York?",
+    "options": ["Wars of the Roses", "Hundred Years' War", "English Civil War", "Norman Conquest"],
+    "answer": "Wars of the Roses",
+    "hint": "15th century England",
+    "fact": "The Wars of the Roses were fought for control of the English throne."
+  },
+  {
+    "q": "What is the value of Pi to three decimal places?",
+    "options": ["3.142", "3.141", "3.143", "3.140"],
+    "answer": "3.142",
+    "hint": "Begins 3.14...",
+    "fact": "Pi to three decimal places is 3.142."
+  },
+  {
+    "q": "Which is the only mammal capable of sustained flight?",
+    "options": ["Bat", "Flying squirrel", "Colugo", "Sugar glider"],
+    "answer": "Bat",
+    "hint": "Uses echolocation",
+    "fact": "Bats are the only mammals capable of true flight."
+  },
+  {
+    "q": "Spell correction: 'Manoevre'",
+    "options": ["Manoeuvre", "Manuevre", "Manouver", "Maneuvre"],
+    "answer": "Manoeuvre",
+    "hint": "British spelling, 'oeu' in the middle",
+    "fact": "The British spelling is 'Manoeuvre'; US spelling is 'Maneuver'."
+  },
+  {
+    "q": "Which element has the highest melting point?",
+    "options": ["Tungsten", "Carbon", "Osmium", "Rhenium"],
+    "answer": "Tungsten",
+    "hint": "Used in light bulb filaments",
+    "fact": "Tungsten melts at 3,422°C, the highest of all elements."
+  },
+  {
+    "q": "Which scientist is considered the father of modern chemistry?",
+    "options": ["Antoine Lavoisier", "Dmitri Mendeleev", "Robert Boyle", "Joseph Priestley"],
+    "answer": "Antoine Lavoisier",
+    "hint": "Named oxygen and hydrogen",
+    "fact": "Lavoisier is known for his work on the law of conservation of mass."
+  },
+  {
+    "q": "What is the capital of Bhutan?",
+    "options": ["Thimphu", "Paro", "Punakha", "Phuntsholing"],
+    "answer": "Thimphu",
+    "hint": "Located in the Himalayas",
+    "fact": "Thimphu is the capital and largest city of Bhutan."
+  },
+  {
+    "q": "Spell correction: 'Conoisseur'",
+    "options": ["Connoisseur", "Conoisseur", "Connesieur", "Connoiser"],
+    "answer": "Connoisseur",
+    "hint": "Double 'n' and double 's'",
+    "fact": "The correct spelling is 'Connoisseur'."
+  },
+  {
+    "q": "Which is the deepest point on Earth's surface?",
+    "options": ["Challenger Deep", "Mariana Trench", "Tonga Trench", "Puerto Rico Trench"],
+    "answer": "Challenger Deep",
+    "hint": "Part of the Mariana Trench",
+    "fact": "Challenger Deep reaches about 10,984 meters below sea level."
+  },
+  {
+    "q": "What is the hardest naturally occurring mineral?",
+    "options": ["Diamond", "Corundum", "Quartz", "Topaz"],
+    "answer": "Diamond",
+    "hint": "Mohs scale rank 10",
+    "fact": "Diamond is the hardest known natural material."
+  },
+  {
+    "q": "Which organelle is responsible for photosynthesis?",
+    "options": ["Chloroplast", "Mitochondria", "Nucleus", "Ribosome"],
+    "answer": "Chloroplast",
+    "hint": "Contains chlorophyll",
+    "fact": "Chloroplasts are found in plant cells and perform photosynthesis."
+  },
+  {
+    "q": "Fill in the blank: The smallest unit of heredity is a ____.",
+    "options": ["Gene", "Chromosome", "DNA", "Allele"],
+    "answer": "Gene",
+    "hint": "Segment of DNA",
+    "fact": "A gene is a unit of heredity that codes for a specific trait."
+  },
+  {
+    "q": "What is the speed of light in vacuum in m/s?",
+    "options": ["299792458", "300000000", "299792000", "299000000"],
+    "answer": "299792458",
+    "hint": "Exact scientific constant",
+    "fact": "The speed of light in vacuum is exactly 299,792,458 meters per second."
+  },
+  {
+    "q": "Which battle marked Napoleon’s final defeat?",
+    "options": ["Battle of Waterloo", "Battle of Leipzig", "Battle of Trafalgar", "Battle of Austerlitz"],
+    "answer": "Battle of Waterloo",
+    "hint": "1815",
+    "fact": "Napoleon was defeated at Waterloo by the British and Prussians."
+  },
+  {
+    "q": "Spell correction: 'Pharoah'",
+    "options": ["Pharaoh", "Pharoah", "Pharao", "Pharroh"],
+    "answer": "Pharaoh",
+    "hint": "Ruler of ancient Egypt",
+    "fact": "The correct spelling is 'Pharaoh'."
+  },
+  {
+    "q": "Who developed the general theory of relativity?",
+    "options": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Max Planck"],
+    "answer": "Albert Einstein",
+    "hint": "Published in 1915",
+    "fact": "Einstein's general theory of relativity describes gravity as the curvature of spacetime."
+  },
+  {
+    "q": "What is the capital of Mongolia?",
+    "options": ["Ulaanbaatar", "Astana", "Bishkek", "Tashkent"],
+    "answer": "Ulaanbaatar",
+    "hint": "Also called Ulan Bator",
+    "fact": "Ulaanbaatar is Mongolia's capital and largest city."
+  },
+  {
+    "q": "Which chemical element was named after the creator of the periodic table?",
+    "options": ["Mendelevium", "Einsteinium", "Curium", "Rutherfordium"],
+    "answer": "Mendelevium",
+    "hint": "Named after Dmitri Mendeleev",
+    "fact": "Mendelevium is a synthetic element with symbol Md."
+  },
+  {
+    "q": "Which novel begins with 'Call me Ishmael'?",
+    "options": ["Moby-Dick", "Treasure Island", "The Old Man and the Sea", "Robinson Crusoe"],
+    "answer": "Moby-Dick",
+    "hint": "About a white whale",
+    "fact": "Herman Melville's 'Moby-Dick' begins with the line 'Call me Ishmael'."
+  },
+  {
+    "q": "Spell correction: 'Acomodation'",
+    "options": ["Accommodation", "Acomodation", "Accomodation", "Accomadation"],
+    "answer": "Accommodation",
+    "hint": "Two 'c's and two 'm's",
+    "fact": "The correct spelling is 'Accommodation'."
+  },
+  {
+    "q": "In which year did the Berlin Wall fall?",
+    "options": ["1989", "1990", "1988", "1991"],
+    "answer": "1989",
+    "hint": "End of Cold War",
+    "fact": "The Berlin Wall fell in 1989, leading to German reunification."
+  },
+  {
+    "q": "What is the largest known star by radius?",
+    "options": ["UY Scuti", "Betelgeuse", "VY Canis Majoris", "Rigel"],
+    "answer": "UY Scuti",
+    "hint": "Red supergiant",
+    "fact": "UY Scuti has an estimated radius over 1,700 times that of the Sun."
+  },
+  {
+    "q": "Which gas is responsible for the greenhouse effect the most?",
+    "options": ["Carbon dioxide", "Methane", "Nitrous oxide", "Water vapor"],
+    "answer": "Carbon dioxide",
+    "hint": "Emitted by burning fossil fuels",
+    "fact": "Carbon dioxide is the largest contributor to human-caused global warming."
+  },
+  {
+    "q": "What is the study of fungi called?",
+    "options": ["Mycology", "Bacteriology", "Virology", "Botany"],
+    "answer": "Mycology",
+    "hint": "Mushroom science",
+    "fact": "Mycology is the branch of biology concerned with fungi."
+  },
+  {
+    "q": "Who was the first emperor of China?",
+    "options": ["Qin Shi Huang", "Han Wudi", "Kublai Khan", "Sun Yat-sen"],
+    "answer": "Qin Shi Huang",
+    "hint": "Built the first version of the Great Wall",
+    "fact": "Qin Shi Huang unified China in 221 BC."
+  }
+  ]
+}
