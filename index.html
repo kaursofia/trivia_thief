@@ -418,7 +418,7 @@ const fallbackQuestions = {
 let questionBank = {easy:[],medium:[],hard:[]};
 async function loadQuestions() {
   try {
-    const res = await fetch('Questions.json');
+    const res = await fetch('questions.json');
     if (!res.ok) throw new Error("Failed to fetch");
     const data = await res.json();
     if (data && Array.isArray(data.easy) && Array.isArray(data.medium) && Array.isArray(data.hard)) {
