@@ -1,73 +1,86 @@
 {
-  "manifest": {
-    "name": "Trivia Thief - Quiz Game",
+  "name": "Trivia Thief - Quiz Game",
   "short_name": "Trivia Thief",
   "description": "A fun and challenging trivia quiz game with multiple difficulty levels.",
-    "start_url": "index.html",
-    "display": "standalone",
-    "display_override": ["standalone", "window-controls-overlay"],
-    "background_color": "#ffffff",
-    "theme_color": "#ff9800",
-    "orientation": "portrait",
-    "icons": [
-      {
-        "src": "apple-touch-icon.png",
-        "sizes": "180x180",
-        "type": "image/png"
-      },
-      {
-        "src": "web-app-manifest-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "web-app-manifest-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any maskable"
-      }
-    ],
-    "shortcuts": [
-      {
-        "name": "Easy Quiz",
-        "short_name": "Easy",
-        "url": "index.html?mode=easy",
-        "icons": [{ "src": "badgeone.png", "sizes": "96x96", "type": "image/png" }]
-      },
-      {
-        "name": "Medium Quiz",
-        "short_name": "Medium",
-        "url": "index.html?mode=medium",
-        "icons": [{ "src": "badgetwo.png", "sizes": "96x96", "type": "image/png" }]
-      },
-      {
-        "name": "Hard Quiz",
-        "short_name": "Hard",
-        "url": "index.html?mode=hard",
-        "icons": [{ "src": "logo.png", "sizes": "96x96", "type": "image/png" }]
-      }
-    ],
-    "protocol_handlers": [
-      {
-        "protocol": "web+quiz",
-        "url": "index.html?quiz=%s"
-      }
-    ],
-    "share_target": {
-      "action": "index.html",
-      "method": "GET",
-      "params": {
-        "title": "title",
-        "text": "text",
-        "url": "url"
-      }
+  "start_url": "index.html",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ff9800",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  },
-  "meta": {
-    "version": "1.0",
-    "description": "A fun trivia quiz game with multiple difficulty levels.",
-    "author": "Sofia Kaur"
-  },
-  "license": "All Rights Reserved - Copyright (c) 2025 Sofia Kaur. Unauthorized copying is strictly prohibited."
+  ],
+  "shortcuts": [
+    {
+      "name": "Easy Quiz",
+      "short_name": "Easy",
+      "url": "index.html?mode=easy",
+      "icons": [
+        {
+          "src": "badgeone.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Medium Quiz",
+      "short_name": "Medium",
+      "url": "index.html?mode=medium",
+      "icons": [
+        {
+          "src": "badgetwo.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Hard Quiz",
+      "short_name": "Hard",
+      "url": "index.html?mode=hard",
+      "icons": [
+        {
+          "src": "logo.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+quiz",
+      "url": "index.html?quiz=%s"
+    }
+  ],
+  "share_target": {
+    "action": "index.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
