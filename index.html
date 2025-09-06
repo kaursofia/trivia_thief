@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
   <!--
-All Rights Reserved
-Copyright (c) 2025 Sofia Kaur
-Unauthorized copying of this file, via any medium is strictly prohibited.
--->
+  All Rights Reserved
+  Copyright (c) 2025 Sofia Kaur
+  Unauthorized copying of this file, via any medium is strictly prohibited.
+  -->
 <head>
   <!-- Google Tag Manager -->
-  <script>
+  <!-- <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id=GTM-PZSNLRJ4'+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PZSNLRJ4');
-  </script>
+  </script> -->
   <!-- End Google Tag Manager -->
    <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1B1RV7TDY"></script>
@@ -24,32 +24,54 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     gtag('config', 'G-P1B1RV7TDY');
   </script>
   <!-- End Google Analytics 4 -->
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com;">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#ffb300">
 <title>Trivia Thief — Quiz</title>
 <style>
   :root{
     --bg:#fff6e5; --card:#fffdfa; --accent:#ff9800; --primary:#ffb300;
-    --muted:#666; --success:#4caf50; --danger:#f44336;
+    --muted:#666; --success:#4caf50; --danger:#f44336; --text:#222;
     --card-shadow:0 8px 28px rgba(0,0,0,.12);
     --btn-shadow:0 2px 10px #ffe6b7;
+    --toggle-bg: #f0f0f0;
+    --toggle-active: #ffb300;
   }
-  html,body{height:100%;margin:0;padding:0;}
+  
+  /* Dark mode variables */
+  body.dark-mode {
+    --bg: #1a1a1a;
+    --card: #2d2d2d;
+    --accent: #ff9800;
+    --primary: #ffb300;
+    --muted: #aaa;
+    --success: #66bb6a;
+    --danger: #ef5350;
+    --text: #f5f5f5;
+    --card-shadow:0 8px 28px rgba(0,0,0,.4);
+    --btn-shadow:0 2px 10px rgba(255, 152, 0, 0.3);
+    --toggle-bg: #444;
+    --toggle-active: #ffb300;
+  }
+  html  html,body{height:100%;margin:0;padding:0;}
   body{
     background:var(--bg);
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     display:flex;align-items:center;justify-content:center;
     min-height:100vh;
     padding:16px;
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
   }
+  
   .screen{
     background:var(--card);
     width:100%;
     max-width:370px;
-    border-radius:22px;box-shadow:var(--card-shadow);
+    border-radius:22px;
+    box-shadow:var(--card-shadow);
     padding:28px 18px 22px 18px;
     box-sizing:border-box;
     text-align:center;
@@ -61,24 +83,48 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
-    transition: max-width .2s, padding .2s;
+    transition: max-width .2s, padding .2s, background-color 0.3s;
   }
+  
   @media (max-width:420px){
     .screen{max-width:99vw;padding:12px 2vw 14vw 2vw;}
   }
+  
   .logo{width:80px;margin-bottom:10px}
+  .logo-top{width:60px;height:60px;object-fit:contain;}
+  
   h1{margin:6px 0 4px;color:var(--accent);font-size:26px;font-weight:700}
+  
   .avatars{display:flex;gap:14px;justify-content:center;margin-bottom:14px;}
-  .avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;border:3px solid transparent;background:white;position:relative;box-shadow:var(--btn-shadow);}
+  
+  .avatar{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    cursor:pointer;
+    border:3px solid transparent;
+    background:white;
+    position:relative;
+    box-shadow:var(--btn-shadow);
+  }
+  
   .avatar.selected{border-color:var(--primary);transform:scale(1.06)}
+  
   .avatar[data-locked="true"]::after{
     content:"🔒";
     position:absolute;
-    bottom:4px; right:4px;
+    bottom:4px; 
+    right:4px;
     font-size:14px;
   }
+  
   input[type="text"] {
     width: 100%;
+    max-width: 300px;
     padding: 12px;
     border-radius: 20px;
     border: 1px solid #e0e0e0;
@@ -88,9 +134,32 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     box-sizing: border-box;
     font-size: 16px;
   }
-  .btn{display:inline-block;width:100%;padding:14px;border-radius:28px;border:none;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;font-weight:700;cursor:pointer;box-shadow:var(--btn-shadow);transition:box-shadow .1s, transform .1s;}
-  .btn.small{width:auto;padding:10px 12px;border-radius:20px;font-size:14px}
+  
+  .btn{
+    display:inline-block;
+    width:100%;
+    max-width: 300px;
+    padding:14px;
+    border-radius:28px;
+    border:none;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:var(--btn-shadow);
+    transition:box-shadow .1s, transform .1s;
+    margin: 0 auto;
+  }
+  
+  .btn.small{
+    width:auto;
+    padding:10px 12px;
+    border-radius:20px;
+    font-size:14px
+  }
+  
   .btn:active{box-shadow:0 1px 2px #ffe6b7;transform:scale(.97);}
+  
   .btn.faded, .btn[disabled]{
     opacity:.45;
     cursor:not-allowed;
@@ -98,24 +167,61 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     pointer-events: none;
     box-shadow:none;
   }
+  
   .progress-bar{
-    height:10px;background:#eee;border-radius:8px;overflow:hidden;margin-bottom:12px;
+    height:10px;
+    background:#eee;
+    border-radius:8px;
+    overflow:hidden;
+    margin-bottom:12px;
     box-shadow:0 2px 8px #ffe0b3;
   }
+  
   .progress-fill{
-    height:100%;width:0;
+    height:100%;
+    width:0;
     background:var(--accent);
     transition:width .25s linear, background .18s;
     border-radius:8px;
   }
+  
   .progress-fill.lowtime{background:var(--danger);}
-  .question{font-weight:700;font-size:19px;color:#222;min-height:45px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;}
-  .options{display:flex;flex-direction:column;gap:10px;margin-top:8px;margin-bottom:12px;}
+  
+  .question{
+    font-weight:700;
+    font-size:19px;
+    color:var(--text);
+    min-height:45px;
+    max-height:90px;
+    overflow-y:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:4px;
+    padding:0 10px;
+  }
+  
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:8px;
+    margin-bottom:12px;
+  }
+  
   .answer-btn{
-    background:#fff;border:2px solid #ffd796;padding:12px 0;border-radius:12px;cursor:pointer;font-weight:600;transition:background .16s, box-shadow .11s, border .13s, color .13s;
+    background:#fff;
+    border:2px solid #ffd796;
+    padding:12px 0;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    transition:background .16s, box-shadow .11s, border .13s, color .13s;
     box-shadow:var(--btn-shadow);
     font-size:1em;
+    color: var(--text);
   }
+  
   .answer-btn:hover, .answer-btn:focus{
     background:#fffbe6;
     box-shadow:0 3px 12px #ffe6b7;
@@ -123,14 +229,27 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     color:var(--accent);
     outline:none;
   }
+  
   .answer-btn:active{
     background:#ffefd0;
     transform:scale(.98);
   }
+  
   .answer-btn.correct{background:var(--success);color:#fff;border-color:var(--success);}
   .answer-btn.wrong{background:var(--danger);color:#fff;border-color:var(--danger);}
   .answer-btn.disabled{opacity:.6;cursor:not-allowed}
-  .avatar-small { width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;font-size:21px;}
+  
+  .avatar-small { 
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    font-size:21px;
+  }
+  
   .lifeline-row{
     margin: 10px auto 0 auto;
     padding: 0 0 0 0;
@@ -143,10 +262,25 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     z-index:10;
     pointer-events:auto;
   }
+  
   .lifeline-btn{
-    width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--primary),var(--accent));color:white;font-size:22px;border:none;cursor:pointer;position:relative;box-shadow:var(--btn-shadow);pointer-events: auto;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:white;
+    font-size:22px;
+    border:none;
+    cursor:pointer;
+    position:relative;
+    box-shadow:var(--btn-shadow);
+    pointer-events: auto;
     transition:box-shadow .18s,transform .1s;
   }
+  
   .lifeline-btn:hover, .lifeline-btn:focus{
     box-shadow:0 5px 18px #ffe6b7;
     outline:none;
@@ -154,16 +288,22 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     color:#fffde6;
     transform:scale(1.05);
   }
+  
   .lifeline-btn:active{transform:scale(.95);}
+  
   .lifeline-btn.used, .lifeline-btn[disabled]{
-    opacity:.43;transform:scale(.96);cursor:not-allowed;filter: grayscale(0.2) brightness(1.08);
+    opacity:.43;
+    transform:scale(.96);
+    cursor:not-allowed;
+    filter: grayscale(0.2) brightness(1.09);
     box-shadow:none;
     pointer-events: none;
   }
+  
   .lifeline-cost-label {
     font-size: 13px;
     color: #ff9800;
-    background: #fffdfa;
+    background: var(--card);
     border-radius: 11px;
     padding: 1px 8px 2px 8px;
     position: absolute;
@@ -178,13 +318,586 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     box-shadow:0 1px 4px #ffe0b7;
     letter-spacing:0.5px;
   }
+  
   .meta{font-size:14px;color:var(--muted);margin-top:7px}
-  .badge{width:90px;height:90px;border-radius:50%;margin:10px auto 10px auto;background:linear-gradient(180deg,#ffd54f,#ffb300);display:flex;align-items:center;justify-content:center;box-shadow:var(--btn-shadow);}
+  
+  .badge{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    margin:10px auto 10px auto;
+    background:linear-gradient(180deg,#ffd54f,#ffb300);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:var(--btn-shadow);
+  }
+  
   #rewardChest{display:none;margin-top:10px}
   #chestImage{width:80px;transition:transform .3s}
   #chestImage.opened{transform:translateY(-6px) rotate(-6deg)}
-  .funfact{position:fixed;left:50%;transform:translateX(-50%);bottom:-120px;background:#fff8e1;padding:12px 18px;border-radius:14px;box-shadow:0 8px 22px rgba(0,0,0,.12);transition:bottom .35s ease,opacity .35s ease;opacity:0;z-index:120}
+  
+  .funfact{
+    position:fixed;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-120px;
+    background:var(--card);
+    padding:12px 18px;
+    border-radius:14px;
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
+    transition:bottom .35s ease,opacity .35s ease;
+    opacity:0;
+    z-index:120; 
+    color: var(--text);
+  }
+  
   .funfact.show{bottom:72px;opacity:1}
+  
+  /* Top bar with center title */
+  .top-bar-with-title {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    z-index: 100;
+  }
+  
+  .top-bar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  
+  /* User info bar */
+  .user-info-bar {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    z-index: 100;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-size: 16px;
+    box-shadow: var(--btn-shadow);
+  }
+  
+  .user-name {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .coin-display {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+  }
+  
+  /* Improved toggle buttons */
+  .toggle-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
+  }
+  
+  .toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .toggle-label {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  
+  .toggle-pill {
+    display: flex;
+    align-items: center;
+    background: var(--toggle-bg);
+    border-radius: 30px;
+    padding: 3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    width: 44px;
+    height: 24px;
+  }
+  
+  .toggle-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+  }
+  
+  .toggle-option.active {
+    background: var(--toggle-active);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+  }
+  
+  .toggle-option:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Larger avatar for difficulty view */
+  .user-avatar-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-size: 40px;
+    box-shadow: var(--btn-shadow);
+    margin: 0 auto 16px;
+  }
+  body.dark-mode .user-avatar-large {
+    background: #3a3a3a;
+  }
+  .user-name-large {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  
+  .welcome-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  
+  /* Dark mode adjustments */
+  body.dark-mode .answer-btn {
+    background: #3a3a3a;
+    border-color: #555;
+    color: var(--text);
+  }
+  
+  body.dark-mode .answer-btn:hover, body.dark-mode .answer-btn:focus {
+    background: #444;
+    border-color: var(--primary);
+  }
+  
+  body.dark-mode input[type="text"] {
+    background: #3a3a3a;
+    border-color: #555;
+    color: var(--text);
+  }
+  
+  body.dark-mode .progress-bar {
+    background: #444;
+  }
+  
+  body.dark-mode #instructionsModal div {
+    background: #333;
+    color: var(--text);
+  }
+  
+  body.dark-mode .avatar {
+    background: #3a3a3a;
+  }
+  
+  body.dark-mode .avatar-small {
+    background: #3a3a3a;
+  }
+  
+  body.dark-mode .user-avatar {
+    background: #3a3a3a;
+  }
+  
+  /* Focus states */
+  button:focus, .avatar:focus, .answer-btn:focus, .lifeline-btn:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  
+  body.dark-mode button:focus, 
+  body.dark-mode .avatar:focus, 
+  body.dark-mode .answer-btn:focus, 
+  body.dark-mode .lifeline-btn:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+  
+  /* Notification system */
+  .notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    color: var(--text);
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .notification-content {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .notification-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--muted);
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .notification-close:hover, .notification-close:focus {
+    color: var(--danger);
+  }
+  
+  /* Loading indicator */
+  .loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+  
+  body.dark-mode .loading-indicator {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 152, 0, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--accent);
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 15px;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Instructions modal improvements */
+  #instructionsModal {
+    background: rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease;
+  }
+  
+  body.dark-mode #instructionsModal {
+    background: rgba(0,0,0,0.7);
+  }
+  
+  #instructionsModal div {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 340px;
+    margin: auto;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  body.dark-mode #instructionsModal div {
+    background: #333;
+    color: var(--text);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  
+  body.dark-mode #instructionsModal h2 {
+    color: var(--accent);
+  }
+  
+  #closeInstructions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--muted);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+  
+  #closeInstructions:hover, #closeInstructions:focus {
+    background: rgba(0,0,0,0.1);
+    color: var(--danger);
+  }
+  
+  body.dark-mode #closeInstructions:hover, 
+  body.dark-mode #closeInstructions:focus {
+    background: rgba(255,255,255,0.1);
+  }
+  
+  /* Coin icon SVG */
+  .coin-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  body.dark-mode .coin-icon circle {
+    fill: #FFA000;
+  }
+  
+  body.dark-mode .coin-icon text {
+    fill: #FFF8E1;
+  }
+  
+  /* Splash Screen */
+  #view-splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  #view-splash .logo {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  #view-splash .tag {
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    animation: slideUp 1.5s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Improved Leaderboard */
+  .leaderboard-container {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    box-shadow: var(--card-shadow);
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .leaderboard-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  #leaderboardList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #leaderboardList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: rgba(255, 152, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  body.dark-mode #leaderboardList li {
+    background: rgba(255, 152, 0, 0.2);
+  }
+  
+  #leaderboardList li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  #leaderboardList li:last-child {
+    margin-bottom: 0;
+  }
+  
+  #leaderboardList li.current-game {
+    background: rgba(255, 152, 0, 0.2);
+    border: 1px solid var(--accent);
+  }
+  
+  .leaderboard-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .leaderboard-avatar {
+    font-size: 20px;
+  }
+  
+  .leaderboard-name {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .leaderboard-score {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+  }
+  
+  .leaderboard-win {
+    color: var(--success);
+    margin-left: 4px;
+  }
+  
+  .leaderboard-loss {
+    color: var(--danger);
+    margin-left: 4px;
+  }
+  
+  /* Social buttons */
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .social-btn:hover, .social-btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  }
+  
+  .social-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .share-btn {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  }
+  
+  .share-btn:hover, .share-btn:focus {
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+  }
+  
+  .instagram-btn {
+    background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    box-shadow: 0 2px 8px rgba(225, 48, 108, 0.3);
+  }
+  
+  .instagram-btn:hover, .instagram-btn:focus {
+    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.4);
+  }
+  
+  /* Avatar unlock animation */
+  @keyframes unlock {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+  
+  .avatar.unlocking {
+    animation: unlock 0.5s ease-in-out;
+  }
 </style>
 </head>
 <body>
@@ -194,90 +907,174 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
-<!-- Start View -->
+<!-- Splash Screen View -->
 <div class="screen" role="application" aria-label="Trivia Thief Game">
-  <div id="view-start" class="view active">
+  <div id="view-splash" class="view active">
     <img class="logo" src="logo.png" alt="Trivia Thief Logo">
     <p class="tag"><strong>A Game Can Make You Millionaire</strong></p>
-    <h1>QUIZ GAME</h1>
-    <div class="avatars" id="avatarRow">
-      <div class="avatar" data-id="cat" title="Cat" role="button" aria-label="Select Cat avatar" tabindex="0">🐱</div>
-      <div class="avatar" data-id="dog" title="Dog" role="button" aria-label="Select Dog avatar" tabindex="0">🐶</div>
-      <div class="avatar" data-id="owl" data-locked="true" title="Owl" role="button" aria-label="Select Owl avatar (locked)" aria-disabled="true" tabindex="0">🦉</div>
-      <div class="avatar" data-id="alien" data-locked="true" title="Alien" role="button" aria-label="Select Alien avatar (locked)" aria-disabled="true" tabindex="0">👽</div>
+  </div>
+  <!-- Start View -->
+  <div id="view-start" class="view" style="display:none">
+    <!-- Top bar with logo and title -->
+    <div class="top-bar-with-title">
+      <img class="logo-top" src="logo.png" alt="Trivia Thief Logo">
+      <div class="top-bar-title">QUIZ GAME</div>
     </div>
-    <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name" autocomplete="name" />
-    <div style="height:10px"></div>
-    <button id="startBtn" class="btn" aria-label="Start the quiz">Start</button>
-    <div style="margin-top:10px"><button class="btn small" type="button" id="instructionsBtn" aria-label="Show instructions">Instructions</button></div>
-    <div class="meta">Tap avatar, enter name, then press Start</div>
-    <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;">
-      <img src="coin.png" alt="Coins" style="width:20px;height:20px">
-      <span id="coinCount" style="font-weight:600" aria-live="polite">0</span>
+    
+    <!-- Toggle buttons positioned at center right -->
+    <div class="toggle-container">
+      <div class="toggle-wrapper">
+        <span class="toggle-label">🌙</span>
+        <div class="toggle-pill" id="darkModeToggle" aria-label="Toggle dark mode">
+          <div class="toggle-option" id="lightMode" title="Light Mode">☀️</div>
+          <div class="toggle-option active" id="darkMode" title="Dark Mode">🌙</div>
+        </div>
+      </div>
+      
+      <div class="toggle-wrapper">
+        <span class="toggle-label">🔊</span>
+        <div class="toggle-pill" id="soundToggle" aria-label="Toggle sound">
+          <div class="toggle-option active" id="soundOn" title="Sound On">🔊</div>
+          <div class="toggle-option" id="soundOff" title="Sound Off">🔇</div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 90px; display: flex; flex-direction: column; align-items: center; width: 100%;">
+      <div class="avatars" id="avatarRow">
+        <div class="avatar" data-id="cat" title="Cat" role="button" aria-label="Select Cat avatar" tabindex="0">🐱</div>
+        <div class="avatar" data-id="dog" title="Dog" role="button" aria-label="Select Dog avatar" tabindex="0">🐶</div>
+        <div class="avatar" data-id="owl" data-locked="true" title="Owl" role="button" aria-label="Select Owl avatar (locked)" aria-disabled="true" tabindex="0">🦉</div>
+        <div class="avatar" data-id="alien" data-locked="true" title="Alien" role="button" aria-label="Select Alien avatar (locked)" aria-disabled="true" tabindex="0">👽</div>
+      </div>
+      <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name" autocomplete="name" />
+      <div style="height:10px"></div>
+      <button id="startBtn" class="btn" aria-label="Start the quiz">Start</button>
+      <div style="margin-top:10px"><button class="btn small" type="button" id="instructionsBtn" aria-label="Show instructions">Instructions</button></div>
+      <div class="meta">Tap avatar, enter name, then press Start</div>
+      <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;">
+        <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+          <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+        </svg>
+        <span id="coinCount" style="font-weight:600" aria-live="polite">0</span>
+      </div>
     </div>
   </div>
+  
   <!-- Difficulty View -->
   <div id="view-difficulty" class="view" style="display:none">
-    <h2 style="margin-bottom:18px;">Select Difficulty</h2>
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <button class="btn" data-diff="easy" aria-label="Select easy difficulty">Easy</button>
-      <button class="btn" data-diff="medium" aria-label="Select medium difficulty">Medium</button>
-      <button class="btn" data-diff="hard" aria-label="Select hard difficulty">Hard</button>
+    <div style="margin-top: 40px;">
+      <div class="user-avatar-large" id="difficultyAvatar"></div>
+      <div class="welcome-text" id="welcomeText">Welcome!</div>
+      
+      <h2 style="margin-bottom:18px;">Select Difficulty</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button class="btn" data-diff="easy" aria-label="Select easy difficulty">Easy</button>
+        <button class="btn" data-diff="medium" aria-label="Select medium difficulty">Medium</button>
+        <button class="btn" data-diff="hard" aria-label="Select hard difficulty">Hard</button>
+      </div>
+      <div class="meta" style="margin-top:14px;">Questions will be pulled randomly from the chosen pool.</div>
+      <div style="margin-top:16px"><button class="btn small" id="backToStart" aria-label="Back to main menu">Back</button></div>
     </div>
-    <div class="meta" style="margin-top:14px;">Questions will be pulled randomly from the chosen pool.</div>
-    <div style="margin-top:16px"><button class="btn small" id="backToStart" aria-label="Back to main menu">Back</button></div>
   </div>
+  
   <!-- Quiz View -->
   <div id="view-quiz" class="view" style="display:none;position:relative;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-      <div style="display:flex;align-items:center;gap:8px">
-        <div class="avatar-small" id="headerAvatar" aria-label="Selected avatar"></div>
-        <span id="headerUsername" style="font-weight:600" aria-label="Player name"></span>
+    <!-- User info bar with coins -->
+    <div class="user-info-bar">
+      <div class="user-info">
+        <div class="user-avatar" id="headerAvatar"></div>
+        <span class="user-name" id="headerUsername"></span>
       </div>
-      <div style="display:flex;align-items:center;gap:6px">
-        <img src="coin.png" alt="Coins" style="width:20px;height:20px">
+      <div class="coin-display">
+        <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+          <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+        </svg>
         <span id="coinCountQuiz" style="font-weight:600" aria-live="polite">0</span>
       </div>
     </div>
-    <div id="progressText" class="meta" aria-live="polite"></div>
-    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" aria-label="Quiz progress"><div id="progressFill" class="progress-fill"></div></div>
-    <div id="questionText" class="question" aria-live="polite">Question will appear here</div>
-    <div id="optionsContainer" class="options" role="list"></div>
-    <div class="lifeline-row" id="lifelineRow">
-      <button id="btnHint" class="lifeline-btn lifeline-hint" aria-label="Use hint lifeline (costs 20 coins)">
-        <span style="font-size:1.2em;line-height:1.1;">💡</span>
-        <span class="lifeline-cost-label">20 <img src="coin.png" width="13" alt="Coins"></span>
-      </button>
-      <button id="btn5050" class="lifeline-btn lifeline-5050" aria-label="Use 50/50 lifeline (costs 30 coins)">
-        <span style="font-size:1.1em;line-height:1.1;">✂️</span>
-        <span class="lifeline-cost-label">30 <img src="coin.png" width="13" alt="Coins"></span>
-      </button>
+    
+    <div style="margin-top: 60px;">
+      <div id="progressText" class="meta" aria-live="polite"></div>
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" aria-label="Quiz progress"><div id="progressFill" class="progress-fill"></div></div>
+      <div id="questionText" class="question" aria-live="polite">Question will appear here</div>
+      <div id="optionsContainer" class="options" role="list"></div>
+      <div class="lifeline-row" id="lifelineRow">
+        <button id="btnHint" class="lifeline-btn lifeline-hint" aria-label="Use hint lifeline (costs 20 coins)">
+          <span style="font-size:1.2em;line-height:1.1;">💡</span>
+          <span class="lifeline-cost-label">20 
+            <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
+            </svg>
+          </span>
+        </button>
+        <button id="btn5050" class="lifeline-btn lifeline-5050" aria-label="Use 50/50 lifeline (costs 30 coins)">
+          <span style="font-size:1.1em;line-height:1.1;">✂️</span>
+          <span class="lifeline-cost-label">30 
+            <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
+  
   <!-- End View -->
   <div id="view-end" class="view" style="display:none">
-    <div id="badge" class="badge" style="display:none"><img id="badgeImage" src="" alt="Badge" style="width:80%;height:auto;border-radius:50%"></div>
-    <h2 id="endTitle">You Win!</h2>
-    <div id="motivationalQuote" class="meta" style="color:#b97b16;margin-bottom:8px;font-weight:600"></div>
-    <div id="playerSummary" class="meta"></div>
-    <div style="margin-top:12px">
-      <button class="btn" id="playAgainBtn" aria-label="Play again">Play Again</button>
-      <button class="btn small" id="mainMenuBtn" style="margin-top:8px" aria-label="Go to main menu">Main Menu</button>
+    <!-- User info bar with avatar only -->
+    <div class="user-info-bar">
+      <div class="user-avatar" id="endAvatar"></div>
+      <div class="coin-display">
+        <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+          <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+        </svg>
+        <span id="coinCountEnd" style="font-weight:600" aria-live="polite">0</span>
+      </div>
     </div>
-    <div id="rewardChest" style="text-align:center;display:none">
-      <img src="chest_closed.png" id="chestImage" alt="Chest">
-      <div style="margin-top:8px"><button id="openChestBtn" class="btn small" aria-label="Open reward chest">Open Chest</button></div>
-    </div>
-    <div style="margin-top:14px;text-align:left">
-      <h3 style="margin:8px 0 6px">Leaderboard</h3>
-      <ol id="leaderboardList" style="padding-left:18px;margin:0 0 6px 0"></ol>
+    
+    <div style="margin-top: 60px;">
+      <div id="badge" class="badge" style="display:none"><img id="badgeImage" src="" alt="Badge" style="width:80%;height:auto;border-radius:50%"></div>
+      <h2 id="endTitle">You Win!</h2>
+      <div id="motivationalQuote" class="meta" style="color:#b97b16;margin-bottom:8px;font-weight:600"></div>
+      <div id="playerSummary" class="meta"></div>
+      <div style="margin-top:12px">
+        <button class="btn" id="playAgainBtn" aria-label="Play again">Play Again</button>
+        <button class="btn small" id="mainMenuBtn" style="margin-top:8px" aria-label="Go to main menu">Main Menu</button>
+      </div>
+      <div id="rewardChest" style="text-align:center;display:none">
+        <img src="chest_closed.png" id="chestImage" alt="Chest">
+        <div style="margin-top:8px"><button id="openChestBtn" class="btn small" aria-label="Open reward chest">Open Chest</button></div>
+      </div>
+      
+      <!-- Improved Leaderboard -->
+      <div class="leaderboard-container">
+        <div class="leaderboard-title">Latest Games</div>
+        <ol id="leaderboardList" style="padding-left:0;list-style-type:none;"></ol>
+        
+        <!-- Social buttons -->
+        <div class="social-buttons">
+          <button class="social-btn share-btn" id="shareBtn">
+            <span>📤</span> Share
+          </button>
+          <a href="https://instagram.com/triviathief" target="_blank" class="social-btn instagram-btn">
+            <span>📷</span> Follow
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+  
   <div id="funFact" class="funfact" aria-live="polite" aria-hidden="true"></div>
 </div>
-<div id="instructionsModal" style="display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,.36);align-items:center;justify-content:center;z-index:200">
+<div id="instructionsModal" style="display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;align-items:center;justify-content:center;z-index:200">
   <div style="background:white;padding:20px;border-radius:12px;max-width:340px;margin:auto;text-align:left">
-    <button id="closeInstructions" style="float:right" aria-label="Close instructions">×</button>
+    <button id="closeInstructions" aria-label="Close instructions">×</button>
     <h2 style="color:var(--accent)">How to Play</h2>
     <ol>
       <li>Pick avatar and enter name.</li>
@@ -286,13 +1083,21 @@ Unauthorized copying of this file, via any medium is strictly prohibited.
     </ol>
   </div>
 </div>
-
+<!-- Notification System -->
+<div id="notification" class="notification" aria-live="polite">
+  <div class="notification-content"></div>
+  <button class="notification-close" aria-label="Close notification">×</button>
+</div>
+<!-- Loading Indicator -->
+<div id="loadingIndicator" class="loading-indicator" style="display: none;">
+  <div class="spinner"></div>
+  <div>Loading questions...</div>
+</div>
 <!-- SOUND EFFECTS -->
 <audio id="sfxStart" src="start.wav" preload="auto"></audio>
 <audio id="sfxTimer" src="tick.wav" preload="auto" loop></audio>
 <audio id="sfxCoin" src="coin.wav" preload="auto"></audio>
 <audio id="sfxChest" src="chest.wav" preload="auto"></audio>
-
 <script>
 const QUESTION_LIMIT = 10, HINT_COST = 20, FIFTY_COST = 30, AVATAR_UNLOCK_COST = 100;
 const MOTIVATIONAL_QUOTES = [
@@ -318,17 +1123,37 @@ const state = {
   timerVal: 10,
   timerHandle: null,
   used5050: false,
-  usedHint: false
+  usedHint: false,
+  soundEnabled: true,
+  darkMode: false,
+  currentView: 'splash',
+  audioContext: null,
+  unlockedAvatars: []
 };
 const byId = id => document.getElementById(id);
-
 // --- SOUND FX HELPERS ---
 function playSFX(id, loop=false) {
+  if (!state.soundEnabled) return;
+  
   const el = document.getElementById(id);
   if (el) {
     el.loop = loop;
     el.currentTime = 0;
-    el.play().catch(()=>{});
+    
+    // Add error handling
+    const playPromise = el.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.error(`Error playing sound ${id}:`, error);
+        // Disable sound if there's an error
+        state.soundEnabled = false;
+        byId('soundOn').classList.remove('active');
+        byId('soundOff').classList.add('active');
+        localStorage.setItem('soundEnabled', 'false');
+        showNotification("Sound disabled due to error");
+      });
+    }
   }
 }
 function stopSFX(id) {
@@ -338,31 +1163,90 @@ function stopSFX(id) {
     el.currentTime = 0;
   }
 }
+// Stop all currently playing sounds
+function stopAllSounds() {
+  stopSFX('sfxStart');
+  stopSFX('sfxTimer');
+  stopSFX('sfxCoin');
+  stopSFX('sfxChest');
+}
 // ---
-
+// Sanitize input to prevent XSS
+function sanitizeInput(input) {
+  const div = document.createElement('div');
+  div.textContent = input;
+  return div.innerHTML;
+}
+// Validate coins from localStorage
+function getValidatedCoins() {
+  const stored = localStorage.getItem('quizCoins');
+  const coins = parseInt(stored || '0', 10);
+  if (isNaN(coins) || coins < 0 || coins > 10000) {
+    return 0;
+  }
+  return coins;
+}
+// Get unlocked avatars from localStorage
+function getUnlockedAvatars() {
+  const stored = localStorage.getItem('unlockedAvatars');
+  return stored ? JSON.parse(stored) : [];
+}
+// Save unlocked avatar to localStorage
+function unlockAvatar(avatarId) {
+  if (!state.unlockedAvatars.includes(avatarId)) {
+    state.unlockedAvatars.push(avatarId);
+    localStorage.setItem('unlockedAvatars', JSON.stringify(state.unlockedAvatars));
+  }
+}
 function updateCoins(amount) {
   state.coins += amount;
   if (state.coins < 0) state.coins = 0;
   localStorage.setItem('quizCoins', String(state.coins));
   byId('coinCount').textContent = state.coins;
   byId('coinCountQuiz').textContent = state.coins;
-  if(amount > 0) playSFX('sfxCoin');
+  byId('coinCountEnd').textContent = state.coins;
+  if(amount > 0) {
+    // Play coin sound only if not already playing
+    const coinAudio = document.getElementById('sfxCoin');
+    if (coinAudio && coinAudio.paused) {
+      playSFX('sfxCoin');
+    }
+  }
 }
 function getAvatarEmoji(id) {
   return ({cat:'🐱', dog:'🐶', owl:'🦉', alien:'👽'}[id] || '🙂');
 }
 function showView(id) {
-  ['view-start','view-difficulty','view-quiz','view-end'].forEach(v => {
+  // Stop all sounds when changing views
+  stopAllSounds();
+  
+  // Update current view state
+  state.currentView = id;
+  
+  ['view-splash', 'view-start','view-difficulty','view-quiz','view-end'].forEach(v => {
     const el = byId(v);
     if (!el) return;
     el.style.display = (v === id) ? 'block' : 'none';
   });
-  // --- SOUND HANDLING ---
+  
+  // Update user info on different views
+  if (id === 'view-difficulty') {
+    byId('welcomeText').textContent = `Welcome, ${sanitizeInput(state.name)}!`;
+    byId('difficultyAvatar').textContent = getAvatarEmoji(state.avatarId);
+  } else if (id === 'view-quiz') {
+    byId('headerAvatar').textContent = getAvatarEmoji(state.avatarId);
+    byId('headerUsername').textContent = sanitizeInput(state.name);
+    byId('coinCountQuiz').textContent = state.coins;
+  } else if (id === 'view-end') {
+    byId('endAvatar').textContent = getAvatarEmoji(state.avatarId);
+    byId('coinCountEnd').textContent = state.coins;
+  }
+  
+  // Handle view-specific audio
   if (id === 'view-start' || id === 'view-end') {
     playSFX('sfxStart');
-    stopSFX('sfxTimer');
-  } else {
-    stopSFX('sfxStart');
+  } else if (id === 'view-quiz') {
+    playSFX('sfxTimer', true);
   }
 }
 function resetLifelines() {
@@ -416,28 +1300,65 @@ const fallbackQuestions = {
   ]
 };
 let questionBank = {easy:[],medium:[],hard:[]};
+let questionsLoaded = false;
 async function loadQuestions() {
+  if (questionsLoaded) return;
+  
+  // Show loading indicator
+  byId('loadingIndicator').style.display = 'flex';
+  
   try {
     const res = await fetch('questions.json');
     if (!res.ok) throw new Error("Failed to fetch");
     const data = await res.json();
     if (data && Array.isArray(data.easy) && Array.isArray(data.medium) && Array.isArray(data.hard)) {
-      questionBank = {
-        easy: (data.easy.length >= 5 ? data.easy.slice(0) : data.easy.concat(fallbackQuestions.easy.slice(0,5-data.easy.length))),
-        medium: (data.medium.length >= 5 ? data.medium.slice(0) : data.medium.concat(fallbackQuestions.medium.slice(0,5-data.medium.length))),
-        hard: (data.hard.length >= 5 ? data.hard.slice(0) : data.hard.concat(fallbackQuestions.hard.slice(0,5-data.hard.length)))
+      // Get unique questions without duplicates
+      const getUniqueQuestions = (loadedQuestions, fallbackQuestions, minCount) => {
+        if (loadedQuestions.length >= minCount) return loadedQuestions.slice(0);
+        
+        const combined = [...loadedQuestions];
+        const fallbackSet = new Set(loadedQuestions.map(q => q.q));
+        
+        for (const q of fallbackQuestions) {
+          if (combined.length >= minCount) break;
+          if (!fallbackSet.has(q.q)) {
+            combined.push(q);
+            fallbackSet.add(q.q);
+          }
+        }
+        
+        return combined.slice(0, minCount);
       };
+      
+      questionBank = {
+        easy: getUniqueQuestions(data.easy || [], fallbackQuestions.easy, 5),
+        medium: getUniqueQuestions(data.medium || [], fallbackQuestions.medium, 5),
+        hard: getUniqueQuestions(data.hard || [], fallbackQuestions.hard, 5)
+      };
+      questionsLoaded = true;
     } else {
       questionBank = {...fallbackQuestions};
+      questionsLoaded = true;
     }
   } catch(e) {
     questionBank = {...fallbackQuestions};
+    questionsLoaded = true;
+  } finally {
+    // Hide loading indicator
+    byId('loadingIndicator').style.display = 'none';
   }
 }
 function getShuffledQuestions(level, count) {
   let arr = questionBank[level].slice();
   shuffleArray(arr);
-  return arr.slice(0, Math.min(count, arr.length));
+  
+  // Ensure we have enough questions
+  if (arr.length < count) {
+    console.warn(`Not enough questions in ${level} pool. Using ${arr.length} questions.`);
+    count = arr.length;
+  }
+  
+  return arr.slice(0, count);
 }
 function updateProgress() {
   const total = state.pool.length || 1;
@@ -480,6 +1401,26 @@ function showFunFact(text, closeAfter = 1600) {
   funFactEl.setAttribute('aria-hidden','false');
   setTimeout(() => { funFactEl.classList.remove('show'); funFactEl.setAttribute('aria-hidden','true'); }, closeAfter);
 }
+// Custom notification system
+function showNotification(message, duration = 3000) {
+  const notification = document.getElementById('notification');
+  const content = notification.querySelector('.notification-content');
+  const closeBtn = notification.querySelector('.notification-close');
+  
+  content.textContent = message;
+  notification.classList.add('show');
+  notification.setAttribute('aria-live', 'assertive');
+  
+  const hideNotification = () => {
+    notification.classList.remove('show');
+  };
+  
+  closeBtn.onclick = hideNotification;
+  
+  if (duration > 0) {
+    setTimeout(hideNotification, duration);
+  }
+}
 const btn5050El = byId('btn5050');
 const btnHintEl = byId('btnHint');
 function updateLifelineStates() {
@@ -513,26 +1454,84 @@ btnHintEl.addEventListener('click', () => {
 });
 function saveToLeaderboard(win) {
   const board = JSON.parse(localStorage.getItem('quizLeaderboard') || '[]');
-  board.push({ name: state.name, avatar: state.avatarId, difficulty: state.difficulty, score: state.correctCount, total: state.pool.length, win: !!win });
-  board.sort((a,b) => (b.win - a.win) || (b.score - a.score));
-  localStorage.setItem('quizLeaderboard', JSON.stringify(board.slice(0,10)));
+  
+  // Validate new entry with timestamp
+  const newEntry = {
+    name: state.name.substring(0, 50), // Limit name length
+    avatar: state.avatarId,
+    difficulty: state.difficulty,
+    score: Math.max(0, Math.min(state.correctCount, state.pool.length)), // Ensure valid score
+    total: state.pool.length,
+    win: !!win,
+    timestamp: Date.now(), // Add timestamp for sorting
+    isCurrent: true // Mark as current game
+  };
+  
+  // Mark all existing entries as not current
+  board.forEach(entry => entry.isCurrent = false);
+  
+  // Add new entry at the beginning
+  board.unshift(newEntry);
+  
+  // Keep only last 5 entries
+  const trimmedBoard = board.slice(0, 5);
+  localStorage.setItem('quizLeaderboard', JSON.stringify(trimmedBoard));
+  
+  return newEntry; // Return the new entry for highlighting
 }
-function renderLeaderboard() {
+function renderLeaderboard(currentEntry = null) {
   const list = byId('leaderboardList');
   list.innerHTML = '';
-  const board = JSON.parse(localStorage.getItem('quizLeaderboard') || '[]');
-  board.forEach(entry => {
+  let board = [];
+  
+  try {
+    board = JSON.parse(localStorage.getItem('quizLeaderboard') || '[]');
+    // Validate board entries
+    board = board.filter(entry => 
+      entry && 
+      typeof entry.name === 'string' && 
+      typeof entry.score === 'number' && 
+      entry.score >= 0
+    );
+  } catch (e) {
+    console.error('Error parsing leaderboard data', e);
+  }
+  
+  if (board.length === 0) {
+    list.innerHTML = '<li style="text-align: center; color: var(--muted);">No games played yet</li>';
+    return;
+  }
+  
+  board.forEach((entry, index) => {
     const li = document.createElement('li');
-    li.innerHTML = `<strong>${entry.name}</strong> (${entry.difficulty.toUpperCase()}) - ${entry.score}/${entry.total}`;
+    if (entry.isCurrent || (currentEntry && currentEntry.timestamp === entry.timestamp)) {
+      li.classList.add('current-game');
+    }
+    
+    li.innerHTML = `
+      <div class="leaderboard-entry">
+        <span class="leaderboard-avatar">${getAvatarEmoji(entry.avatar)}</span>
+        <span class="leaderboard-name">${sanitizeInput(entry.name)}</span>
+        <span>(${entry.difficulty.toUpperCase()})</span>
+      </div>
+      <div>
+        <span class="leaderboard-score">${entry.score}/${entry.total}</span>
+        ${entry.win ? '<span class="leaderboard-win">✓</span>' : '<span class="leaderboard-loss">✗</span>'}
+      </div>
+    `;
     list.appendChild(li);
   });
 }
 function finishGame(win) {
   clearTimer();
+  stopSFX('sfxTimer'); // Explicitly stop the timer sound
   funFactEl.classList.remove('show');
   showView('view-end');
+  
+  const currentEntry = saveToLeaderboard(win);
+  
   if (win) {
-    byId('endTitle').textContent = `🎉 Congratulations, ${state.name}! You Won!`;
+    byId('endTitle').textContent = `🎉 Congratulations, ${sanitizeInput(state.name)}! You Won!`;
     byId('badge').style.display = 'flex';
     if (!state.used5050 && !state.usedHint) {
       byId('badgeImage').src = 'badgeone.png';
@@ -547,29 +1546,34 @@ function finishGame(win) {
       openBtn.classList.remove('faded');
       openBtn.dataset.opened = '0';
     }
-    byId('motivationalQuote').textContent = "You’re a trivia master!";
+    byId('motivationalQuote').textContent = "You're a trivia master!";
   } else {
-    byId('endTitle').textContent = `😢 Game Over, ${state.name}`;
+    byId('endTitle').textContent = `😢 Game Over, ${sanitizeInput(state.name)}`;
     byId('badge').style.display = 'none';
     byId('rewardChest').style.display = 'none';
     byId('motivationalQuote').textContent = MOTIVATIONAL_QUOTES[Math.floor(Math.random()*MOTIVATIONAL_QUOTES.length)];
   }
   byId('playerSummary').textContent = `Score: ${state.correctCount}/${state.pool.length}`;
-  renderLeaderboard();
-  saveToLeaderboard(win);
+  renderLeaderboard(currentEntry);
 }
 function renderQuestion() {
   if (state.index >= state.pool.length) {
     finishGame(true);
     return;
   }
+  
   updateProgress();
   const q = state.pool[state.index];
   byId('questionText').textContent = q.q;
   const container = byId('optionsContainer');
+  
+  // Use a document fragment for better performance
+  const fragment = document.createDocumentFragment();
   container.innerHTML = '';
+  
   let shuffledOptions = q.options.slice();
   shuffleArray(shuffledOptions);
+  
   shuffledOptions.forEach(opt => {
     const btn = document.createElement('button');
     btn.className = 'answer-btn';
@@ -577,14 +1581,23 @@ function renderQuestion() {
     btn.setAttribute('aria-label', `Answer option: ${opt}`);
     btn.textContent = opt;
     btn.onclick = () => onAnswer(btn, opt);
-    container.appendChild(btn);
+    fragment.appendChild(btn);
   });
-  Array.from(container.querySelectorAll('.answer-btn')).forEach(b => { b.style.visibility = 'visible'; b.classList.remove('disabled','correct','wrong'); b.disabled = false; });
+  
+  // Add all buttons at once
+  container.appendChild(fragment);
+  
+  Array.from(container.querySelectorAll('.answer-btn')).forEach(b => { 
+    b.style.visibility = 'visible'; 
+    b.classList.remove('disabled','correct','wrong'); 
+    b.disabled = false; 
+  });
+  
   byId('headerAvatar').textContent = getAvatarEmoji(state.avatarId);
-  byId('headerUsername').textContent = state.name;
+  byId('headerUsername').textContent = sanitizeInput(state.name);
   byId('coinCountQuiz').textContent = state.coins;
   updateLifelineStates();
-  playSFX('sfxTimer', true); // Timer ticking sound
+  playSFX('sfxTimer', true);
   startTimer();
 }
 function shuffleArray(a) {
@@ -594,41 +1607,75 @@ function shuffleArray(a) {
   }
   return a;
 }
-document.querySelectorAll('.avatar').forEach(a => {
-  a.addEventListener('click', () => {
-    if (a.dataset.locked === "true") {
-      if (state.coins >= AVATAR_UNLOCK_COST && confirm(`Unlock this avatar for ${AVATAR_UNLOCK_COST} coins?`)) {
-        updateCoins(-AVATAR_UNLOCK_COST);
-        a.dataset.locked = "false";
-        a.removeAttribute('aria-disabled');
-        alert("Avatar unlocked!");
-      } else {
-        alert("This avatar is locked. Earn more coins to unlock.");
-        return;
-      }
+// Initialize avatar states
+function initializeAvatars() {
+  state.unlockedAvatars = getUnlockedAvatars();
+  
+  document.querySelectorAll('.avatar').forEach(a => {
+    const avatarId = a.dataset.id;
+    
+    // Check if avatar is unlocked
+    if (state.unlockedAvatars.includes(avatarId)) {
+      a.dataset.locked = "false";
+      a.removeAttribute('aria-disabled');
+    } else if (avatarId !== 'cat' && avatarId !== 'dog') {
+      // Only lock owl and alien by default, cat and dog are unlocked
+      a.dataset.locked = "true";
+      a.setAttribute('aria-disabled', 'true');
     }
-    document.querySelectorAll('.avatar').forEach(x => x.classList.remove('selected'));
-    a.classList.add('selected');
-    state.avatarId = a.dataset.id;
+    
+    a.addEventListener('click', () => {
+      if (a.dataset.locked === "true") {
+        if (state.coins >= AVATAR_UNLOCK_COST) {
+          if (confirm(`Unlock this avatar for ${AVATAR_UNLOCK_COST} coins?`)) {
+            updateCoins(-AVATAR_UNLOCK_COST);
+            unlockAvatar(avatarId);
+            a.dataset.locked = "false";
+            a.removeAttribute('aria-disabled');
+            a.classList.add('unlocking');
+            showNotification("Avatar unlocked!");
+            
+            // Automatically select the unlocked avatar
+            document.querySelectorAll('.avatar').forEach(x => x.classList.remove('selected'));
+            a.classList.add('selected');
+            state.avatarId = a.dataset.id;
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+              a.classList.remove('unlocking');
+            }, 500);
+          }
+        } else {
+          showNotification("This avatar is locked. Earn more coins to unlock.");
+          return;
+        }
+      } else {
+        document.querySelectorAll('.avatar').forEach(x => x.classList.remove('selected'));
+        a.classList.add('selected');
+        state.avatarId = a.dataset.id;
+      }
+    });
+    
+    a.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') a.click();
+    });
   });
-  a.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') a.click();
-  });
-});
-byId('startBtn').addEventListener('click', function initMusic() {
-  const startEl = document.getElementById('sfxStart');
-  if (startEl) {
-    startEl.loop = true;
-    startEl.currentTime = 0;
-    startEl.play().catch(() => {});
+}
+// Start button click handler
+function handleStartClick() {
+  playSFX('sfxStart');
+  if (!state.avatarId) {
+    showNotification("Select an avatar first");
+    return;
   }
-  if (!state.avatarId) return alert("Select an avatar first");
-  if (!byId('nameInput').value.trim()) return alert("Enter your name");
+  if (!byId('nameInput').value.trim()) {
+    showNotification("Enter your name");
+    return;
+  }
   state.name = byId('nameInput').value.trim();
   showView('view-difficulty');
-  byId('startBtn').removeEventListener('click', initMusic);
-});
-
+}
+byId('startBtn').addEventListener('click', handleStartClick);
 byId('openChestBtn').addEventListener('click', () => {
   const btn = byId('openChestBtn');
   if (!btn) return;
@@ -640,8 +1687,41 @@ byId('openChestBtn').addEventListener('click', () => {
   btn.disabled = true;
   btn.classList.add('faded');
   playSFX('sfxChest');
-  alert(`🎉 You won ${coinsWon} coins!`);
+  showNotification(`🎉 You won ${coinsWon} coins!`);
 });
+// Share functionality
+byId('shareBtn').addEventListener('click', () => {
+  const shareText = `🎮 I just played Trivia Thief and scored ${state.correctCount}/${state.pool.length}! Can you beat my score, ${state.name}? Challenge yourself at: ${window.location.href}`;
+  
+  if (navigator.share) {
+    navigator.share({
+      title: 'Trivia Thief Quiz Game',
+      text: shareText,
+      url: window.location.href
+    })
+    .then(() => {
+      showNotification('Thanks for sharing!');
+    })
+    .catch(err => {
+      console.error('Error sharing:', err);
+      // Fallback to clipboard if share is cancelled
+      copyToClipboard(shareText);
+    });
+  } else {
+    // Fallback for browsers that don't support Web Share API
+    copyToClipboard(shareText);
+  }
+});
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      showNotification('Share link copied to clipboard!');
+    })
+    .catch(err => {
+      console.error('Error copying to clipboard:', err);
+      showNotification('Unable to share. Please try again.');
+    });
+}
 document.querySelectorAll('#view-difficulty .btn[data-diff]').forEach(btn => btn.addEventListener('click', async () => {
   await loadQuestions();
   state.difficulty = btn.dataset.diff;
@@ -654,67 +1734,195 @@ document.querySelectorAll('#view-difficulty .btn[data-diff]').forEach(btn => btn
 }));
 byId('playAgainBtn').addEventListener('click', () => { showView('view-difficulty'); });
 byId('mainMenuBtn').addEventListener('click', () => { showView('view-start'); });
-byId('instructionsBtn').addEventListener('click', () => { byId('instructionsModal').style.display = 'flex'; });
+byId('instructionsBtn').addEventListener('click', () => { 
+  byId('instructionsModal').style.display = 'flex'; 
+  // Apply dark mode styles to modal if needed
+  if (document.body.classList.contains('dark-mode')) {
+    const modalDiv = byId('instructionsModal').querySelector('div');
+    if (modalDiv) {
+      modalDiv.style.background = '#333';
+      modalDiv.style.color = 'var(--text)';
+      const modalTitle = modalDiv.querySelector('h2');
+      if (modalTitle) {
+        modalTitle.style.color = 'var(--accent)';
+      }
+    }
+  }
+});
 byId('closeInstructions').addEventListener('click', () => { byId('instructionsModal').style.display = 'none'; });
-byId('backToStart').addEventListener('click', () => { showView('view-start'); });
-state.coins = parseInt(localStorage.getItem('quizCoins') || '0', 10);
+byId('backToStart').addEventListener('click', () => { 
+  showView('view-start'); 
+  // Re-attach start button event listener when going back to start screen
+  byId('startBtn').addEventListener('click', handleStartClick);
+});
+// Dark mode toggle
+byId('lightMode').addEventListener('click', () => {
+  document.body.classList.remove('dark-mode');
+  state.darkMode = false;
+  byId('lightMode').classList.remove('active');
+  byId('darkMode').classList.add('active');
+  localStorage.setItem('darkMode', 'false');
+});
+byId('darkMode').addEventListener('click', () => {
+  document.body.classList.add('dark-mode');
+  state.darkMode = true;
+  byId('darkMode').classList.remove('active');
+  byId('lightMode').classList.add('active');
+  localStorage.setItem('darkMode', 'true');
+});
+// Sound toggle
+byId('soundOn').addEventListener('click', () => {
+  state.soundEnabled = true;
+  byId('soundOn').classList.add('active');
+  byId('soundOff').classList.remove('active');
+  localStorage.setItem('soundEnabled', 'true');
+});
+byId('soundOff').addEventListener('click', () => {
+  state.soundEnabled = false;
+  byId('soundOff').classList.add('active');
+  byId('soundOn').classList.remove('active');
+  localStorage.setItem('soundEnabled', 'false');
+  // Stop all currently playing sounds
+  stopAllSounds();
+});
+// Initialize settings from localStorage
+state.coins = getValidatedCoins();
+state.soundEnabled = localStorage.getItem('soundEnabled') !== 'false';
+state.darkMode = localStorage.getItem('darkMode') === 'true';
+// Apply saved settings
+if (state.darkMode) {
+  document.body.classList.add('dark-mode');
+  byId('darkMode').classList.add('active');
+  byId('lightMode').classList.remove('active');
+}
+if (!state.soundEnabled) {
+  byId('soundOn').classList.remove('active');
+  byId('soundOff').classList.add('active');
+}
 byId('coinCount').textContent = state.coins;
 byId('coinCountQuiz').textContent = state.coins;
+byId('coinCountEnd').textContent = state.coins;
+// Initialize avatars
+initializeAvatars();
+// Show splash screen first, then transition to start screen
+window.addEventListener('load', () => {
+  showView('view-splash');
+  
+  // Transition to start screen after 3 seconds
+  setTimeout(() => {
+    showView('view-start');
+  }, 3000);
+});
 loadQuestions();
 </script>
 <script>
+// PWA Functionality
 let deferredPrompt;
-
 window.addEventListener('beforeinstallprompt', (e) => {
   // Prevent Chrome from showing the default mini-infobar
   e.preventDefault();
   // Store the event so you can trigger it later
   deferredPrompt = e;
-
-  // Create an install button
-  const installBtn = document.createElement('button');
-  installBtn.textContent = '📥 Install App';
-  installBtn.style.position = 'fixed';
-  installBtn.style.bottom = '20px';
-  installBtn.style.right = '20px';
-  installBtn.style.zIndex = '9999';
-  installBtn.style.padding = '10px 15px';
-  installBtn.style.background = '#ff9800';
-  installBtn.style.color = 'white';
-  installBtn.style.border = 'none';
-  installBtn.style.borderRadius = '5px';
-  installBtn.style.cursor = 'pointer';
-
-  // Add click event to trigger install prompt
-  installBtn.addEventListener('click', () => {
-    installBtn.style.display = 'none';
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the install');
-      } else {
-        console.log('User dismissed the install');
-      }
-      deferredPrompt = null;
+  
+  // Check if install button already exists
+  if (!document.getElementById('installBtn')) {
+    // Create an install button
+    const installBtn = document.createElement('button');
+    installBtn.id = 'installBtn';
+    installBtn.textContent = '📥 Install App';
+    installBtn.style.position = 'fixed';
+    installBtn.style.bottom = '20px';
+    installBtn.style.right = '20px';
+    installBtn.style.zIndex = '9999';
+    installBtn.style.padding = '10px 15px';
+    installBtn.style.background = '#ff9800';
+    installBtn.style.color = 'white';
+    installBtn.style.border = 'none';
+    installBtn.style.borderRadius = '5px';
+    installBtn.style.cursor = 'pointer';
+    installBtn.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+    
+    // Add click event to trigger install prompt
+    installBtn.addEventListener('click', () => {
+      installBtn.style.display = 'none';
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install');
+        } else {
+          console.log('User dismissed the install');
+        }
+        deferredPrompt = null;
+      });
     });
-  });
-
-  // Append the button to the body
-  document.body.appendChild(installBtn);
+    
+    // Append the button to the body
+    document.body.appendChild(installBtn);
+  }
 });
-/*
-All Rights Reserved
-Copyright (c) 2025 Sofia Kaur
-Unauthorized copying of this file, via any medium is strictly prohibited.
-*/
-</script>
-<script>
+// Register Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('Service Worker registered', reg))
-      .catch(err => console.log('SW registration failed:', err));
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => {
+        console.log('Service Worker registered', reg);
+        
+        // Check for updates
+        reg.addEventListener('updatefound', () => {
+          const installingWorker = reg.installing;
+          installingWorker.addEventListener('statechange', () => {
+            if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // New content is available, show update notification
+              showNotification('New version available! Refresh to update.', 5000);
+            }
+          });
+        });
+      })
+      .catch(err => {
+        console.log('SW registration failed:', err);
+        // Create a basic service worker if registration fails
+        createBasicServiceWorker();
+      });
   });
+}
+// Create a basic service worker if the registration fails
+function createBasicServiceWorker() {
+  const swContent = `
+    self.addEventListener('install', event => {
+      self.skipWaiting();
+    });
+    
+    self.addEventListener('activate', event => {
+      event.waitUntil(clients.claim());
+    });
+    
+    self.addEventListener('fetch', event => {
+      event.respondWith(
+        fetch(event.request).catch(() => {
+          return caches.match(event.request);
+        })
+      );
+    });
+  `;
+  
+  const blob = new Blob([swContent], { type: 'application/javascript' });
+  const swUrl = URL.createObjectURL(blob);
+  
+  navigator.serviceWorker.register(swUrl)
+    .then(reg => console.log('Basic SW registered'))
+    .catch(err => console.log('Basic SW registration failed:', err));
+}
+// Handle app installed event
+window.addEventListener('appinstalled', () => {
+  showNotification('App installed successfully!', 3000);
+  const installBtn = document.getElementById('installBtn');
+  if (installBtn) {
+    installBtn.style.display = 'none';
+  }
+});
+// Check if the app is running in standalone mode (PWA)
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  console.log('App is running in standalone mode');
 }
 </script>
 </body>
