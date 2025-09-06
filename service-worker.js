@@ -1,36 +1,44 @@
-const CACHE_NAME = 'trivia-thief-cache-v1';
+const CACHE_NAME = 'trivia-thief-cache-v2';
 
 // All files in same folder as index.html
 const ASSETS_TO_CACHE = [
-  'index.html',
-  'logo.png',
-  'coin.png',
-  'chest_closed.png',
-  'badgeone.png',
-  'badgetwo.png',
-  'start.wav',
-  'tick.wav',
-  'coin.wav',
-  'chest.wav',
-  'questions.json',
-  'apple-touch-icon.png',
-  'site.webmanifest',
-  'favicon-96x96.png',
-  'favicon.ico',
-  'favicon.svg',
-  'web-app-manifest-192x192.png',
-  'web-app-manifest-512x512.png',
-  'service-worker.js',
-  'README.md',
-  'LICENSE.txt'
-  // Add any other assets you want cached here (no comma after last item)
+  './index.html',
+  './logo.png',
+  './coin.png',
+  './chest_closed.png',
+  './badgeone.png',
+  './badgetwo.png',
+  './start.wav',
+  './tick.wav',
+  './coin.wav',
+  './chest.wav',
+  './questions.json',
+  './apple-touch-icon.png',
+  './site.webmanifest',
+  './favicon-96x96.png',
+  './favicon.ico',
+  './favicon.svg',
+  './web-app-manifest-192x192.png',
+  './web-app-manifest-512x512.png'
+  // ❌ Removed README.md, LICENSE.txt, and service-worker.js from cache list
+  // These may not be served or needed in cache
 ];
 
-// Install event: cache assets
+// Install event: safely cache assets
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS_TO_CACHE))
-  );
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    for (const asset of ASSETS_TO_CACHE) {
+      try {
+        const response = await fetch(asset, { cache: 'reload' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        await cache.put(asset, response.clone());
+      } catch (err) {
+        console.warn('[SW] Failed to cache', asset, err);
+      }
+    }
+    self.skipWaiting();
+  })());
 });
 
 // Activate event: cleanup old caches
@@ -38,39 +46,36 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
-        keys
-          .filter(key => key !== CACHE_NAME)
-          .map(key => caches.delete(key))
+        keys.filter(key => key !== CACHE_NAME)
+            .map(key => caches.delete(key))
       )
-    )
+    ).then(() => self.clients.claim())
   );
 });
 
-// Fetch event: serve from cache, fall back to network
+// Fetch event: serve from cache first
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request, { ignoreSearch: true }).then(response => {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request, { ignoreSearch: true })
+      .then(response => response || fetch(event.request))
   );
 });
 
-// --- Background Sync Example ---
-self.addEventListener('sync', (event) => {
+// Optional background sync example
+self.addEventListener('sync', event => {
   if (event.tag === 'sync-quiz-scores') {
     event.waitUntil(uploadScores());
   }
 });
 
 async function uploadScores() {
-  // Example: simulate uploading stored quiz scores
   console.log('Background sync: Uploading quiz scores...');
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise(resolve => setTimeout(resolve, 2000));
   console.log('Quiz scores uploaded!');
 }
 
-// --- Periodic Sync Example ---
-self.addEventListener('periodicsync', (event) => {
+// Optional periodic sync example
+self.addEventListener('periodicsync', event => {
   if (event.tag === 'update-questions') {
     event.waitUntil(fetchNewQuestions());
   }
@@ -79,7 +84,7 @@ self.addEventListener('periodicsync', (event) => {
 async function fetchNewQuestions() {
   console.log('Periodic sync: Fetching latest questions...');
   try {
-    const res = await fetch('questions.json'); // relative path safe for ZIP
+    const res = await fetch('./questions.json');
     if (res.ok) {
       console.log('Questions updated successfully');
     }
@@ -93,3 +98,4 @@ All Rights Reserved
 Copyright (c) 2025 Sofia Kaur
 Unauthorized copying of this file, via any medium is strictly prohibited.
 */
+
