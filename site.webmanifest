@@ -2,12 +2,10 @@
   "name": "Trivia Thief - Quiz Game",
   "short_name": "Trivia Thief",
   "description": "A fun and challenging trivia quiz game with multiple difficulty levels.",
-  "start_url": "index.html",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "display_override": [
-    "standalone",
-    "window-controls-overlay"
-  ],
+  "display_override": ["standalone", "window-controls-overlay"],
   "background_color": "#ffffff",
   "theme_color": "#ff9800",
   "orientation": "portrait",
@@ -34,7 +32,7 @@
     {
       "name": "Easy Quiz",
       "short_name": "Easy",
-      "url": "index.html?mode=easy",
+      "url": "./?mode=easy",
       "icons": [
         {
           "src": "badgeone.png",
@@ -46,7 +44,7 @@
     {
       "name": "Medium Quiz",
       "short_name": "Medium",
-      "url": "index.html?mode=medium",
+      "url": "./?mode=medium",
       "icons": [
         {
           "src": "badgetwo.png",
@@ -58,7 +56,7 @@
     {
       "name": "Hard Quiz",
       "short_name": "Hard",
-      "url": "index.html?mode=hard",
+      "url": "./?mode=hard",
       "icons": [
         {
           "src": "logo.png",
@@ -71,11 +69,11 @@
   "protocol_handlers": [
     {
       "protocol": "web+quiz",
-      "url": "index.html?quiz=%s"
+      "url": "./?quiz=%s"
     }
   ],
   "share_target": {
-    "action": "index.html",
+    "action": "./",
     "method": "GET",
     "params": {
       "title": "title",
