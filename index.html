@@ -24,12 +24,31 @@
     gtag('config', 'G-P1B1RV7TDY');
   </script>
   <!-- End Google Analytics 4 -->
+   <!-- Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com;">
+    <meta name="description" content="A fun and challenging trivia quiz game with multiple difficulty levels. Test your knowledge with questions on various topics and challenge your friends!">
+    <meta name="version" content="1.0">
+    <meta name="author" content="Sofia Kaur">
+    <meta name="copyright" content="All Rights Reserved - Copyright (c) 2025 Trivia Thief">
+    <meta name="theme-color" content="#ffb300">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Trivia Thief">
+    <meta name="keywords" content="trivia, quiz, game, knowledge, questions, challenge, fun, education">
+    <meta name="robots" content="index, follow">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#ffb300">
-<title>Trivia Thief — Quiz</title>
+<!-- Icons -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmCULaM6tU8zTMs2uDZ+6BgdF2e5q5n9gHtvPp1zK0s8e3fXyZxX5x5hZ+4d4r9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<title>Trivia Thief — Quiz Game</title>
 <style>
   :root{
     --bg:#fff6e5; --card:#fffdfa; --accent:#ff9800; --primary:#ffb300;
@@ -42,28 +61,40 @@
   
   /* Dark mode variables */
   body.dark-mode {
-    --bg: #1a1a1a;
-    --card: #2d2d2d;
-    --accent: #ff9800;
-    --primary: #ffb300;
-    --muted: #aaa;
-    --success: #66bb6a;
-    --danger: #ef5350;
-    --text: #f5f5f5;
+  --bg: #121212;        /* ya koi aur dark background */
+  --card: #1e1e1e;      /* card ka dark shade */
+  --text: #ffffff;      /* text ko white karo */
+  --muted: #999999;     /* thoda halka grey */
+  --success: #4caf50;
+  --danger: #ff5252;
+  --accent: #ffb300;
     --card-shadow:0 8px 28px rgba(0,0,0,.4);
     --btn-shadow:0 2px 10px rgba(255, 152, 0, 0.3);
     --toggle-bg: #444;
     --toggle-active: #ffb300;
   }
-  html  html,body{height:100%;margin:0;padding:0;}
-  body{
-    background:var(--bg);
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    display:flex;align-items:center;justify-content:center;
-    min-height:100vh;
-    padding:16px;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
     color: var(--text);
     transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .app-container {
+    background: var(--card);
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .screen{
@@ -235,8 +266,22 @@
     transform:scale(.98);
   }
   
+  /* Fixed dark mode answer highlighting */
   .answer-btn.correct{background:var(--success);color:#fff;border-color:var(--success);}
   .answer-btn.wrong{background:var(--danger);color:#fff;border-color:var(--danger);}
+  
+  body.dark-mode .answer-btn.correct {
+    background: var(--success);
+    color: #fff;
+    border-color: var(--success);
+  }
+  
+  body.dark-mode .answer-btn.wrong {
+    background: var(--danger);
+    color: #fff;
+    border-color: var(--danger);
+  }
+  
   .answer-btn.disabled{opacity:.6;cursor:not-allowed}
   
   .avatar-small { 
@@ -532,6 +577,10 @@
     color: var(--text);
   }
   
+  body.dark-mode #instructionsModal h2 {
+    color: var(--accent);
+  }
+  
   body.dark-mode .avatar {
     background: #3a3a3a;
   }
@@ -642,6 +691,15 @@
   #instructionsModal {
     background: rgba(0,0,0,0.5);
     transition: opacity 0.3s ease;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
   }
   
   body.dark-mode #instructionsModal {
@@ -783,12 +841,14 @@
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 8px;
-    background: rgba(255, 152, 0, 0.1);
+    background: var(--card);   /* card ke jaisa hi background */
+    border: 1px solid var(--accent); /* sirf border se highlight */
     transition: transform 0.2s, box-shadow 0.2s;
   }
   
-  body.dark-mode #leaderboardList li {
-    background: rgba(255, 152, 0, 0.2);
+  body.dark-mode 
+  #leaderboardList li {
+    background: var(--card);   /* dark mode me bhi same card color */
   }
   
   #leaderboardList li:hover {
@@ -802,7 +862,6 @@
   
   #leaderboardList li.current-game {
     background: rgba(255, 152, 0, 0.2);
-    border: 1px solid var(--accent);
   }
   
   .leaderboard-entry {
@@ -898,6 +957,23 @@
   .avatar.unlocking {
     animation: unlock 0.5s ease-in-out;
   }
+  
+  /* Footer styling */
+  footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 16px;
+    background-color: var(--card);
+    color: var(--muted);
+    font-size: 14px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  body.dark-mode footer {
+    background-color: #222;
+  }
 </style>
 </head>
 <body>
@@ -907,197 +983,207 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
-<!-- Splash Screen View -->
-<div class="screen" role="application" aria-label="Trivia Thief Game">
-  <div id="view-splash" class="view active">
-    <img class="logo" src="logo.png" alt="Trivia Thief Logo">
-    <p class="tag"><strong>A Game Can Make You Millionaire</strong></p>
-  </div>
-  <!-- Start View -->
-  <div id="view-start" class="view" style="display:none">
-    <!-- Top bar with logo and title -->
-    <div class="top-bar-with-title">
-      <img class="logo-top" src="logo.png" alt="Trivia Thief Logo">
-      <div class="top-bar-title">QUIZ GAME</div>
-    </div>
-    
-    <!-- Toggle buttons positioned at center right -->
-    <div class="toggle-container">
-      <div class="toggle-wrapper">
-        <span class="toggle-label">🌙</span>
-        <div class="toggle-pill" id="darkModeToggle" aria-label="Toggle dark mode">
-          <div class="toggle-option" id="lightMode" title="Light Mode">☀️</div>
-          <div class="toggle-option active" id="darkMode" title="Dark Mode">🌙</div>
+  
+  <div class="app-container">
+    <!-- Splash Screen View -->
+    <div class="screen" role="application" aria-label="Trivia Thief Game">
+      <div id="view-splash" class="view active">
+        <img class="logo" src="logo.png" alt="Trivia Thief Logo">
+        <p class="tag"><strong>A Game Can Make You Millionaire</strong></p>
+      </div>
+      <!-- Start View -->
+      <div id="view-start" class="view" style="display:none">
+        <!-- Top bar with logo and title -->
+        <div class="top-bar-with-title">
+          <img class="logo-top" src="logo.png" alt="Trivia Thief Logo">
+          <div class="top-bar-title">QUIZ GAME</div>
         </div>
-      </div>
-      
-      <div class="toggle-wrapper">
-        <span class="toggle-label">🔊</span>
-        <div class="toggle-pill" id="soundToggle" aria-label="Toggle sound">
-          <div class="toggle-option active" id="soundOn" title="Sound On">🔊</div>
-          <div class="toggle-option" id="soundOff" title="Sound Off">🔇</div>
-        </div>
-      </div>
-    </div>
-    
-    <div style="margin-top: 90px; display: flex; flex-direction: column; align-items: center; width: 100%;">
-      <div class="avatars" id="avatarRow">
-        <div class="avatar" data-id="cat" title="Cat" role="button" aria-label="Select Cat avatar" tabindex="0">🐱</div>
-        <div class="avatar" data-id="dog" title="Dog" role="button" aria-label="Select Dog avatar" tabindex="0">🐶</div>
-        <div class="avatar" data-id="owl" data-locked="true" title="Owl" role="button" aria-label="Select Owl avatar (locked)" aria-disabled="true" tabindex="0">🦉</div>
-        <div class="avatar" data-id="alien" data-locked="true" title="Alien" role="button" aria-label="Select Alien avatar (locked)" aria-disabled="true" tabindex="0">👽</div>
-      </div>
-      <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name" autocomplete="name" />
-      <div style="height:10px"></div>
-      <button id="startBtn" class="btn" aria-label="Start the quiz">Start</button>
-      <div style="margin-top:10px"><button class="btn small" type="button" id="instructionsBtn" aria-label="Show instructions">Instructions</button></div>
-      <div class="meta">Tap avatar, enter name, then press Start</div>
-      <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;">
-        <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#FFD700"/>
-          <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
-        </svg>
-        <span id="coinCount" style="font-weight:600" aria-live="polite">0</span>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Difficulty View -->
-  <div id="view-difficulty" class="view" style="display:none">
-    <div style="margin-top: 40px;">
-      <div class="user-avatar-large" id="difficultyAvatar"></div>
-      <div class="welcome-text" id="welcomeText">Welcome!</div>
-      
-      <h2 style="margin-bottom:18px;">Select Difficulty</h2>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <button class="btn" data-diff="easy" aria-label="Select easy difficulty">Easy</button>
-        <button class="btn" data-diff="medium" aria-label="Select medium difficulty">Medium</button>
-        <button class="btn" data-diff="hard" aria-label="Select hard difficulty">Hard</button>
-      </div>
-      <div class="meta" style="margin-top:14px;">Questions will be pulled randomly from the chosen pool.</div>
-      <div style="margin-top:16px"><button class="btn small" id="backToStart" aria-label="Back to main menu">Back</button></div>
-    </div>
-  </div>
-  
-  <!-- Quiz View -->
-  <div id="view-quiz" class="view" style="display:none;position:relative;">
-    <!-- User info bar with coins -->
-    <div class="user-info-bar">
-      <div class="user-info">
-        <div class="user-avatar" id="headerAvatar"></div>
-        <span class="user-name" id="headerUsername"></span>
-      </div>
-      <div class="coin-display">
-        <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#FFD700"/>
-          <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
-        </svg>
-        <span id="coinCountQuiz" style="font-weight:600" aria-live="polite">0</span>
-      </div>
-    </div>
-    
-    <div style="margin-top: 60px;">
-      <div id="progressText" class="meta" aria-live="polite"></div>
-      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" aria-label="Quiz progress"><div id="progressFill" class="progress-fill"></div></div>
-      <div id="questionText" class="question" aria-live="polite">Question will appear here</div>
-      <div id="optionsContainer" class="options" role="list"></div>
-      <div class="lifeline-row" id="lifelineRow">
-        <button id="btnHint" class="lifeline-btn lifeline-hint" aria-label="Use hint lifeline (costs 20 coins)">
-          <span style="font-size:1.2em;line-height:1.1;">💡</span>
-          <span class="lifeline-cost-label">20 
-            <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
-              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
-            </svg>
-          </span>
-        </button>
-        <button id="btn5050" class="lifeline-btn lifeline-5050" aria-label="Use 50/50 lifeline (costs 30 coins)">
-          <span style="font-size:1.1em;line-height:1.1;">✂️</span>
-          <span class="lifeline-cost-label">30 
-            <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
-              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
-            </svg>
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  
-  <!-- End View -->
-  <div id="view-end" class="view" style="display:none">
-    <!-- User info bar with avatar only -->
-    <div class="user-info-bar">
-      <div class="user-avatar" id="endAvatar"></div>
-      <div class="coin-display">
-        <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#FFD700"/>
-          <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
-        </svg>
-        <span id="coinCountEnd" style="font-weight:600" aria-live="polite">0</span>
-      </div>
-    </div>
-    
-    <div style="margin-top: 60px;">
-      <div id="badge" class="badge" style="display:none"><img id="badgeImage" src="" alt="Badge" style="width:80%;height:auto;border-radius:50%"></div>
-      <h2 id="endTitle">You Win!</h2>
-      <div id="motivationalQuote" class="meta" style="color:#b97b16;margin-bottom:8px;font-weight:600"></div>
-      <div id="playerSummary" class="meta"></div>
-      <div style="margin-top:12px">
-        <button class="btn" id="playAgainBtn" aria-label="Play again">Play Again</button>
-        <button class="btn small" id="mainMenuBtn" style="margin-top:8px" aria-label="Go to main menu">Main Menu</button>
-      </div>
-      <div id="rewardChest" style="text-align:center;display:none">
-        <img src="chest_closed.png" id="chestImage" alt="Chest">
-        <div style="margin-top:8px"><button id="openChestBtn" class="btn small" aria-label="Open reward chest">Open Chest</button></div>
-      </div>
-      
-      <!-- Improved Leaderboard -->
-      <div class="leaderboard-container">
-        <div class="leaderboard-title">Latest Games</div>
-        <ol id="leaderboardList" style="padding-left:0;list-style-type:none;"></ol>
         
-        <!-- Social buttons -->
-        <div class="social-buttons">
-          <button class="social-btn share-btn" id="shareBtn">
-            <span>📤</span> Share
-          </button>
-          <a href="https://instagram.com/triviathief" target="_blank" class="social-btn instagram-btn">
-            <span>📷</span> Follow
-          </a>
+        <!-- Toggle buttons positioned at center right -->
+        <div class="toggle-container">
+          <div class="toggle-wrapper">
+            <div class="toggle-pill" id="darkModeToggle" aria-label="Toggle dark mode">
+              <div class="toggle-option" id="lightMode" title="Light Mode">☀️</div>
+              <div class="toggle-option active" id="darkMode" title="Dark Mode">🌙</div>
+            </div>
+          </div>
+          
+          <div class="toggle-wrapper">
+            <div class="toggle-pill" id="soundToggle" aria-label="Toggle sound">
+              <div class="toggle-option active" id="soundOn" title="Sound On">🔊</div>
+              <div class="toggle-option" id="soundOff" title="Sound Off">🔇</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 90px; display: flex; flex-direction: column; align-items: center; width: 100%;">
+          <div class="avatars" id="avatarRow">
+            <div class="avatar" data-id="cat" title="Cat" role="button" aria-label="Select Cat avatar" tabindex="0">🐱</div>
+            <div class="avatar" data-id="dog" title="Dog" role="button" aria-label="Select Dog avatar" tabindex="0">🐶</div>
+            <div class="avatar" data-id="owl" data-locked="true" title="Owl" role="button" aria-label="Select Owl avatar (locked)" aria-disabled="true" tabindex="0">🦉</div>
+            <div class="avatar" data-id="alien" data-locked="true" title="Alien" role="button" aria-label="Select Alien avatar (locked)" aria-disabled="true" tabindex="0">👽</div>
+          </div>
+          <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name" autocomplete="name" />
+          <div style="height:10px"></div>
+          <button id="startBtn" class="btn" aria-label="Start the quiz">Start</button>
+          <div style="margin-top:10px"><button class="btn small" type="button" id="instructionsBtn" aria-label="Show instructions">Instructions</button></div>
+          <div class="meta">Tap avatar, enter name, then press Start</div>
+          <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;">
+            <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+            </svg>
+            <span id="coinCount" style="font-weight:600" aria-live="polite">0</span>
+          </div>
         </div>
       </div>
+      
+      <!-- Difficulty View -->
+      <div id="view-difficulty" class="view" style="display:none">
+        <div style="margin-top: 40px;">
+          <div class="user-avatar-large" id="difficultyAvatar"></div>
+          <div class="welcome-text" id="welcomeText">Welcome!</div>
+          
+          <h2 style="margin-bottom:18px;">Select Difficulty</h2>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <button class="btn" data-diff="easy" aria-label="Select easy difficulty">Easy</button>
+            <button class="btn" data-diff="medium" aria-label="Select medium difficulty">Medium</button>
+            <button class="btn" data-diff="hard" aria-label="Select hard difficulty">Hard</button>
+          </div>
+          <div class="meta" style="margin-top:14px;">Questions will be pulled randomly from the chosen pool.</div>
+          <div style="margin-top:16px"><button class="btn small" id="backToStart" aria-label="Back to main menu">Back</button></div>
+        </div>
+      </div>
+      
+      <!-- Quiz View -->
+      <div id="view-quiz" class="view" style="display:none;position:relative;">
+        <!-- User info bar with coins -->
+        <div class="user-info-bar">
+          <div class="user-info">
+            <div class="user-avatar" id="headerAvatar"></div>
+            <span class="user-name" id="headerUsername"></span>
+          </div>
+          <div class="coin-display">
+            <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+            </svg>
+            <span id="coinCountQuiz" style="font-weight:600" aria-live="polite">0</span>
+          </div>
+        </div>
+        
+        <div style="margin-top: 60px;">
+          <div id="progressText" class="meta" aria-live="polite"></div>
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" aria-label="Quiz progress"><div id="progressFill" class="progress-fill"></div></div>
+          <div id="questionText" class="question" aria-live="polite">Question will appear here</div>
+          <div id="optionsContainer" class="options" role="list"></div>
+          <div class="lifeline-row" id="lifelineRow">
+            <button id="btnHint" class="lifeline-btn lifeline-hint" aria-label="Use hint lifeline (costs 20 coins)">
+              <span style="font-size:1.2em;line-height:1.1;">💡</span>
+              <span class="lifeline-cost-label">20 
+                <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+                  <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
+                </svg>
+              </span>
+            </button>
+            <button id="btn5050" class="lifeline-btn lifeline-5050" aria-label="Use 50/50 lifeline (costs 30 coins)">
+              <span style="font-size:1.1em;line-height:1.1;">✂️</span>
+              <span class="lifeline-cost-label">30 
+                <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+                  <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- End View -->
+      <div id="view-end" class="view" style="display:none">
+        <!-- User info bar with avatar only -->
+        <div class="user-info-bar">
+          <div class="user-avatar" id="endAvatar"></div>
+          <div class="coin-display">
+            <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+            </svg>
+            <span id="coinCountEnd" style="font-weight:600" aria-live="polite">0</span>
+          </div>
+        </div>
+        
+        <div style="margin-top: 60px;">
+          <div id="badge" class="badge" style="display:none"><img id="badgeImage" src="" alt="Badge" style="width:80%;height:auto;border-radius:50%"></div>
+          <h2 id="endTitle">You Win!</h2>
+          <div id="motivationalQuote" class="meta" style="color:#b97b16;margin-bottom:8px;font-weight:600"></div>
+          <div id="playerSummary" class="meta"></div>
+          <div style="margin-top:12px">
+            <button class="btn" id="playAgainBtn" aria-label="Play again">Play Again</button>
+            <button class="btn small" id="mainMenuBtn" style="margin-top:8px" aria-label="Go to main menu">Main Menu</button>
+          </div>
+          <div id="rewardChest" style="text-align:center;display:none">
+            <img src="chest_closed.png" id="chestImage" alt="Chest">
+            <div style="margin-top:8px"><button id="openChestBtn" class="btn small" aria-label="Open reward chest">Open Chest</button></div>
+          </div>
+          
+          <!-- Improved Leaderboard -->
+          <div class="leaderboard-container">
+            <div class="leaderboard-title">Latest Games</div>
+            <ol id="leaderboardList" style="padding-left:0;list-style-type:none;"></ol>
+            
+            <!-- Social buttons -->
+            <div class="social-buttons">
+              <button class="social-btn share-btn" id="shareBtn">
+                <span>📤</span> Share
+              </button>
+              <a href="https://instagram.com/triviathief" target="_blank" class="social-btn instagram-btn">
+                <span>📷</span> Follow
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="funFact" class="funfact" aria-live="polite" aria-hidden="true"></div>
     </div>
   </div>
   
-  <div id="funFact" class="funfact" aria-live="polite" aria-hidden="true"></div>
-</div>
-<div id="instructionsModal" style="display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;align-items:center;justify-content:center;z-index:200">
-  <div style="background:white;padding:20px;border-radius:12px;max-width:340px;margin:auto;text-align:left">
-    <button id="closeInstructions" aria-label="Close instructions">×</button>
-    <h2 style="color:var(--accent)">How to Play</h2>
-    <ol>
-      <li>Pick avatar and enter name.</li>
-      <li>Start → choose difficulty → answer questions.</li>
-      <li>You earn coins for correct answers and can buy lifelines.</li>
-    </ol>
+  <div id="instructionsModal">
+    <div>
+      <button id="closeInstructions" aria-label="Close instructions">×</button>
+      <h2 style="color:var(--accent)">How to Play</h2>
+      <ol>
+        <li>Pick avatar and enter name.</li>
+        <li>Start → choose difficulty → answer questions.</li>
+        <li>You earn coins for correct answers and can buy lifelines.</li>
+      </ol>
+    </div>
   </div>
-</div>
-<!-- Notification System -->
-<div id="notification" class="notification" aria-live="polite">
-  <div class="notification-content"></div>
-  <button class="notification-close" aria-label="Close notification">×</button>
-</div>
-<!-- Loading Indicator -->
-<div id="loadingIndicator" class="loading-indicator" style="display: none;">
-  <div class="spinner"></div>
-  <div>Loading questions...</div>
-</div>
-<!-- SOUND EFFECTS -->
-<audio id="sfxStart" src="start.wav" preload="auto"></audio>
-<audio id="sfxTimer" src="tick.wav" preload="auto" loop></audio>
-<audio id="sfxCoin" src="coin.wav" preload="auto"></audio>
-<audio id="sfxChest" src="chest.wav" preload="auto"></audio>
+  
+  <!-- Notification System -->
+  <div id="notification" class="notification" aria-live="polite">
+    <div class="notification-content"></div>
+    <button class="notification-close" aria-label="Close notification">×</button>
+  </div>
+  
+  <!-- Loading Indicator -->
+  <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+    <div class="spinner"></div>
+    <div>Loading questions...</div>
+  </div>
+  
+  <!-- SOUND EFFECTS -->
+  <audio id="sfxStart" src="start.wav" preload="auto"></audio>
+  <audio id="sfxTimer" src="tick.wav" preload="auto" loop></audio>
+  <audio id="sfxCoin" src="coin.wav" preload="auto"></audio>
+  <audio id="sfxChest" src="chest.wav" preload="auto"></audio>
+  
+  <footer>
+    <p>&copy; 2025 Trivia Thief. All Rights Reserved.</p>
+  </footer>
+  
 <script>
 const QUESTION_LIMIT = 10, HINT_COST = 20, FIFTY_COST = 30, AVATAR_UNLOCK_COST = 100;
 const MOTIVATIONAL_QUOTES = [
@@ -1127,11 +1213,25 @@ const state = {
   soundEnabled: true,
   darkMode: false,
   currentView: 'splash',
-  audioContext: null,
   unlockedAvatars: []
 };
 const byId = id => document.getElementById(id);
 // --- SOUND FX HELPERS ---
+let audioContext;
+let funFactTimeout;
+
+// Initialize audio context on first user interaction
+function initAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  
+  // Resume audio context if suspended
+  if (audioContext.state === 'suspended') {
+    audioContext.resume();
+  }
+}
+
 function playSFX(id, loop=false) {
   if (!state.soundEnabled) return;
   
@@ -1399,7 +1499,11 @@ function showFunFact(text, closeAfter = 1600) {
   funFactEl.textContent = text || '';
   funFactEl.classList.add('show');
   funFactEl.setAttribute('aria-hidden','false');
-  setTimeout(() => { funFactEl.classList.remove('show'); funFactEl.setAttribute('aria-hidden','true'); }, closeAfter);
+  clearTimeout(funFactTimeout); // Clear existing timeout
+  funFactTimeout = setTimeout(() => { 
+    funFactEl.classList.remove('show'); 
+    funFactEl.setAttribute('aria-hidden','true'); 
+  }, closeAfter);
 }
 // Custom notification system
 function showNotification(message, duration = 3000) {
@@ -1663,6 +1767,9 @@ function initializeAvatars() {
 }
 // Start button click handler
 function handleStartClick() {
+  // Initialize audio context on first user interaction
+  initAudioContext();
+  
   playSFX('sfxStart');
   if (!state.avatarId) {
     showNotification("Select an avatar first");
@@ -1736,24 +1843,10 @@ byId('playAgainBtn').addEventListener('click', () => { showView('view-difficulty
 byId('mainMenuBtn').addEventListener('click', () => { showView('view-start'); });
 byId('instructionsBtn').addEventListener('click', () => { 
   byId('instructionsModal').style.display = 'flex'; 
-  // Apply dark mode styles to modal if needed
-  if (document.body.classList.contains('dark-mode')) {
-    const modalDiv = byId('instructionsModal').querySelector('div');
-    if (modalDiv) {
-      modalDiv.style.background = '#333';
-      modalDiv.style.color = 'var(--text)';
-      const modalTitle = modalDiv.querySelector('h2');
-      if (modalTitle) {
-        modalTitle.style.color = 'var(--accent)';
-      }
-    }
-  }
 });
 byId('closeInstructions').addEventListener('click', () => { byId('instructionsModal').style.display = 'none'; });
 byId('backToStart').addEventListener('click', () => { 
   showView('view-start'); 
-  // Re-attach start button event listener when going back to start screen
-  byId('startBtn').addEventListener('click', handleStartClick);
 });
 // Dark mode toggle
 byId('lightMode').addEventListener('click', () => {
@@ -1812,6 +1905,22 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     showView('view-start');
   }, 3000);
+  
+  // Add error handling for audio elements
+  ['sfxStart', 'sfxTimer', 'sfxCoin', 'sfxChest'].forEach(id => {
+    const audio = document.getElementById(id);
+    if (audio) {
+      audio.addEventListener('error', (e) => {
+        console.error(`Error loading audio file for ${id}:`, e);
+        // Disable sound if there's an error
+        state.soundEnabled = false;
+        byId('soundOn').classList.remove('active');
+        byId('soundOff').classList.add('active');
+        localStorage.setItem('soundEnabled', 'false');
+        showNotification("Sound disabled due to error loading audio files");
+      });
+    }
+  });
 });
 loadQuestions();
 </script>
