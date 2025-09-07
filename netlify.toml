@@ -1,8 +1,0 @@
-# netlify.toml (paste this in repo root)
-[build]
-  publish = "."
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
