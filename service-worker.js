@@ -1,7 +1,7 @@
-const CACHE_NAME = 'trivia-thief-cache-v2';
+const CACHE_NAME = 'trivia-thief-static-v3';
+const DATA_CACHE_NAME = 'trivia-thief-data-v1';
 
-// All files in same folder as index.html
-const ASSETS_TO_CACHE = [
+const STATIC_ASSETS = [
   './index.html',
   './logo.png',
   './coin.png',
@@ -12,7 +12,6 @@ const ASSETS_TO_CACHE = [
   './tick.wav',
   './coin.wav',
   './chest.wav',
-  './questions.json',
   './apple-touch-icon.png',
   './site.webmanifest',
   './favicon-96x96.png',
@@ -20,48 +19,72 @@ const ASSETS_TO_CACHE = [
   './favicon.svg',
   './web-app-manifest-192x192.png',
   './web-app-manifest-512x512.png'
-  // ❌ Removed README.md, LICENSE.txt, and service-worker.js from cache list
-  // These may not be served or needed in cache
 ];
 
-// Install event: safely cache assets
+// Install: pre-cache static assets
 self.addEventListener('install', event => {
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME);
-    for (const asset of ASSETS_TO_CACHE) {
-      try {
-        const response = await fetch(asset, { cache: 'reload' });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        await cache.put(asset, response.clone());
-      } catch (err) {
-        console.warn('[SW] Failed to cache', asset, err);
-      }
-    }
-    self.skipWaiting();
-  })());
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(STATIC_ASSETS);
+    }).catch(err => {
+      console.warn('[SW] Failed to pre-cache assets', err);
+    })
+  );
+  self.skipWaiting();
 });
 
-// Activate event: cleanup old caches
+// Activate: clean up old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys.filter(key => key !== CACHE_NAME)
-            .map(key => caches.delete(key))
-      )
-    ).then(() => self.clients.claim())
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys
+          .filter(key => key !== CACHE_NAME && key !== DATA_CACHE_NAME)
+          .map(key => caches.delete(key))
+      );
+    }).then(() => self.clients.claim())
   );
 });
 
-// Fetch event: serve from cache first
+// Fetch handler
 self.addEventListener('fetch', event => {
+  const { request } = event;
+
+  // Handle questions.json with stale-while-revalidate
+  if (request.url.endsWith('questions.json')) {
+    event.respondWith(
+      caches.open(DATA_CACHE_NAME).then(async cache => {
+        try {
+          const networkResponse = await fetch(request);
+          if (networkResponse.ok) {
+            cache.put(request, networkResponse.clone());
+          }
+          return networkResponse;
+        } catch (err) {
+          const cachedResponse = await cache.match(request);
+          return cachedResponse || new Response('{"easy":[],"medium":[],"hard":[]}', {
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
+      })
+    );
+    return;
+  }
+
+  // Default: cache-first for static assets
   event.respondWith(
-    caches.match(event.request, { ignoreSearch: true })
-      .then(response => response || fetch(event.request))
+    caches.match(request).then(response => {
+      return response || fetch(request).catch(() => {
+        // Fallback: if offline and HTML requested, serve cached index.html
+        if (request.mode === 'navigate') {
+          return caches.match('./index.html');
+        }
+      });
+    })
   );
 });
 
-// Optional background sync example
+// Background sync example
 self.addEventListener('sync', event => {
   if (event.tag === 'sync-quiz-scores') {
     event.waitUntil(uploadScores());
@@ -69,12 +92,12 @@ self.addEventListener('sync', event => {
 });
 
 async function uploadScores() {
-  console.log('Background sync: Uploading quiz scores...');
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  console.log('Quiz scores uploaded!');
+  console.log('[SW] Background sync: uploading quiz scores…');
+  await new Promise(res => setTimeout(res, 2000));
+  console.log('[SW] Quiz scores uploaded!');
 }
 
-// Optional periodic sync example
+// Periodic sync example for refreshing questions
 self.addEventListener('periodicsync', event => {
   if (event.tag === 'update-questions') {
     event.waitUntil(fetchNewQuestions());
@@ -82,20 +105,62 @@ self.addEventListener('periodicsync', event => {
 });
 
 async function fetchNewQuestions() {
-  console.log('Periodic sync: Fetching latest questions...');
+  console.log('[SW] Periodic sync: fetching latest questions…');
   try {
     const res = await fetch('./questions.json');
     if (res.ok) {
-      console.log('Questions updated successfully');
+      const cache = await caches.open(DATA_CACHE_NAME);
+      cache.put('./questions.json', res.clone());
+      console.log('[SW] Questions updated successfully');
     }
   } catch (err) {
-    console.error('Failed to fetch new questions', err);
+    console.error('[SW] Failed to fetch new questions', err);
   }
 }
-
-/*
-All Rights Reserved
-Copyright (c) 2025 Sofia Kaur
-Unauthorized copying of this file, via any medium is strictly prohibited.
-*/
-
+// Push notifications example
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.text() : 'New notification from Trivia Thief!';
+  const options = {
+    body: data,
+    icon: './logo.png',
+    badge: './badgeone.png',
+    vibrate: [100, 50, 100],
+    data: { dateOfArrival: Date.now(), primaryKey: 1 }
+  };
+  event.waitUntil(
+    self.registration.showNotification('Trivia Thief', options)
+  );
+});
+// Notification click handler
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  event.waitUntil(
+    clients.matchAll({ type: 'window' }).then(clientList => {
+      for (const client of clientList) {
+        if (client.url === '/' && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      if (clients.openWindow) {
+        return clients.openWindow('/');
+      }
+    })
+  );
+});
+// Listen for messages from the client
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+// This service worker script is designed to enhance the offline capabilities and performance of the Trivia Thief web app. It implements caching strategies, background sync, periodic updates, and push notifications to provide a seamless user experience even when the network is unreliable.
+// Make sure to test thoroughly across different browsers and devices to ensure compatibility and performance.
+// Update the CACHE_NAME and DATA_CACHE_NAME variables to manage cache versions effectively.
+// Increment the version numbers when you make changes to the static assets or data structure to ensure users receive the latest updates.
+// Remember to register this service worker in your main application script (e.g., app.js or index.js) using navigator.serviceWorker.register('/service-worker.js');
+// Also, ensure your server is configured to serve the service worker with the correct MIME type (application/javascript).
+// This code is provided as-is without any warranties. Use it at your own risk.
+// (c) 2025 Trivia Thief. All rights reserved.
+// License: All Rights Reserved. Unauthorized use is prohibited.
+// For any questions or support, contact the developer at Trivia Thief Instagram Handle
+//
