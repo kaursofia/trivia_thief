@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <!--
+  All Rights Reserved
+  Copyright (c) 2025 Sofia Kaur
+  Unauthorized copying of this file, via any medium is strictly prohibited.
+  -->
+<head>
+  <!-- Google Tag Manager -->
+  <!-- <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=GTM-PZSNLRJ4'+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PZSNLRJ4');
+  </script> -->
+  <!-- End Google Tag Manager -->
+   <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1B1RV7TDY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P1B1RV7TDY');
+  </script>
+  <!-- End Google Analytics 4 -->
+   <!-- Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com;">
+    <meta name="description" content="A fun and challenging trivia quiz game with multiple difficulty levels. Test your knowledge with questions on various topics and challenge your friends!">
+    <meta name="version" content="1.0">
+    <meta name="author" content="Sofia Kaur">
+    <meta name="copyright" content="All Rights Reserved - Copyright (c) 2025 Trivia Thief">
+    <meta name="theme-color" content="#ffb300">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Trivia Thief">
+    <meta name="keywords" content="trivia, quiz, game, knowledge, questions, challenge, fun, education">
+    <meta name="robots" content="index, follow">
+<link rel="manifest" href="site.webmanifest">
+<!-- Icons -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="web-app-manifest-512x512.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmCULaM6tU8zTMs2uDZ+6BgdF2e5q5n9gHtvPp1zK0s8e3fXyZxX5x5hZ+4d4r9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<title>Trivia Thief — Quiz Game</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZSNLRJ4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <div class="app-container">
+    <!-- Splash Screen View -->
+    <div class="screen" role="application" aria-label="Trivia Thief Game">
+      <div id="view-splash" class="view active">
+        <img class="logo" src="logo.png" alt="Trivia Thief Logo">
+        <p class="tag"><strong>A Game Can Make You Millionaire</strong></p>
+      </div>
+      <!-- Start View -->
+      <div id="view-start" class="view" style="display:none">
+        <!-- Top bar with logo and title -->
+        <div class="top-bar-with-title">
+          <img class="logo-top" src="logo.png" alt="Trivia Thief Logo">
+          <div class="top-bar-title">QUIZ GAME</div>
+        </div>
+        
+        <!-- Toggle buttons positioned at center right -->
+        <div class="toggle-container">
+          <div class="toggle-wrapper">
+            <div class="toggle-pill" id="darkModeToggle" aria-label="Toggle dark mode">
+              <div class="toggle-option" id="lightMode" title="Light Mode">☀️</div>
+              <div class="toggle-option active" id="darkMode" title="Dark Mode">🌙</div>
+            </div>
+          </div>
+          
+          <div class="toggle-wrapper">
+            <div class="toggle-pill" id="soundToggle" aria-label="Toggle sound">
+              <div class="toggle-option active" id="soundOn" title="Sound On">🔊</div>
+              <div class="toggle-option" id="soundOff" title="Sound Off">🔇</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 90px; display: flex; flex-direction: column; align-items: center; width: 100%;">
+          <div class="avatars" id="avatarRow">
+            <div class="avatar" data-id="cat" title="Cat" role="button" aria-label="Select Cat avatar" tabindex="0">🐱</div>
+            <div class="avatar" data-id="dog" title="Dog" role="button" aria-label="Select Dog avatar" tabindex="0">🐶</div>
+            <div class="avatar" data-id="owl" data-locked="true" title="Owl" role="button" aria-label="Select Owl avatar (locked)" aria-disabled="true" tabindex="0">🦉</div>
+            <div class="avatar" data-id="alien" data-locked="true" title="Alien" role="button" aria-label="Select Alien avatar (locked)" aria-disabled="true" tabindex="0">👽</div>
+          </div>
+          <input id="nameInput" type="text" placeholder="Enter your name" aria-label="Enter your name" autocomplete="name" />
+          <div style="height:10px"></div>
+          <button id="startBtn" class="btn" aria-label="Start the quiz">Start</button>
+          <div style="margin-top:10px"><button class="btn small" type="button" id="instructionsBtn" aria-label="Show instructions">Instructions</button></div>
+          <div class="meta">Tap avatar, enter name, then press Start</div>
+          <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;">
+            <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+            </svg>
+            <span id="coinCount" style="font-weight:600" aria-live="polite">0</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Difficulty View -->
+      <div id="view-difficulty" class="view" style="display:none">
+        <div style="margin-top: 40px;">
+          <div class="user-avatar-large" id="difficultyAvatar"></div>
+          <div class="welcome-text" id="welcomeText">Welcome!</div>
+          
+          <h2 style="margin-bottom:18px;">Select Difficulty</h2>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <button class="btn" data-diff="easy" aria-label="Select easy difficulty">Easy</button>
+            <button class="btn" data-diff="medium" aria-label="Select medium difficulty">Medium</button>
+            <button class="btn" data-diff="hard" aria-label="Select hard difficulty">Hard</button>
+          </div>
+          <div class="meta" style="margin-top:14px;">Questions will be pulled randomly from the chosen pool.</div>
+          <div style="margin-top:16px"><button class="btn small" id="backToStart" aria-label="Back to main menu">Back</button></div>
+        </div>
+      </div>
+      
+      <!-- Quiz View -->
+      <div id="view-quiz" class="view" style="display:none;position:relative;">
+        <!-- User info bar with coins -->
+        <div class="user-info-bar">
+          <div class="user-info">
+            <div class="user-avatar" id="headerAvatar"></div>
+            <span class="user-name" id="headerUsername"></span>
+          </div>
+          <div class="coin-display">
+            <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+            </svg>
+            <span id="coinCountQuiz" style="font-weight:600" aria-live="polite">0</span>
+          </div>
+        </div>
+        
+        <div style="margin-top: 60px;">
+          <div id="progressText" class="meta" aria-live="polite"></div>
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" aria-label="Quiz progress"><div id="progressFill" class="progress-fill"></div></div>
+          <div id="questionText" class="question" aria-live="polite">Question will appear here</div>
+          <div id="optionsContainer" class="options" role="list"></div>
+          <div class="lifeline-row" id="lifelineRow">
+            <button id="btnHint" class="lifeline-btn lifeline-hint" aria-label="Use hint lifeline (costs 20 coins)">
+              <span style="font-size:1.2em;line-height:1.1;">💡</span>
+              <span class="lifeline-cost-label">20 
+                <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+                  <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
+                </svg>
+              </span>
+            </button>
+            <button id="btn5050" class="lifeline-btn lifeline-5050" aria-label="Use 50/50 lifeline (costs 30 coins)">
+              <span style="font-size:1.1em;line-height:1.1;">✂️</span>
+              <span class="lifeline-cost-label">30 
+                <svg class="coin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+                  <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="8" font-weight="bold">$</text>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- End View -->
+      <div id="view-end" class="view" style="display:none">
+        <!-- User info bar with avatar only -->
+        <div class="user-info-bar">
+          <div class="user-avatar" id="endAvatar"></div>
+          <div class="coin-display">
+            <svg class="coin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="#FFD700"/>
+              <text x="12" y="16" text-anchor="middle" fill="#B8860B" font-size="12" font-weight="bold">$</text>
+            </svg>
+            <span id="coinCountEnd" style="font-weight:600" aria-live="polite">0</span>
+          </div>
+        </div>
+        
+        <div style="margin-top: 60px;">
+          <div id="badge" class="badge" style="display:none"><img id="badgeImage" src="" alt="Badge" style="width:80%;height:auto;border-radius:50%"></div>
+          <h2 id="endTitle">You Win!</h2>
+          <div id="motivationalQuote" class="meta" style="color:#b97b16;margin-bottom:8px;font-weight:600"></div>
+          <div id="playerSummary" class="meta"></div>
+          <div style="margin-top:12px">
+            <button class="btn" id="playAgainBtn" aria-label="Play again">Play Again</button>
+            <button class="btn small" id="mainMenuBtn" style="margin-top:8px" aria-label="Go to main menu">Main Menu</button>
+          </div>
+          <div id="rewardChest" style="text-align:center;display:none">
+            <img src="chest_closed.png" id="chestImage" alt="Chest">
+            <div style="margin-top:8px"><button id="openChestBtn" class="btn small" aria-label="Open reward chest">Open Chest</button></div>
+          </div>
+          
+          <!-- Improved Leaderboard -->
+          <div class="leaderboard-container">
+            <div class="leaderboard-title">Latest Games</div>
+            <ol id="leaderboardList" style="padding-left:0;list-style-type:none;"></ol>
+            
+            <!-- Social buttons -->
+            <div class="social-buttons">
+              <button class="social-btn share-btn" id="shareBtn">
+                <span>📤</span> Share
+              </button>
+              <a href="https://instagram.com/triviathief" target="_blank" class="social-btn instagram-btn">
+                <span>📷</span> Follow
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="funFact" class="funfact" aria-live="polite" aria-hidden="true"></div>
+    </div>
+  </div>
+  
+  <div id="instructionsModal">
+    <div>
+      <button id="closeInstructions" aria-label="Close instructions">×</button>
+      <h2 style="color:var(--accent)">How to Play</h2>
+      <ol>
+        <li>Pick avatar and enter name.</li>
+        <li>Start → choose difficulty → answer questions.</li>
+        <li>You earn coins for correct answers and can buy lifelines.</li>
+      </ol>
+    </div>
+  </div>
+  
+  <!-- Notification System -->
+  <div id="notification" class="notification" aria-live="polite">
+    <div class="notification-content"></div>
+    <button class="notification-close" aria-label="Close notification">×</button>
+  </div>
+  
+  <!-- Loading Indicator -->
+  <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+    <div class="spinner"></div>
+    <div>Loading questions...</div>
+  </div>
+  
+  <!-- SOUND EFFECTS -->
+  <audio id="sfxStart" src="start.wav" preload="auto"></audio>
+  <audio id="sfxTimer" src="tick.wav" preload="auto" loop></audio>
+  <audio id="sfxCoin" src="coin.wav" preload="auto"></audio>
+  <audio id="sfxChest" src="chest.wav" preload="auto"></audio>
+  
+  <footer>
+    <p>&copy; 2025 Trivia Thief. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
